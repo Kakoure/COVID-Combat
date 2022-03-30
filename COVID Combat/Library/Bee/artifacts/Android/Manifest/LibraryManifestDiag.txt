@@ -1,0 +1,20 @@
+Using template 'Assets/Plugins/Android\AndroidManifest.xml'
+
+android.permission.INTERNET was added because:
+	System.Net.Sockets was present in:
+		kcp2k-FeaturesChecked.txt
+		Mirror.Components-FeaturesChecked.txt
+		Mirror-FeaturesChecked.txt
+		SimpleWebTransport-FeaturesChecked.txt
+		Telepathy-FeaturesChecked.txt
+		where-allocations-FeaturesChecked.txt
+	Force Internet Permission
+android.hardware.touchscreen.multitouch, android.hardware.touchscreen.multitouch.distinct were enabled because:
+	UnityEngine.Input::GetTouch was present in:
+		Assembly-CSharp-FeaturesChecked.txt
+		Google.XR.Cardboard-FeaturesChecked.txt
+		UnityEngine.UI-FeaturesChecked.txt
+	UnityEngine.Input::get_touchCount was present in:
+		Assembly-CSharp-FeaturesChecked.txt
+		Google.XR.Cardboard-FeaturesChecked.txt
+		UnityEngine.UI-FeaturesChecked.txt
