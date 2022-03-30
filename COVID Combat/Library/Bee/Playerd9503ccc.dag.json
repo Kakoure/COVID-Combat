@@ -1331,8 +1331,7 @@
         1323,
         1324,
         1325,
-        1326,
-        1327
+        1326
       ],
       "AllowUnexpectedOutput": true,
       "DebugActionIndex": 0
@@ -1405,7 +1404,7 @@
     },
     {
       "Annotation": "UnityLinker Library/Bee/artifacts/Android/ManagedStripped",
-      "Action": "\"C:\\Program Files\\Unity\\Hub\\Editor\\2021.2.17f1\\Editor\\Data\\il2cpp/build/deploy/UnityLinker.exe\" --search-directory=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed\" --out=\"Library/Bee/artifacts/Android/ManagedStripped\" --include-link-xml=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed\\TypesInScenes.xml\" --include-link-xml=\"C:/Program Files/Unity/Hub/Editor/2021.2.17f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/AndroidNativeLink.xml\" --include-directory=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed\" --dotnetprofile=unityaot-linux --dotnetruntime=Il2Cpp --platform=Android --use-editor-options --enable-engine-module-stripping --engine-modules-asset-file=\"C:/Program Files/Unity/Hub/Editor/2021.2.17f1/Editor/Data/PlaybackEngines/AndroidPlayer/modules.asset\" --editor-data-file=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/EditorToUnityLinkerData.json\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Assembly-CSharp.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Telepathy.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Mirror.Components.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Mirror.Examples.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Mirror.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/kcp2k.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/where-allocations.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Mirror.Authenticators.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/SimpleWebTransport.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/UnityEngine.SpatialTracking.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Unity.XR.Management.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Google.XR.Cardboard.dll\" --print-command-line",
+      "Action": "\"C:\\Program Files\\Unity\\Hub\\Editor\\2021.2.17f1\\Editor\\Data\\il2cpp/build/deploy/UnityLinker.exe\" --search-directory=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed\" --out=\"Library/Bee/artifacts/Android/ManagedStripped\" --include-link-xml=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed\\MethodsToPreserve.xml\" --include-link-xml=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed\\TypesInScenes.xml\" --include-link-xml=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed\\SerializedTypes.xml\" --include-link-xml=\"C:/Program Files/Unity/Hub/Editor/2021.2.17f1/Editor/Data/PlaybackEngines/AndroidPlayer/Tools/AndroidNativeLink.xml\" --include-directory=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed\" --dotnetprofile=unityaot-linux --dotnetruntime=Il2Cpp --platform=Android --use-editor-options --enable-engine-module-stripping --engine-modules-asset-file=\"C:/Program Files/Unity/Hub/Editor/2021.2.17f1/Editor/Data/PlaybackEngines/AndroidPlayer/modules.asset\" --editor-data-file=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/EditorToUnityLinkerData.json\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Assembly-CSharp.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Mirror.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/kcp2k.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Mirror.Examples.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Unity.TextMeshPro.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/UnityEngine.UI.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/UnityEngine.SpatialTracking.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Unity.XR.Management.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Mirror.Authenticators.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Telepathy.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/where-allocations.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/SimpleWebTransport.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Mirror.Components.dll\" --include-unity-root-assembly=\"C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Google.XR.Cardboard.dll\" --print-command-line",
       "Inputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Accessibility.dll",
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Assembly-CSharp.dll",
@@ -1415,6 +1414,7 @@
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Google.XR.Cardboard.pdb",
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/kcp2k.dll",
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/kcp2k.pdb",
+        "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/MethodsToPreserve.xml",
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Microsoft.CSharp.dll",
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Microsoft.Win32.Primitives.dll",
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Microsoft.Win32.Registry.AccessControl.dll",
@@ -1432,6 +1432,7 @@
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/Mono.Security.dll",
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/mscorlib.dll",
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/netstandard.dll",
+        "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/SerializedTypes.xml",
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/SimpleWebTransport.dll",
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/SimpleWebTransport.pdb",
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Temp/StagingArea/Data/Managed/System.AppContext.dll",
@@ -25610,20 +25611,6 @@
       "DebugActionIndex": 1198
     },
     {
-      "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/icallsummary.txt",
-      "ActionType": "CopyFiles",
-      "Inputs": [
-        "Library/Bee/artifacts/Android/ManagedStripped/icallsummary.txt"
-      ],
-      "Outputs": [
-        "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/icallsummary.txt"
-      ],
-      "ToBuildDependencies": [
-        7
-      ],
-      "DebugActionIndex": 1199
-    },
-    {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/kcp2k.dll",
       "ActionType": "CopyFiles",
       "Inputs": [
@@ -25635,7 +25622,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1200
+      "DebugActionIndex": 1199
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/kcp2k.pdb",
@@ -25649,7 +25636,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1201
+      "DebugActionIndex": 1200
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/Mirror.Authenticators.dll",
@@ -25663,7 +25650,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1202
+      "DebugActionIndex": 1201
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/Mirror.Authenticators.pdb",
@@ -25677,7 +25664,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1203
+      "DebugActionIndex": 1202
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/Mirror.Components.dll",
@@ -25691,7 +25678,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1204
+      "DebugActionIndex": 1203
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/Mirror.Components.pdb",
@@ -25705,7 +25692,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1205
+      "DebugActionIndex": 1204
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/Mirror.dll",
@@ -25719,7 +25706,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1206
+      "DebugActionIndex": 1205
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/Mirror.Examples.dll",
@@ -25733,7 +25720,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1207
+      "DebugActionIndex": 1206
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/Mirror.Examples.pdb",
@@ -25747,7 +25734,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1208
+      "DebugActionIndex": 1207
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/Mirror.pdb",
@@ -25761,7 +25748,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1209
+      "DebugActionIndex": 1208
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/Mono.Security.dll",
@@ -25775,7 +25762,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1210
+      "DebugActionIndex": 1209
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/mscorlib.dll",
@@ -25789,7 +25776,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1211
+      "DebugActionIndex": 1210
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/SimpleWebTransport.dll",
@@ -25803,7 +25790,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1212
+      "DebugActionIndex": 1211
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/SimpleWebTransport.pdb",
@@ -25817,7 +25804,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1213
+      "DebugActionIndex": 1212
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/System.Configuration.dll",
@@ -25831,7 +25818,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1214
+      "DebugActionIndex": 1213
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/System.Core.dll",
@@ -25845,7 +25832,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1215
+      "DebugActionIndex": 1214
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/System.dll",
@@ -25859,7 +25846,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1216
+      "DebugActionIndex": 1215
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/System.Numerics.dll",
@@ -25873,7 +25860,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1217
+      "DebugActionIndex": 1216
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/System.Xml.dll",
@@ -25887,7 +25874,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1218
+      "DebugActionIndex": 1217
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/Telepathy.dll",
@@ -25901,7 +25888,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1219
+      "DebugActionIndex": 1218
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/Telepathy.pdb",
@@ -25915,7 +25902,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1220
+      "DebugActionIndex": 1219
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/Unity.TextMeshPro.dll",
@@ -25929,7 +25916,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1221
+      "DebugActionIndex": 1220
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/Unity.TextMeshPro.pdb",
@@ -25943,7 +25930,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1222
+      "DebugActionIndex": 1221
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/Unity.XR.Management.dll",
@@ -25957,7 +25944,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1223
+      "DebugActionIndex": 1222
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/Unity.XR.Management.pdb",
@@ -25971,7 +25958,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1224
+      "DebugActionIndex": 1223
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.AIModule.dll",
@@ -25985,7 +25972,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1225
+      "DebugActionIndex": 1224
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.AIModule.pdb",
@@ -25999,7 +25986,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1226
+      "DebugActionIndex": 1225
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.AndroidJNIModule.dll",
@@ -26013,7 +26000,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1227
+      "DebugActionIndex": 1226
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.AndroidJNIModule.pdb",
@@ -26027,7 +26014,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1228
+      "DebugActionIndex": 1227
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.AnimationModule.dll",
@@ -26041,7 +26028,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1229
+      "DebugActionIndex": 1228
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.AnimationModule.pdb",
@@ -26055,7 +26042,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1230
+      "DebugActionIndex": 1229
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.AudioModule.dll",
@@ -26069,7 +26056,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1231
+      "DebugActionIndex": 1230
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.AudioModule.pdb",
@@ -26083,7 +26070,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1232
+      "DebugActionIndex": 1231
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.CoreModule.dll",
@@ -26097,7 +26084,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1233
+      "DebugActionIndex": 1232
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.CoreModule.pdb",
@@ -26111,7 +26098,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1234
+      "DebugActionIndex": 1233
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.dll",
@@ -26125,7 +26112,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1235
+      "DebugActionIndex": 1234
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.GridModule.dll",
@@ -26139,7 +26126,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1236
+      "DebugActionIndex": 1235
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.GridModule.pdb",
@@ -26153,7 +26140,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1237
+      "DebugActionIndex": 1236
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.IMGUIModule.dll",
@@ -26167,7 +26154,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1238
+      "DebugActionIndex": 1237
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.IMGUIModule.pdb",
@@ -26181,7 +26168,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1239
+      "DebugActionIndex": 1238
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.InputLegacyModule.dll",
@@ -26195,7 +26182,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1240
+      "DebugActionIndex": 1239
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.InputLegacyModule.pdb",
@@ -26209,7 +26196,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1241
+      "DebugActionIndex": 1240
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.InputModule.dll",
@@ -26223,7 +26210,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1242
+      "DebugActionIndex": 1241
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.InputModule.pdb",
@@ -26237,7 +26224,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1243
+      "DebugActionIndex": 1242
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.JSONSerializeModule.dll",
@@ -26251,7 +26238,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1244
+      "DebugActionIndex": 1243
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.JSONSerializeModule.pdb",
@@ -26265,7 +26252,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1245
+      "DebugActionIndex": 1244
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.pdb",
@@ -26279,7 +26266,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1246
+      "DebugActionIndex": 1245
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.Physics2DModule.dll",
@@ -26293,7 +26280,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1247
+      "DebugActionIndex": 1246
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.Physics2DModule.pdb",
@@ -26307,7 +26294,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1248
+      "DebugActionIndex": 1247
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.PhysicsModule.dll",
@@ -26321,7 +26308,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1249
+      "DebugActionIndex": 1248
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.PhysicsModule.pdb",
@@ -26335,7 +26322,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1250
+      "DebugActionIndex": 1249
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.SharedInternalsModule.dll",
@@ -26349,7 +26336,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1251
+      "DebugActionIndex": 1250
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.SharedInternalsModule.pdb",
@@ -26363,7 +26350,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1252
+      "DebugActionIndex": 1251
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.SpatialTracking.dll",
@@ -26377,7 +26364,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1253
+      "DebugActionIndex": 1252
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.SpatialTracking.pdb",
@@ -26391,7 +26378,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1254
+      "DebugActionIndex": 1253
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.SpriteShapeModule.dll",
@@ -26405,7 +26392,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1255
+      "DebugActionIndex": 1254
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.SpriteShapeModule.pdb",
@@ -26419,7 +26406,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1256
+      "DebugActionIndex": 1255
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.SubsystemsModule.dll",
@@ -26433,7 +26420,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1257
+      "DebugActionIndex": 1256
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.SubsystemsModule.pdb",
@@ -26447,7 +26434,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1258
+      "DebugActionIndex": 1257
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.TextCoreFontEngineModule.dll",
@@ -26461,7 +26448,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1259
+      "DebugActionIndex": 1258
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.TextCoreFontEngineModule.pdb",
@@ -26475,7 +26462,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1260
+      "DebugActionIndex": 1259
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.TextCoreTextEngineModule.dll",
@@ -26489,7 +26476,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1261
+      "DebugActionIndex": 1260
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.TextCoreTextEngineModule.pdb",
@@ -26503,7 +26490,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1262
+      "DebugActionIndex": 1261
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.TextRenderingModule.dll",
@@ -26517,7 +26504,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1263
+      "DebugActionIndex": 1262
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.TextRenderingModule.pdb",
@@ -26531,7 +26518,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1264
+      "DebugActionIndex": 1263
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.TilemapModule.dll",
@@ -26545,7 +26532,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1265
+      "DebugActionIndex": 1264
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.TilemapModule.pdb",
@@ -26559,7 +26546,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1266
+      "DebugActionIndex": 1265
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.UI.dll",
@@ -26573,7 +26560,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1267
+      "DebugActionIndex": 1266
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.UI.pdb",
@@ -26587,7 +26574,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1268
+      "DebugActionIndex": 1267
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.UIElementsModule.dll",
@@ -26601,7 +26588,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1269
+      "DebugActionIndex": 1268
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.UIElementsModule.pdb",
@@ -26615,7 +26602,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1270
+      "DebugActionIndex": 1269
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.UIElementsNativeModule.dll",
@@ -26629,7 +26616,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1271
+      "DebugActionIndex": 1270
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.UIElementsNativeModule.pdb",
@@ -26643,7 +26630,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1272
+      "DebugActionIndex": 1271
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.UIModule.dll",
@@ -26657,7 +26644,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1273
+      "DebugActionIndex": 1272
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.UIModule.pdb",
@@ -26671,7 +26658,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1274
+      "DebugActionIndex": 1273
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.XRModule.dll",
@@ -26685,7 +26672,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1275
+      "DebugActionIndex": 1274
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.XRModule.pdb",
@@ -26699,7 +26686,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1276
+      "DebugActionIndex": 1275
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityLinkerToEditorData.json",
@@ -26713,7 +26700,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1277
+      "DebugActionIndex": 1276
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/where-allocations.dll",
@@ -26727,7 +26714,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1278
+      "DebugActionIndex": 1277
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/where-allocations.pdb",
@@ -26741,7 +26728,7 @@
       "ToBuildDependencies": [
         7
       ],
-      "DebugActionIndex": 1279
+      "DebugActionIndex": 1278
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/unity default resources",
@@ -26752,7 +26739,7 @@
       "Outputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/unity default resources"
       ],
-      "DebugActionIndex": 1280
+      "DebugActionIndex": 1279
     },
     {
       "Annotation": "WriteText Library/Bee/artifacts/csharpactions/build.gradle_asnc.info",
@@ -26763,7 +26750,7 @@
         "Library/Bee/artifacts/csharpactions/build.gradle_asnc.info"
       ],
       "AllowUnwrittenOutputFiles": true,
-      "DebugActionIndex": 1281
+      "DebugActionIndex": 1280
     },
     {
       "Annotation": "ActionGenerateProjectFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/build.gradle (+5 others)",
@@ -26793,11 +26780,11 @@
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/settings.gradle"
       ],
       "ToBuildDependencies": [
-        1281
+        1280
       ],
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 1282
+      "DebugActionIndex": 1281
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/proguard-unity.txt",
@@ -26808,7 +26795,7 @@
       "Outputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/proguard-unity.txt"
       ],
-      "DebugActionIndex": 1283
+      "DebugActionIndex": 1282
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/java/com/unity3d/player/UnityPlayerActivity.java",
@@ -26819,7 +26806,7 @@
       "Outputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/java/com/unity3d/player/UnityPlayerActivity.java"
       ],
-      "DebugActionIndex": 1284
+      "DebugActionIndex": 1283
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/libs/unity-classes.jar",
@@ -26830,7 +26817,7 @@
       "Outputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/libs/unity-classes.jar"
       ],
-      "DebugActionIndex": 1285
+      "DebugActionIndex": 1284
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values/ids.xml",
@@ -26841,7 +26828,7 @@
       "Outputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values/ids.xml"
       ],
-      "DebugActionIndex": 1286
+      "DebugActionIndex": 1285
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values/styles.xml",
@@ -26852,7 +26839,7 @@
       "Outputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values/styles.xml"
       ],
-      "DebugActionIndex": 1287
+      "DebugActionIndex": 1286
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values-v21/styles.xml",
@@ -26863,7 +26850,7 @@
       "Outputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values-v21/styles.xml"
       ],
-      "DebugActionIndex": 1288
+      "DebugActionIndex": 1287
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values-v28/styles.xml",
@@ -26874,7 +26861,7 @@
       "Outputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values-v28/styles.xml"
       ],
-      "DebugActionIndex": 1289
+      "DebugActionIndex": 1288
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values/styles.xml",
@@ -26885,7 +26872,7 @@
       "Outputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values/styles.xml"
       ],
-      "DebugActionIndex": 1290
+      "DebugActionIndex": 1289
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values-v21/styles.xml",
@@ -26896,7 +26883,7 @@
       "Outputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values-v21/styles.xml"
       ],
-      "DebugActionIndex": 1291
+      "DebugActionIndex": 1290
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values-v28/styles.xml",
@@ -26907,7 +26894,7 @@
       "Outputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values-v28/styles.xml"
       ],
-      "DebugActionIndex": 1292
+      "DebugActionIndex": 1291
     },
     {
       "Annotation": "WriteText C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values/strings.xml",
@@ -26918,7 +26905,7 @@
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values/strings.xml"
       ],
       "AllowUnwrittenOutputFiles": true,
-      "DebugActionIndex": 1293
+      "DebugActionIndex": 1292
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-anydpi-v26/app_icon.xml",
@@ -26929,7 +26916,7 @@
       "Outputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-anydpi-v26/app_icon.xml"
       ],
-      "DebugActionIndex": 1294
+      "DebugActionIndex": 1293
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-anydpi-v26/app_icon_round.xml",
@@ -26940,7 +26927,7 @@
       "Outputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-anydpi-v26/app_icon_round.xml"
       ],
-      "DebugActionIndex": 1295
+      "DebugActionIndex": 1294
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-mdpi/app_icon.png",
@@ -26951,7 +26938,7 @@
       "Outputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-mdpi/app_icon.png"
       ],
-      "DebugActionIndex": 1296
+      "DebugActionIndex": 1295
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-mdpi/ic_launcher_background.png",
@@ -26962,7 +26949,7 @@
       "Outputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-mdpi/ic_launcher_background.png"
       ],
-      "DebugActionIndex": 1297
+      "DebugActionIndex": 1296
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-mdpi/ic_launcher_foreground.png",
@@ -26973,7 +26960,7 @@
       "Outputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-mdpi/ic_launcher_foreground.png"
       ],
-      "DebugActionIndex": 1298
+      "DebugActionIndex": 1297
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libmain.so",
@@ -26984,7 +26971,7 @@
       "Outputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libmain.so"
       ],
-      "DebugActionIndex": 1299
+      "DebugActionIndex": 1298
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/arm64-v8a/libmain.so",
@@ -26995,7 +26982,7 @@
       "Outputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/arm64-v8a/libmain.so"
       ],
-      "DebugActionIndex": 1300
+      "DebugActionIndex": 1299
     },
     {
       "Annotation": "WriteText Library/Bee/artifacts/csharpactions/LauncherManifestDiag.txt_zvqu.info",
@@ -27006,7 +26993,7 @@
         "Library/Bee/artifacts/csharpactions/LauncherManifestDiag.txt_zvqu.info"
       ],
       "AllowUnwrittenOutputFiles": true,
-      "DebugActionIndex": 1301
+      "DebugActionIndex": 1300
     },
     {
       "Annotation": "Generate Manifests Library/Bee/artifacts/Android/Manifest/LauncherManifestDiag.txt (+3 others)",
@@ -27120,11 +27107,11 @@
         94,
         96,
         98,
-        1301
+        1300
       ],
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 1302
+      "DebugActionIndex": 1301
     },
     {
       "Annotation": "ClassRegistrationGenerator C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/artifacts/Android/il2cppOutput/UnityClassRegistration.cpp",
@@ -27142,7 +27129,7 @@
         7
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1303
+      "DebugActionIndex": 1302
     },
     {
       "Annotation": "Compile UnityClassRegistration Library/Bee/artifacts/Android/libunity/armeabi-v7a/UnityClassRegistration.o",
@@ -27156,10 +27143,10 @@
         "Library/Bee/artifacts/Android/libunity/armeabi-v7a/UnityClassRegistration.o"
       ],
       "ToBuildDependencies": [
-        1303
+        1302
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1304
+      "DebugActionIndex": 1303
     },
     {
       "Annotation": "ICallRegistrationGenerator C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/artifacts/Android/il2cppOutput/UnityICallRegistration.cpp",
@@ -27197,7 +27184,7 @@
         7
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1305
+      "DebugActionIndex": 1304
     },
     {
       "Annotation": "Compile UnityICallRegistration Library/Bee/artifacts/Android/libunity/armeabi-v7a/UnityICallRegistration.o",
@@ -27211,10 +27198,10 @@
         "Library/Bee/artifacts/Android/libunity/armeabi-v7a/UnityICallRegistration.o"
       ],
       "ToBuildDependencies": [
-        1305
+        1304
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1306
+      "DebugActionIndex": 1305
     },
     {
       "Annotation": "Link libunity Library/Bee/artifacts/Android/libunity/armeabi-v7a/unstripped/libunity.so",
@@ -27231,11 +27218,11 @@
         "Library/Bee/artifacts/Android/libunity/armeabi-v7a/unstripped/libunity.so"
       ],
       "ToBuildDependencies": [
-        1304,
-        1306
+        1303,
+        1305
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1307
+      "DebugActionIndex": 1306
     },
     {
       "Annotation": "Generate Library/Bee/artifacts/Android/libunity/armeabi-v7a/libunity.dbg.so from Library/Bee/artifacts/Android/libunity/armeabi-v7a/unstripped/libunity.so Library/Bee/artifacts/Android/libunity/armeabi-v7a/libunity.dbg.so",
@@ -27248,10 +27235,10 @@
         "Library/Bee/artifacts/Android/libunity/armeabi-v7a/libunity.dbg.so"
       ],
       "ToBuildDependencies": [
-        1307
+        1306
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1308
+      "DebugActionIndex": 1307
     },
     {
       "Annotation": "Generate Library/Bee/artifacts/Android/libunity/armeabi-v7a/libunity.sym.so from Library/Bee/artifacts/Android/libunity/armeabi-v7a/libunity.dbg.so Library/Bee/artifacts/Android/libunity/armeabi-v7a/libunity.sym.so",
@@ -27264,10 +27251,10 @@
         "Library/Bee/artifacts/Android/libunity/armeabi-v7a/libunity.sym.so"
       ],
       "ToBuildDependencies": [
-        1308
+        1307
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1309
+      "DebugActionIndex": 1308
     },
     {
       "Annotation": "Stripping Library/Bee/artifacts/Android/libunity/armeabi-v7a/unstripped/libunity.so -> Library/Bee/artifacts/Android/libunity/armeabi-v7a/stripped/libunity.so Library/Bee/artifacts/Android/libunity/armeabi-v7a/stripped/libunity.so",
@@ -27280,10 +27267,10 @@
         "Library/Bee/artifacts/Android/libunity/armeabi-v7a/stripped/libunity.so"
       ],
       "ToBuildDependencies": [
-        1307
+        1306
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1310
+      "DebugActionIndex": 1309
     },
     {
       "Annotation": "Adding note Library/Bee/artifacts/Android/libunity/armeabi-v7a/stripped/libunity.so -> C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libunity.so C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libunity.so",
@@ -27298,11 +27285,11 @@
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libunity.so"
       ],
       "ToBuildDependencies": [
-        1309,
-        1310
+        1308,
+        1309
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1311
+      "DebugActionIndex": 1310
     },
     {
       "Annotation": "Compile UnityClassRegistration Library/Bee/artifacts/Android/libunity/arm64-v8a/UnityClassRegistration.o",
@@ -27316,10 +27303,10 @@
         "Library/Bee/artifacts/Android/libunity/arm64-v8a/UnityClassRegistration.o"
       ],
       "ToBuildDependencies": [
-        1303
+        1302
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1312
+      "DebugActionIndex": 1311
     },
     {
       "Annotation": "Compile UnityICallRegistration Library/Bee/artifacts/Android/libunity/arm64-v8a/UnityICallRegistration.o",
@@ -27333,10 +27320,10 @@
         "Library/Bee/artifacts/Android/libunity/arm64-v8a/UnityICallRegistration.o"
       ],
       "ToBuildDependencies": [
-        1305
+        1304
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1313
+      "DebugActionIndex": 1312
     },
     {
       "Annotation": "Link libunity Library/Bee/artifacts/Android/libunity/arm64-v8a/unstripped/libunity.so",
@@ -27353,11 +27340,11 @@
         "Library/Bee/artifacts/Android/libunity/arm64-v8a/unstripped/libunity.so"
       ],
       "ToBuildDependencies": [
-        1312,
-        1313
+        1311,
+        1312
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1314
+      "DebugActionIndex": 1313
     },
     {
       "Annotation": "Generate Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.dbg.so from Library/Bee/artifacts/Android/libunity/arm64-v8a/unstripped/libunity.so Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.dbg.so",
@@ -27370,10 +27357,10 @@
         "Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.dbg.so"
       ],
       "ToBuildDependencies": [
-        1314
+        1313
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1315
+      "DebugActionIndex": 1314
     },
     {
       "Annotation": "Generate Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.sym.so from Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.dbg.so Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.sym.so",
@@ -27386,10 +27373,10 @@
         "Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.sym.so"
       ],
       "ToBuildDependencies": [
-        1315
+        1314
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1316
+      "DebugActionIndex": 1315
     },
     {
       "Annotation": "Stripping Library/Bee/artifacts/Android/libunity/arm64-v8a/unstripped/libunity.so -> Library/Bee/artifacts/Android/libunity/arm64-v8a/stripped/libunity.so Library/Bee/artifacts/Android/libunity/arm64-v8a/stripped/libunity.so",
@@ -27402,10 +27389,10 @@
         "Library/Bee/artifacts/Android/libunity/arm64-v8a/stripped/libunity.so"
       ],
       "ToBuildDependencies": [
-        1314
+        1313
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1317
+      "DebugActionIndex": 1316
     },
     {
       "Annotation": "Adding note Library/Bee/artifacts/Android/libunity/arm64-v8a/stripped/libunity.so -> C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/arm64-v8a/libunity.so C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/arm64-v8a/libunity.so",
@@ -27420,11 +27407,11 @@
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/arm64-v8a/libunity.so"
       ],
       "ToBuildDependencies": [
-        1316,
-        1317
+        1315,
+        1316
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1318
+      "DebugActionIndex": 1317
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/armeabi-v7a/libmain.so",
@@ -27435,7 +27422,7 @@
       "Outputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/armeabi-v7a/libmain.so"
       ],
-      "DebugActionIndex": 1319
+      "DebugActionIndex": 1318
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/armeabi-v7a/libil2cpp.so",
@@ -27449,7 +27436,7 @@
       "ToBuildDependencies": [
         528
       ],
-      "DebugActionIndex": 1320
+      "DebugActionIndex": 1319
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/armeabi-v7a/libunity.so",
@@ -27461,9 +27448,9 @@
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/armeabi-v7a/libunity.so"
       ],
       "ToBuildDependencies": [
-        1309
+        1308
       ],
-      "DebugActionIndex": 1321
+      "DebugActionIndex": 1320
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/arm64-v8a/libmain.so",
@@ -27474,7 +27461,7 @@
       "Outputs": [
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/arm64-v8a/libmain.so"
       ],
-      "DebugActionIndex": 1322
+      "DebugActionIndex": 1321
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/arm64-v8a/libil2cpp.so",
@@ -27488,7 +27475,7 @@
       "ToBuildDependencies": [
         958
       ],
-      "DebugActionIndex": 1323
+      "DebugActionIndex": 1322
     },
     {
       "Annotation": "CopyFiles C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/arm64-v8a/libunity.so",
@@ -27500,9 +27487,9 @@
         "C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/arm64-v8a/libunity.so"
       ],
       "ToBuildDependencies": [
-        1316
+        1315
       ],
-      "DebugActionIndex": 1324
+      "DebugActionIndex": 1323
     },
     {
       "Annotation": "WriteText Library/Bee/artifacts/csharpactions/unity_app_guid_vem8.info",
@@ -27513,7 +27500,7 @@
         "Library/Bee/artifacts/csharpactions/unity_app_guid_vem8.info"
       ],
       "AllowUnwrittenOutputFiles": true,
-      "DebugActionIndex": 1325
+      "DebugActionIndex": 1324
     },
     {
       "Annotation": "GuidGenerator C:/Users/nonsk/Documents/Github/COVID Combat/COVID Combat/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/unity_app_guid",
@@ -27541,11 +27528,11 @@
       ],
       "ToBuildDependencies": [
         99,
-        1325
+        1324
       ],
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 1326
+      "DebugActionIndex": 1325
     },
     {
       "Annotation": "Player",
@@ -27919,7 +27906,7 @@
         1277,
         1278,
         1279,
-        1280,
+        1281,
         1282,
         1283,
         1284,
@@ -27938,14 +27925,13 @@
         1297,
         1298,
         1299,
-        1300,
-        1302,
-        1311,
-        1318,
-        1326
+        1301,
+        1310,
+        1317,
+        1325
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1327
+      "DebugActionIndex": 1326
     }
   ],
   "FileSignatures": [
@@ -28481,7 +28467,7 @@
   ],
         "NamedNodes": {
           "all_tundra_nodes": 0,
-          "Player": 1327
+          "Player": 1326
         }
 ,  "DefaultNodes": [
     0

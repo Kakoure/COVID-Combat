@@ -14,12 +14,20 @@
 
 // System.Collections.Generic.HashSet`1<UnityEngine.XR.Management.XRLoader>
 struct HashSet_1_t174593AE6599738C19A33586587D63534CED9F0F;
+// System.Collections.Generic.List`1<UnityEngine.GameObject>
+struct List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B;
+// System.Collections.Generic.List`1<UnityEngine.Transform>
+struct List_1_t991BBC5A1D51F59A450367DF944DAA207F22D06D;
 // System.Collections.Generic.List`1<UnityEngine.XR.Management.XRLoader>
 struct List_1_tA1A04BD6B1EE83992AE369D5DB31A028E9B57822;
 // System.IntPtr[]
 struct IntPtrU5BU5D_tFD177F8C806A6921AD7150264CCC62FA00CAD832;
 // System.Diagnostics.StackTrace[]
 struct StackTraceU5BU5D_t32FBCB20930EAF5BAE3F450FF75228E5450DA0DF;
+// UnityEngine.AsyncOperation
+struct AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C;
+// COVIDNetworkManager
+struct COVIDNetworkManager_tED75972BDD410F10CEDADE313DDC3F1144B8274D;
 // UnityEngine.Camera
 struct Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184;
 // CameraPointer
@@ -40,6 +48,12 @@ struct IEnumerator_t7B609C2FFA6EB5167D9C62A0C32A21DE2F666DAA;
 struct Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3;
 // UnityEngine.MonoBehaviour
 struct MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71;
+// Mirror.NetworkAuthenticator
+struct NetworkAuthenticator_tC028847267A43082A100FF3C6342109E073EDC67;
+// Mirror.NetworkConnection
+struct NetworkConnection_t49880296B0FA972023F34582D7A41D7B63383E78;
+// Mirror.NetworkManager
+struct NetworkManager_t22337EB27AB0071DE75824D151EB358D4F1F78BE;
 // System.NotSupportedException
 struct NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A;
 // UnityEngine.Object
@@ -54,6 +68,8 @@ struct SafeSerializationManager_tCBB85B95DFD1634237140CD892E82D06ECB3F5E6;
 struct String_t;
 // UnityEngine.Transform
 struct Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1;
+// Mirror.Transport
+struct Transport_t8E1D3887BA35250F79E4200BB8008A5C2D4E7E07;
 // System.Void
 struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915;
 // VrModeController
@@ -71,6 +87,7 @@ struct U3CStartXRU3Ed__10_t4223433AD52975410FE71459D78A6C0A5A85B6E6;
 
 IL2CPP_EXTERN_C RuntimeClass* Api_t145FCB8AD359667011C398E3BE4F2962C25C363D_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* NetworkManager_t22337EB27AB0071DE75824D151EB358D4F1F78BE_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* U3CStartXRU3Ed__10_t4223433AD52975410FE71459D78A6C0A5A85B6E6_il2cpp_TypeInfo_var;
@@ -581,6 +598,63 @@ struct CardboardStartup_t7D6D696AD513DC97C444D91AC5D0979A253FED41  : public Mono
 {
 };
 
+// Mirror.NetworkManager
+struct NetworkManager_t22337EB27AB0071DE75824D151EB358D4F1F78BE  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	// System.Boolean Mirror.NetworkManager::dontDestroyOnLoad
+	bool ___dontDestroyOnLoad_4;
+	// System.Boolean Mirror.NetworkManager::runInBackground
+	bool ___runInBackground_5;
+	// System.Boolean Mirror.NetworkManager::autoStartServerBuild
+	bool ___autoStartServerBuild_6;
+	// System.Int32 Mirror.NetworkManager::serverTickRate
+	int32_t ___serverTickRate_7;
+	// System.String Mirror.NetworkManager::offlineScene
+	String_t* ___offlineScene_8;
+	// System.String Mirror.NetworkManager::onlineScene
+	String_t* ___onlineScene_9;
+	// Mirror.Transport Mirror.NetworkManager::transport
+	Transport_t8E1D3887BA35250F79E4200BB8008A5C2D4E7E07* ___transport_10;
+	// System.String Mirror.NetworkManager::networkAddress
+	String_t* ___networkAddress_11;
+	// System.Int32 Mirror.NetworkManager::maxConnections
+	int32_t ___maxConnections_12;
+	// Mirror.NetworkAuthenticator Mirror.NetworkManager::authenticator
+	NetworkAuthenticator_tC028847267A43082A100FF3C6342109E073EDC67* ___authenticator_13;
+	// UnityEngine.GameObject Mirror.NetworkManager::playerPrefab
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playerPrefab_14;
+	// System.Boolean Mirror.NetworkManager::autoCreatePlayer
+	bool ___autoCreatePlayer_15;
+	// Mirror.PlayerSpawnMethod Mirror.NetworkManager::playerSpawnMethod
+	int32_t ___playerSpawnMethod_16;
+	// System.Collections.Generic.List`1<UnityEngine.GameObject> Mirror.NetworkManager::spawnPrefabs
+	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___spawnPrefabs_17;
+	// System.Boolean Mirror.NetworkManager::clientLoadedScene
+	bool ___clientLoadedScene_22;
+	// Mirror.NetworkManagerMode Mirror.NetworkManager::<mode>k__BackingField
+	int32_t ___U3CmodeU3Ek__BackingField_23;
+	// System.Boolean Mirror.NetworkManager::finishStartHostPending
+	bool ___finishStartHostPending_24;
+	// Mirror.SceneOperation Mirror.NetworkManager::clientSceneOperation
+	uint8_t ___clientSceneOperation_27;
+};
+
+struct NetworkManager_t22337EB27AB0071DE75824D151EB358D4F1F78BE_StaticFields
+{
+	// System.Collections.Generic.List`1<UnityEngine.Transform> Mirror.NetworkManager::startPositions
+	List_1_t991BBC5A1D51F59A450367DF944DAA207F22D06D* ___startPositions_18;
+	// System.Int32 Mirror.NetworkManager::startPositionIndex
+	int32_t ___startPositionIndex_19;
+	// Mirror.NetworkManager Mirror.NetworkManager::<singleton>k__BackingField
+	NetworkManager_t22337EB27AB0071DE75824D151EB358D4F1F78BE* ___U3CsingletonU3Ek__BackingField_20;
+	// Mirror.NetworkConnection Mirror.NetworkManager::clientReadyConnection
+	NetworkConnection_t49880296B0FA972023F34582D7A41D7B63383E78* ___clientReadyConnection_21;
+	// System.String Mirror.NetworkManager::<networkSceneName>k__BackingField
+	String_t* ___U3CnetworkSceneNameU3Ek__BackingField_25;
+	// UnityEngine.AsyncOperation Mirror.NetworkManager::loadingSceneAsync
+	AsyncOperation_tD2789250E4B098DEDA92B366A577E500A92D2D3C* ___loadingSceneAsync_26;
+};
+
 // ObjectController
 struct ObjectController_tC7C3CD5CDC9519FAA82AEE4489D5319439D254BC  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -599,6 +673,11 @@ struct VrModeController_t16AB766455BA8AC167CD084A2D8B6279144A4B99  : public Mono
 {
 	// UnityEngine.Camera VrModeController::_mainCamera
 	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ____mainCamera_5;
+};
+
+// COVIDNetworkManager
+struct COVIDNetworkManager_tED75972BDD410F10CEDADE313DDC3F1144B8274D  : public NetworkManager_t22337EB27AB0071DE75824D151EB358D4F1F78BE
+{
 };
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -737,6 +816,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_LogError_m059825802BB6AF7EA9693FEB
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XRManagerSettings_StartSubsystems_m94D89460222C083D6E25881C6825E44FEC98DDCC (XRManagerSettings_t7923B66EB3FEE58C7B9F85FF61749B774D3B9E52* __this, const RuntimeMethod* method) ;
 // System.Void System.NotSupportedException::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* __this, const RuntimeMethod* method) ;
+// System.Void Mirror.NetworkManager::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NetworkManager__ctor_m12FFC2DC0BAB6F279513E0089C6772A115662B39 (NetworkManager_t22337EB27AB0071DE75824D151EB358D4F1F78BE* __this, const RuntimeMethod* method) ;
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -1760,6 +1841,29 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CStartXRU3Ed__10_System_Coll
 	{
 		RuntimeObject* L_0 = __this->___U3CU3E2__current_1;
 		return L_0;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void COVIDNetworkManager::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void COVIDNetworkManager__ctor_m83DD7C0729021C179EFABB9D0D78188B25E49FB2 (COVIDNetworkManager_tED75972BDD410F10CEDADE313DDC3F1144B8274D* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&NetworkManager_t22337EB27AB0071DE75824D151EB358D4F1F78BE_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		il2cpp_codegen_runtime_class_init_inline(NetworkManager_t22337EB27AB0071DE75824D151EB358D4F1F78BE_il2cpp_TypeInfo_var);
+		NetworkManager__ctor_m12FFC2DC0BAB6F279513E0089C6772A115662B39(__this, NULL);
+		return;
 	}
 }
 #ifdef __clang__

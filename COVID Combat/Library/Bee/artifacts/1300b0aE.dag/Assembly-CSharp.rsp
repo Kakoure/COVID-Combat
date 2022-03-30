@@ -390,6 +390,7 @@
 "Assets/Samples/Google Cardboard XR Plugin for Unity/1.13.0/Hello Cardboard/Scripts/CardboardStartup.cs"
 "Assets/Samples/Google Cardboard XR Plugin for Unity/1.13.0/Hello Cardboard/Scripts/ObjectController.cs"
 "Assets/Samples/Google Cardboard XR Plugin for Unity/1.13.0/Hello Cardboard/Scripts/VrModeController.cs"
+"Assets/Scripts/COVIDNetworkManager.cs"
 -langversion:9.0
 
 /deterministic

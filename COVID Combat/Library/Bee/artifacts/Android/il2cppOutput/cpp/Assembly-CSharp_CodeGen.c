@@ -66,7 +66,9 @@ extern void U3CStartXRU3Ed__10_System_Collections_Generic_IEnumeratorU3CSystem_O
 extern void U3CStartXRU3Ed__10_System_Collections_IEnumerator_Reset_mD99AEFDB38CFAC11731CDB371647891816288600 (void);
 // 0x0000001B System.Object VrModeController/<StartXR>d__10::System.Collections.IEnumerator.get_Current()
 extern void U3CStartXRU3Ed__10_System_Collections_IEnumerator_get_Current_mD84D9ACDB0A04C619509BA51590975DB84C30B0F (void);
-static Il2CppMethodPointer s_methodPointers[27] = 
+// 0x0000001C System.Void COVIDNetworkManager::.ctor()
+extern void COVIDNetworkManager__ctor_m83DD7C0729021C179EFABB9D0D78188B25E49FB2 (void);
+static Il2CppMethodPointer s_methodPointers[28] = 
 {
 	CameraPointer_Update_mF19D284A593E4627CD4F22A58C11FB87B6627FF4,
 	CameraPointer__ctor_m5C4B443EB7C8A518306BF27BD947D938FDF5162D,
@@ -95,8 +97,9 @@ static Il2CppMethodPointer s_methodPointers[27] =
 	U3CStartXRU3Ed__10_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mD0B4CE8CBE980FD132B19F40FF2172502B1D0566,
 	U3CStartXRU3Ed__10_System_Collections_IEnumerator_Reset_mD99AEFDB38CFAC11731CDB371647891816288600,
 	U3CStartXRU3Ed__10_System_Collections_IEnumerator_get_Current_mD84D9ACDB0A04C619509BA51590975DB84C30B0F,
+	COVIDNetworkManager__ctor_m83DD7C0729021C179EFABB9D0D78188B25E49FB2,
 };
-static const int32_t s_InvokerIndices[27] = 
+static const int32_t s_InvokerIndices[28] = 
 {
 	4643,
 	4643,
@@ -125,12 +128,13 @@ static const int32_t s_InvokerIndices[27] =
 	4528,
 	4643,
 	4528,
+	4643,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	27,
+	28,
 	s_methodPointers,
 	0,
 	NULL,
