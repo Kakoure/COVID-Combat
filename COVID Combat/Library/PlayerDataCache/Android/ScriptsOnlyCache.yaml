@@ -1,11 +1,21 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - COVIDNetworkManager
+    - PlayFab.Networking.UnityNetworkServer
+    - PlayfabConfiguration
     Google.XR.Cardboard.dll:
     - Google.XR.Cardboard.XRLoader
+    Mirror.Components.dll:
+    - Mirror.NetworkTransform
     Mirror.dll:
+    - Mirror.NetworkIdentity
+    - Mirror.NetworkManagerHUD
     - kcp2k.KcpTransport
+    PlayFab.dll:
+    - PlayFabSharedSettings
+    PlayFabEditorExtensions.dll:
+    - PlayFab.PfEditor.PlayFabEditor
+    - PlayFab.PfEditor.PlayFabEditorPrefsSO
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -64,13 +74,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.SpriteState
-  methodsToPreserve:
-  - assembly: Mirror
-    fullTypeName: Mirror.NetworkManager
-    methodName: StartClient
-  - assembly: Mirror
-    fullTypeName: Mirror.NetworkManager
-    methodName: StartHost
+  methodsToPreserve: []
   sceneClasses:
     Assets/Scenes/Game Scene.unity:
     - Class: 1
@@ -129,33 +133,45 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1532}
+      Script: {instanceID: 1558}
     - Class: 114
-      Script: {instanceID: 1534}
+      Script: {instanceID: 1560}
     - Class: 114
-      Script: {instanceID: 1544}
+      Script: {instanceID: 1570}
     - Class: 114
-      Script: {instanceID: 1932}
+      Script: {instanceID: 1980}
     - Class: 114
-      Script: {instanceID: 2330}
+      Script: {instanceID: 2398}
     - Class: 114
-      Script: {instanceID: 2740}
+      Script: {instanceID: 2830}
     - Class: 114
-      Script: {instanceID: 2896}
+      Script: {instanceID: 2994}
     - Class: 114
-      Script: {instanceID: 2954}
+      Script: {instanceID: 3054}
     - Class: 114
-      Script: {instanceID: 3394}
+      Script: {instanceID: 3530}
     - Class: 114
-      Script: {instanceID: 3508}
+      Script: {instanceID: 3538}
     - Class: 114
-      Script: {instanceID: 3918}
+      Script: {instanceID: 3660}
     - Class: 114
-      Script: {instanceID: 4862}
+      Script: {instanceID: 3846}
     - Class: 114
-      Script: {instanceID: 5236}
+      Script: {instanceID: 3998}
     - Class: 114
-      Script: {instanceID: 24022}
+      Script: {instanceID: 4100}
+    - Class: 114
+      Script: {instanceID: 4508}
+    - Class: 114
+      Script: {instanceID: 5102}
+    - Class: 114
+      Script: {instanceID: 5242}
+    - Class: 114
+      Script: {instanceID: 5448}
+    - Class: 114
+      Script: {instanceID: 5490}
+    - Class: 114
+      Script: {instanceID: 5624}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -631,6 +647,12 @@ ScriptsOnlyBuild:
     className: StandaloneInputModule
   - hash:
       serializedVersion: 2
+      Hash: f8088e9f673161ccdd63e4389cf0994c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayfabConfiguration
+  - hash:
+      serializedVersion: 2
       Hash: cf95add559be53ae8bfdfcea86c5a18f
     assemblyName: Mirror.dll
     namespaceName: Mirror
@@ -739,6 +761,12 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
+      Hash: 7b6113efb956a45fe463259b12a0687f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: PlayFab.Networking
+    className: UnityNetworkServer
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -835,6 +863,12 @@ ScriptsOnlyBuild:
     className: PositionAsUV1
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: PlayFab.dll
+    namespaceName: PlayFab
+    className: PlayFabMultiplayerAgentView
+  - hash:
+      serializedVersion: 2
       Hash: 265cf1537361bce87401ba1fba27baf3
     assemblyName: Mirror.Components.dll
     namespaceName: Mirror.Experimental
@@ -887,6 +921,12 @@ ScriptsOnlyBuild:
     assemblyName: Mirror.Examples.dll
     namespaceName: Mirror.Examples.RigidbodyPhysics
     className: AddForce
+  - hash:
+      serializedVersion: 2
+      Hash: bc8d5a16cdc0bb11217587af2000e9e4
+    assemblyName: PlayFab.dll
+    namespaceName: 
+    className: PlayFabSharedSettings
   - hash:
       serializedVersion: 2
       Hash: a81d4c2c1cf3ad164d277d927a193679
@@ -1229,12 +1269,6 @@ ScriptsOnlyBuild:
     assemblyName: Mirror.Examples.dll
     namespaceName: Mirror.Examples.NetworkRoom
     className: NetworkRoomPlayerExt
-  - hash:
-      serializedVersion: 2
-      Hash: 7b6113efb956a45fe463259b12a0687f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: COVIDNetworkManager
   platform: 13
   scenePathNames:
   - Assets/Scenes/Start Menu.unity

@@ -63,6 +63,9 @@ extern "C" void RegisterStaticallyLinkedModulesGranular()
 	void RegisterModule_UIElements();
 	RegisterModule_UIElements();
 
+	void RegisterModule_UnityWebRequest();
+	RegisterModule_UnityWebRequest();
+
 	void RegisterModule_XR();
 	RegisterModule_XR();
 

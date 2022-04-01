@@ -135,6 +135,7 @@
 -define:MIRROR_57_0_OR_NEWER
 -define:MIRROR_58_0_OR_NEWER
 -define:MIRROR_65_0_OR_NEWER
+-define:ENABLE_PLAYFABSERVER_API
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"C:/Program Files/Unity/Hub/Editor/2021.2.17f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/mscorlib.dll"
@@ -328,6 +329,7 @@
 -r:"Library/Bee/artifacts/1300b0aP.dag/Mirror.Components.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/Mirror.Examples.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/Mirror.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aP.dag/PlayFab.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/SimpleWebTransport.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/Telepathy.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/Unity.Subsystem.Registration.ref.dll"
@@ -342,7 +344,9 @@
 "Assets/Samples/Google Cardboard XR Plugin for Unity/1.13.0/Hello Cardboard/Scripts/CardboardStartup.cs"
 "Assets/Samples/Google Cardboard XR Plugin for Unity/1.13.0/Hello Cardboard/Scripts/ObjectController.cs"
 "Assets/Samples/Google Cardboard XR Plugin for Unity/1.13.0/Hello Cardboard/Scripts/VrModeController.cs"
-"Assets/Scripts/COVIDNetworkManager.cs"
+"Assets/Scripts/AgentListener.cs"
+"Assets/Scripts/PlayfabConfiguration.cs"
+"Assets/Scripts/UnityNetworkServer.cs"
 -langversion:9.0
 
 /deterministic

@@ -97,6 +97,7 @@
 -define:NET_STANDARD_2_0
 -define:NET_STANDARD
 -define:ENABLE_PROFILER
+-define:UNITY_SERVER
 -define:DEBUG
 -define:TRACE
 -define:UNITY_ASSERTIONS
@@ -114,35 +115,7 @@
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
 -define:ENABLE_LEGACY_INPUT_MANAGER
--define:MIRROR
--define:MIRROR_17_0_OR_NEWER
--define:MIRROR_18_0_OR_NEWER
--define:MIRROR_24_0_OR_NEWER
--define:MIRROR_26_0_OR_NEWER
--define:MIRROR_27_0_OR_NEWER
--define:MIRROR_28_0_OR_NEWER
--define:MIRROR_29_0_OR_NEWER
--define:MIRROR_30_0_OR_NEWER
--define:MIRROR_30_5_2_OR_NEWER
--define:MIRROR_32_1_2_OR_NEWER
--define:MIRROR_32_1_4_OR_NEWER
--define:MIRROR_35_0_OR_NEWER
--define:MIRROR_35_1_OR_NEWER
--define:MIRROR_37_0_OR_NEWER
--define:MIRROR_38_0_OR_NEWER
--define:MIRROR_39_0_OR_NEWER
--define:MIRROR_40_0_OR_NEWER
--define:MIRROR_41_0_OR_NEWER
--define:MIRROR_42_0_OR_NEWER
--define:MIRROR_43_0_OR_NEWER
--define:MIRROR_44_0_OR_NEWER
--define:MIRROR_46_0_OR_NEWER
--define:MIRROR_47_0_OR_NEWER
--define:MIRROR_53_0_OR_NEWER
--define:MIRROR_55_0_OR_NEWER
--define:MIRROR_57_0_OR_NEWER
--define:MIRROR_58_0_OR_NEWER
--define:MIRROR_65_0_OR_NEWER
+-define:ENABLE_PLAYFABSERVER_API
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"Assets/Mirror/Plugins/Mono.Cecil/Mono.CecilX.dll"
@@ -365,6 +338,9 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Mirror.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Mirror.Examples.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Mirror.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/PlayFab.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/PlayFabEditorExtensions.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/PlayFabSDKEditor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/SimpleWebTransport.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Telepathy.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
@@ -390,6 +366,9 @@
 "Assets/Samples/Google Cardboard XR Plugin for Unity/1.13.0/Hello Cardboard/Scripts/CardboardStartup.cs"
 "Assets/Samples/Google Cardboard XR Plugin for Unity/1.13.0/Hello Cardboard/Scripts/ObjectController.cs"
 "Assets/Samples/Google Cardboard XR Plugin for Unity/1.13.0/Hello Cardboard/Scripts/VrModeController.cs"
+"Assets/Scripts/AgentListener.cs"
+"Assets/Scripts/PlayfabConfiguration.cs"
+"Assets/Scripts/UnityNetworkServer.cs"
 -langversion:9.0
 
 /deterministic

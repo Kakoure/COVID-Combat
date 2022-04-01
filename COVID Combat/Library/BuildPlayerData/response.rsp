@@ -4,6 +4,7 @@
 -a="C:\Users\nonsk\Documents\Github\COVID Combat\COVID Combat\Library\PlayerScriptAssemblies\UnityEngine.TestRunner.dll"
 -a="C:\Users\nonsk\Documents\Github\COVID Combat\COVID Combat\Library\PlayerScriptAssemblies\Mirror.Examples.dll"
 -a="C:\Users\nonsk\Documents\Github\COVID Combat\COVID Combat\Library\PlayerScriptAssemblies\Unity.Timeline.dll"
+-a="C:\Users\nonsk\Documents\Github\COVID Combat\COVID Combat\Library\PlayerScriptAssemblies\PlayFab.dll"
 -a="C:\Users\nonsk\Documents\Github\COVID Combat\COVID Combat\Library\PlayerScriptAssemblies\Unity.TextMeshPro.dll"
 -a="C:\Users\nonsk\Documents\Github\COVID Combat\COVID Combat\Library\PlayerScriptAssemblies\Unity.Subsystem.Registration.dll"
 -a="C:\Users\nonsk\Documents\Github\COVID Combat\COVID Combat\Library\PlayerScriptAssemblies\UnityEngine.UI.dll"

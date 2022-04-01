@@ -135,6 +135,7 @@
 -define:MIRROR_57_0_OR_NEWER
 -define:MIRROR_58_0_OR_NEWER
 -define:MIRROR_65_0_OR_NEWER
+-define:ENABLE_PLAYFABSERVER_API
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"C:/Program Files/Unity/Hub/Editor/2021.2.17f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/mscorlib.dll"
