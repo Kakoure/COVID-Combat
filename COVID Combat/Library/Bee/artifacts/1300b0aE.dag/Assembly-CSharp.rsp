@@ -395,6 +395,7 @@
 "Assets/Samples/Google Cardboard XR Plugin for Unity/1.13.0/Hello Cardboard/Scripts/ObjectController.cs"
 "Assets/Samples/Google Cardboard XR Plugin for Unity/1.13.0/Hello Cardboard/Scripts/VrModeController.cs"
 "Assets/Scripts/AgentListener.cs"
+"Assets/Scripts/ClientStartup.cs"
 "Assets/Scripts/PlayfabConfiguration.cs"
 "Assets/Scripts/UnityNetworkServer.cs"
 -langversion:9.0

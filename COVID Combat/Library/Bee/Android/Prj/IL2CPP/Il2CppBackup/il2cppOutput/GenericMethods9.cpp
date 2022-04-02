@@ -153,6 +153,8 @@ struct Action_2_tCFCEE592405B35148F5E1AC506FEB4F8CB2F49B6;
 struct Action_2_t8863334817D651A8E3B8E434C682CA5A76CE9498;
 // System.Action`2<Mirror.NetworkWriter,Mirror.EntityStateMessage>
 struct Action_2_t92D149BA0BB9E6C54B7036167F4A14DFF1B5BE08;
+// System.Action`2<Mirror.NetworkWriter,PlayFab.Networking.MaintenanceMessage>
+struct Action_2_t1816B3536A4D885546AB79822042E54A33F800ED;
 // System.Action`2<Mirror.NetworkWriter,Mirror.Examples.MultipleMatch.MatchInfo>
 struct Action_2_t1D8E4389A2FC4D611519FC7C996BF96F763E5017;
 // System.Action`2<Mirror.NetworkWriter,Mirror.Examples.MultipleMatch.MatchPlayerData>
@@ -187,6 +189,8 @@ struct Action_2_tAF93D04C699FAC16A658F8DA78DD252A93E952E8;
 struct Action_2_t222FF649DCA9CA8D8C70ACBCAEC8D8D787CABD96;
 // System.Action`2<Mirror.NetworkWriter,Mirror.Discovery.ServerResponse>
 struct Action_2_tCEBC50305883EF04493D9481294E72765C203EB5;
+// System.Action`2<Mirror.NetworkWriter,PlayFab.Networking.ShutdownMessage>
+struct Action_2_t28A7122B69BEC7212EFFDE277560165A2D5D5AC4;
 // System.Action`2<Mirror.NetworkWriter,Mirror.SpawnMessage>
 struct Action_2_t8CF38B31F52C4EF713F3D2BAC6B806B321ADC0A1;
 // System.Action`2<Mirror.NetworkWriter,System.UInt32>
@@ -752,11 +756,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* NetworkWriter_WriteBlittable_TisPlane_tB7D8
 IL2CPP_EXTERN_C const RuntimeMethod* NetworkWriter_WriteBlittable_TisQuaternion_tDA59F214EF07D7700B26E40E562F267AF7306974_mD95146DDEF099B2575801811770B7527E72A4969_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* NetworkWriter_WriteBlittable_TisRay_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00_m12215AB273BE44D56F25D1191396401D4A391E95_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* NetworkWriter_WriteBlittable_TisRect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D_m940F11E933366652E6371BCFF31E31EC8201CFC7_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* NetworkWriter_WriteBlittable_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_mB83421D51DF4417A5E9E204F78319F101D7441EF_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* NetworkWriter_WriteBlittable_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m52D9BC2519EC2FAD4102C0A11EFA7DA40E68615D_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* NetworkWriter_WriteBlittable_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m7A05C5F5DD5D33FC126D2DAC895A096EC3402A14_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* NetworkWriter_WriteBlittable_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m3F8565D904BC20262924C7AF8BFBB3F7FE770535_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* NetworkWriter_WriteBlittable_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_m869219CA464A4A9CCE03043BF274E8EBD19428AC_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Pool_1_Take_mD3534D3CD3B874A08D0A3098E6D3BA36642E07B4_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* ValueCollection_GetEnumerator_mFA799553A98D00C77FA2DF4D0F9BAEB2DDCCE816_RuntimeMethod_var;
 struct ComputedTransitionProperty_tD8E4D8EB5DD69E063944F27A48D9263F4F1354E1_marshaled_com;
@@ -2038,6 +2038,17 @@ struct Writer_1_t43CDE8B30140776D24809288A7A734939B0C8392_StaticFields
 	Action_2_t92D149BA0BB9E6C54B7036167F4A14DFF1B5BE08* ___write_0;
 };
 
+// Mirror.Writer`1<PlayFab.Networking.MaintenanceMessage>
+struct Writer_1_tD491F75433868FC328E4B58A2C1DA365BEA40958  : public RuntimeObject
+{
+};
+
+struct Writer_1_tD491F75433868FC328E4B58A2C1DA365BEA40958_StaticFields
+{
+	// System.Action`2<Mirror.NetworkWriter,T> Mirror.Writer`1::write
+	Action_2_t1816B3536A4D885546AB79822042E54A33F800ED* ___write_0;
+};
+
 // Mirror.Writer`1<Mirror.Examples.MultipleMatch.MatchInfo>
 struct Writer_1_tE837CDE21BF382361B1ED24E4C34DC6B7B9C65E0  : public RuntimeObject
 {
@@ -2223,6 +2234,17 @@ struct Writer_1_t43CFB35FC90FE8C0533C6EC8EBF6DB48628DF5B0_StaticFields
 {
 	// System.Action`2<Mirror.NetworkWriter,T> Mirror.Writer`1::write
 	Action_2_tCEBC50305883EF04493D9481294E72765C203EB5* ___write_0;
+};
+
+// Mirror.Writer`1<PlayFab.Networking.ShutdownMessage>
+struct Writer_1_tE54D615FC33ECCFCB2E5487BE5F3AF0796D11C26  : public RuntimeObject
+{
+};
+
+struct Writer_1_tE54D615FC33ECCFCB2E5487BE5F3AF0796D11C26_StaticFields
+{
+	// System.Action`2<Mirror.NetworkWriter,T> Mirror.Writer`1::write
+	Action_2_t28A7122B69BEC7212EFFDE277560165A2D5D5AC4* ___write_0;
 };
 
 // Mirror.Writer`1<Mirror.SpawnMessage>
@@ -3236,6 +3258,27 @@ struct Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B
 	};
 };
 
+// System.DateTime
+struct DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D 
+{
+	// System.UInt64 System.DateTime::_dateData
+	uint64_t ____dateData_46;
+};
+
+struct DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D_StaticFields
+{
+	// System.Int32[] System.DateTime::s_daysToMonth365
+	Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* ___s_daysToMonth365_30;
+	// System.Int32[] System.DateTime::s_daysToMonth366
+	Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* ___s_daysToMonth366_31;
+	// System.DateTime System.DateTime::MinValue
+	DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___MinValue_32;
+	// System.DateTime System.DateTime::MaxValue
+	DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___MaxValue_33;
+	// System.DateTime System.DateTime::UnixEpoch
+	DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___UnixEpoch_34;
+};
+
 // System.Decimal
 struct Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F 
 {
@@ -3708,6 +3751,18 @@ struct ServerResponse_t32FDA3FF44465187DD1DA88F5ABAB7C3F1227088_marshaled_com
 	IPEndPoint_t2F09CBA7A808B67724B4E2954EEDC46D910F4ECB* ___U3CEndPointU3Ek__BackingField_0;
 	Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E* ___uri_1;
 	int64_t ___serverId_2;
+};
+
+// PlayFab.Networking.ShutdownMessage
+struct ShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E 
+{
+	union
+	{
+		struct
+		{
+		};
+		uint8_t ShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E__padding[1];
+	};
 };
 
 // System.Single
@@ -4514,6 +4569,23 @@ struct Exception_t_marshaled_com
 	StackTraceU5BU5D_t32FBCB20930EAF5BAE3F450FF75228E5450DA0DF* ___captured_traces_14;
 	Il2CppSafeArray/*NONE*/* ___native_trace_ips_15;
 	int32_t ___caught_in_unmanaged_16;
+};
+
+// PlayFab.Networking.MaintenanceMessage
+struct MaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6 
+{
+	// System.DateTime PlayFab.Networking.MaintenanceMessage::ScheduledMaintenanceUTC
+	DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___ScheduledMaintenanceUTC_0;
+};
+// Native definition for P/Invoke marshalling of PlayFab.Networking.MaintenanceMessage
+struct MaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6_marshaled_pinvoke
+{
+	DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___ScheduledMaintenanceUTC_0;
+};
+// Native definition for COM marshalling of PlayFab.Networking.MaintenanceMessage
+struct MaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6_marshaled_com
+{
+	DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D ___ScheduledMaintenanceUTC_0;
 };
 
 // Mirror.Examples.MultipleMatch.MatchInfo
@@ -5414,6 +5486,11 @@ struct Action_2_t92D149BA0BB9E6C54B7036167F4A14DFF1B5BE08  : public MulticastDel
 {
 };
 
+// System.Action`2<Mirror.NetworkWriter,PlayFab.Networking.MaintenanceMessage>
+struct Action_2_t1816B3536A4D885546AB79822042E54A33F800ED  : public MulticastDelegate_t
+{
+};
+
 // System.Action`2<Mirror.NetworkWriter,Mirror.Examples.MultipleMatch.MatchInfo>
 struct Action_2_t1D8E4389A2FC4D611519FC7C996BF96F763E5017  : public MulticastDelegate_t
 {
@@ -5496,6 +5573,11 @@ struct Action_2_t222FF649DCA9CA8D8C70ACBCAEC8D8D787CABD96  : public MulticastDel
 
 // System.Action`2<Mirror.NetworkWriter,Mirror.Discovery.ServerResponse>
 struct Action_2_tCEBC50305883EF04493D9481294E72765C203EB5  : public MulticastDelegate_t
+{
+};
+
+// System.Action`2<Mirror.NetworkWriter,PlayFab.Networking.ShutdownMessage>
+struct Action_2_t28A7122B69BEC7212EFFDE277560165A2D5D5AC4  : public MulticastDelegate_t
 {
 };
 
@@ -8616,6 +8698,29 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint16_t MessagePacking_GetId_TisEntityStateM
 		return (uint16_t)((int32_t)(uint16_t)((int32_t)(L_3&((int32_t)65535))));
 	}
 }
+// System.UInt16 Mirror.MessagePacking::GetId<PlayFab.Networking.MaintenanceMessage>()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint16_t MessagePacking_GetId_TisMaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6_mE7C59873C36AEC9A11FC2C939E98FA664F4A3010_gshared (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Type_t_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// (ushort)(typeof(T).FullName.GetStableHashCode() & 0xFFFF);
+		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_0 = { reinterpret_cast<intptr_t> (il2cpp_rgctx_type(method->rgctx_data, 0)) };
+		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
+		Type_t* L_1;
+		L_1 = Type_GetTypeFromHandle_m2570A2A5B32A5E9D9F0F38B37459DA18736C823E(L_0, NULL);
+		NullCheck(L_1);
+		String_t* L_2;
+		L_2 = VirtualFuncInvoker0< String_t* >::Invoke(25 /* System.String System.Type::get_FullName() */, L_1);
+		int32_t L_3;
+		L_3 = Extensions_GetStableHashCode_mDE19358D2CA9C78D4686D92B6602E2B5B936556C(L_2, NULL);
+		return (uint16_t)((int32_t)(uint16_t)((int32_t)(L_3&((int32_t)65535))));
+	}
+}
 // System.UInt16 Mirror.MessagePacking::GetId<Mirror.NetworkPingMessage>()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint16_t MessagePacking_GetId_TisNetworkPingMessage_t254AA1B47CDBC1136A16C49B6147AC5462C60B27_m8229F82B6E874D5BD1A2B0B4B0F52BA0C46582CC_gshared (const RuntimeMethod* method) 
 {
@@ -8871,6 +8976,29 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint16_t MessagePacking_GetId_TisSceneMessage
 }
 // System.UInt16 Mirror.MessagePacking::GetId<Mirror.Examples.MultipleMatch.ServerMatchMessage>()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint16_t MessagePacking_GetId_TisServerMatchMessage_tAA90E663A53A2A48E57057D0B00DA4251AC000B8_mE23D8A00A231BDD4871CC59CE854B0F908FFDAEA_gshared (const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Type_t_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// (ushort)(typeof(T).FullName.GetStableHashCode() & 0xFFFF);
+		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_0 = { reinterpret_cast<intptr_t> (il2cpp_rgctx_type(method->rgctx_data, 0)) };
+		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
+		Type_t* L_1;
+		L_1 = Type_GetTypeFromHandle_m2570A2A5B32A5E9D9F0F38B37459DA18736C823E(L_0, NULL);
+		NullCheck(L_1);
+		String_t* L_2;
+		L_2 = VirtualFuncInvoker0< String_t* >::Invoke(25 /* System.String System.Type::get_FullName() */, L_1);
+		int32_t L_3;
+		L_3 = Extensions_GetStableHashCode_mDE19358D2CA9C78D4686D92B6602E2B5B936556C(L_2, NULL);
+		return (uint16_t)((int32_t)(uint16_t)((int32_t)(L_3&((int32_t)65535))));
+	}
+}
+// System.UInt16 Mirror.MessagePacking::GetId<PlayFab.Networking.ShutdownMessage>()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint16_t MessagePacking_GetId_TisShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E_m31133F97CD6688B4349AE53AC9F86AD7463AEBC6_gshared (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -9198,6 +9326,35 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MessagePacking_Pack_TisEntityStateMessag
 		return;
 	}
 }
+// System.Void Mirror.MessagePacking::Pack<PlayFab.Networking.MaintenanceMessage>(T,Mirror.NetworkWriter)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MessagePacking_Pack_TisMaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6_mD304D124C2C0A7E63CE22C7BA6AF1921ED563A14_gshared (MaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6 ___message0, NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C* ___writer1, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&NetworkWriterExtensions_t2D2B2848AD867C9392E353747A5A82CB5FED9DBD_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	uint16_t V_0 = 0;
+	{
+		// ushort msgType = GetId<T>();
+		uint16_t L_0;
+		L_0 = ((  uint16_t (*) (const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->rgctx_data, 0)))(il2cpp_rgctx_method(method->rgctx_data, 0));
+		V_0 = L_0;
+		// writer.WriteUShort(msgType);
+		NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C* L_1 = ___writer1;
+		uint16_t L_2 = V_0;
+		il2cpp_codegen_runtime_class_init_inline(NetworkWriterExtensions_t2D2B2848AD867C9392E353747A5A82CB5FED9DBD_il2cpp_TypeInfo_var);
+		NetworkWriterExtensions_WriteUShort_m4AEC8147034117F9EB131043089577CD2DB42DB4_inline(L_1, L_2, NULL);
+		// writer.Write(message);
+		NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C* L_3 = ___writer1;
+		MaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6 L_4 = ___message0;
+		NullCheck(L_3);
+		((  void (*) (NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C*, MaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->rgctx_data, 1)))(L_3, L_4, il2cpp_rgctx_method(method->rgctx_data, 1));
+		// }
+		return;
+	}
+}
 // System.Void Mirror.MessagePacking::Pack<Mirror.NetworkPingMessage>(T,Mirror.NetworkWriter)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MessagePacking_Pack_TisNetworkPingMessage_t254AA1B47CDBC1136A16C49B6147AC5462C60B27_mE940D035D81CFF9EBEA65F347D944CC69E3CAD3C_gshared (NetworkPingMessage_t254AA1B47CDBC1136A16C49B6147AC5462C60B27 ___message0, NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C* ___writer1, const RuntimeMethod* method) 
 {
@@ -9513,6 +9670,35 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MessagePacking_Pack_TisServerMatchMessag
 		ServerMatchMessage_tAA90E663A53A2A48E57057D0B00DA4251AC000B8 L_4 = ___message0;
 		NullCheck(L_3);
 		((  void (*) (NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C*, ServerMatchMessage_tAA90E663A53A2A48E57057D0B00DA4251AC000B8, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->rgctx_data, 1)))(L_3, L_4, il2cpp_rgctx_method(method->rgctx_data, 1));
+		// }
+		return;
+	}
+}
+// System.Void Mirror.MessagePacking::Pack<PlayFab.Networking.ShutdownMessage>(T,Mirror.NetworkWriter)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MessagePacking_Pack_TisShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E_m4CE74999173A1280516DE28FCD4C813FF07FC0A8_gshared (ShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E ___message0, NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C* ___writer1, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&NetworkWriterExtensions_t2D2B2848AD867C9392E353747A5A82CB5FED9DBD_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	uint16_t V_0 = 0;
+	{
+		// ushort msgType = GetId<T>();
+		uint16_t L_0;
+		L_0 = ((  uint16_t (*) (const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->rgctx_data, 0)))(il2cpp_rgctx_method(method->rgctx_data, 0));
+		V_0 = L_0;
+		// writer.WriteUShort(msgType);
+		NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C* L_1 = ___writer1;
+		uint16_t L_2 = V_0;
+		il2cpp_codegen_runtime_class_init_inline(NetworkWriterExtensions_t2D2B2848AD867C9392E353747A5A82CB5FED9DBD_il2cpp_TypeInfo_var);
+		NetworkWriterExtensions_WriteUShort_m4AEC8147034117F9EB131043089577CD2DB42DB4_inline(L_1, L_2, NULL);
+		// writer.Write(message);
+		NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C* L_3 = ___writer1;
+		ShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E L_4 = ___message0;
+		NullCheck(L_3);
+		((  void (*) (NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C*, ShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->rgctx_data, 1)))(L_3, L_4, il2cpp_rgctx_method(method->rgctx_data, 1));
 		// }
 		return;
 	}
@@ -18392,6 +18578,83 @@ IL_003b:
 		return;
 	}
 }
+// System.Void Mirror.NetworkConnection::Send<PlayFab.Networking.MaintenanceMessage>(T,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NetworkConnection_Send_TisMaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6_mE0013AC0899F467D6AE7E7EF39E641416E4F3D5B_gshared (NetworkConnection_t49880296B0FA972023F34582D7A41D7B63383E78* __this, MaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6 ___message0, int32_t ___channelId1, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDisposable_t030E0496B4E0E4E4F086825007979AF51F7248C5_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&NetworkWriterPool_tDAD1CE5B5A3F73CC1D52E76DFF72EA2B57094267_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	PooledNetworkWriter_t94EA264974848EB7C1465B22A12967EC43951458* V_0 = NULL;
+	{
+		// using (PooledNetworkWriter writer = NetworkWriterPool.GetWriter())
+		il2cpp_codegen_runtime_class_init_inline(NetworkWriterPool_tDAD1CE5B5A3F73CC1D52E76DFF72EA2B57094267_il2cpp_TypeInfo_var);
+		PooledNetworkWriter_t94EA264974848EB7C1465B22A12967EC43951458* L_0;
+		L_0 = NetworkWriterPool_GetWriter_m1698DCA253D41E4B3B8206F7596D45BCB0A1BDA8_inline(NULL);
+		V_0 = L_0;
+	}
+	{
+		auto __finallyBlock = il2cpp::utils::Finally([&]
+		{
+
+FINALLY_0030:
+			{// begin finally (depth: 1)
+				{
+					PooledNetworkWriter_t94EA264974848EB7C1465B22A12967EC43951458* L_1 = V_0;
+					if (!L_1)
+					{
+						goto IL_003a;
+					}
+				}
+				{
+					PooledNetworkWriter_t94EA264974848EB7C1465B22A12967EC43951458* L_2 = V_0;
+					NullCheck((RuntimeObject*)L_2);
+					InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t030E0496B4E0E4E4F086825007979AF51F7248C5_il2cpp_TypeInfo_var, (RuntimeObject*)L_2);
+				}
+
+IL_003a:
+				{
+					return;
+				}
+			}// end finally (depth: 1)
+		});
+		try
+		{// begin try (depth: 1)
+			// MessagePacking.Pack(message, writer);
+			MaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6 L_3 = ___message0;
+			PooledNetworkWriter_t94EA264974848EB7C1465B22A12967EC43951458* L_4 = V_0;
+			((  void (*) (MaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6, NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C*, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->rgctx_data, 0)))(L_3, (NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C*)L_4, il2cpp_rgctx_method(method->rgctx_data, 0));
+			// NetworkDiagnostics.OnSend(message, channelId, writer.Position, 1);
+			MaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6 L_5 = ___message0;
+			int32_t L_6 = ___channelId1;
+			PooledNetworkWriter_t94EA264974848EB7C1465B22A12967EC43951458* L_7 = V_0;
+			NullCheck(L_7);
+			int32_t L_8 = (int32_t)((NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C*)L_7)->___Position_2;
+			((  void (*) (MaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6, int32_t, int32_t, int32_t, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->rgctx_data, 1)))(L_5, L_6, L_8, 1, il2cpp_rgctx_method(method->rgctx_data, 1));
+			// Send(writer.ToArraySegment(), channelId);
+			PooledNetworkWriter_t94EA264974848EB7C1465B22A12967EC43951458* L_9 = V_0;
+			NullCheck((NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C*)L_9);
+			ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093 L_10;
+			L_10 = NetworkWriter_ToArraySegment_m35FBADDD2990B92709B5B3277F7A982140189135_inline((NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C*)L_9, NULL);
+			int32_t L_11 = ___channelId1;
+			VirtualActionInvoker2< ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093, int32_t >::Invoke(5 /* System.Void Mirror.NetworkConnection::Send(System.ArraySegment`1<System.Byte>,System.Int32) */, __this, L_10, L_11);
+			goto IL_003b;
+		}// end try (depth: 1)
+		catch(Il2CppExceptionWrapper& e)
+		{
+			__finallyBlock.StoreException(e.ex);
+		}
+	}
+
+IL_003b:
+	{
+		// }
+		return;
+	}
+}
 // System.Void Mirror.NetworkConnection::Send<Mirror.NetworkPingMessage>(T,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NetworkConnection_Send_TisNetworkPingMessage_t254AA1B47CDBC1136A16C49B6147AC5462C60B27_mB81C583700B948959BABD63352A8975AAF089D97_gshared (NetworkConnection_t49880296B0FA972023F34582D7A41D7B63383E78* __this, NetworkPingMessage_t254AA1B47CDBC1136A16C49B6147AC5462C60B27 ___message0, int32_t ___channelId1, const RuntimeMethod* method) 
 {
@@ -19141,6 +19404,83 @@ IL_003a:
 			NullCheck(L_7);
 			int32_t L_8 = (int32_t)((NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C*)L_7)->___Position_2;
 			((  void (*) (ServerMatchMessage_tAA90E663A53A2A48E57057D0B00DA4251AC000B8, int32_t, int32_t, int32_t, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->rgctx_data, 1)))(L_5, L_6, L_8, 1, il2cpp_rgctx_method(method->rgctx_data, 1));
+			// Send(writer.ToArraySegment(), channelId);
+			PooledNetworkWriter_t94EA264974848EB7C1465B22A12967EC43951458* L_9 = V_0;
+			NullCheck((NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C*)L_9);
+			ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093 L_10;
+			L_10 = NetworkWriter_ToArraySegment_m35FBADDD2990B92709B5B3277F7A982140189135_inline((NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C*)L_9, NULL);
+			int32_t L_11 = ___channelId1;
+			VirtualActionInvoker2< ArraySegment_1_t3DC888623B720A071D69279F1FCB95A109195093, int32_t >::Invoke(5 /* System.Void Mirror.NetworkConnection::Send(System.ArraySegment`1<System.Byte>,System.Int32) */, __this, L_10, L_11);
+			goto IL_003b;
+		}// end try (depth: 1)
+		catch(Il2CppExceptionWrapper& e)
+		{
+			__finallyBlock.StoreException(e.ex);
+		}
+	}
+
+IL_003b:
+	{
+		// }
+		return;
+	}
+}
+// System.Void Mirror.NetworkConnection::Send<PlayFab.Networking.ShutdownMessage>(T,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NetworkConnection_Send_TisShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E_m444A745A1FD8CCDCFF5818B8B637F8EAACB0FDDB_gshared (NetworkConnection_t49880296B0FA972023F34582D7A41D7B63383E78* __this, ShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E ___message0, int32_t ___channelId1, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDisposable_t030E0496B4E0E4E4F086825007979AF51F7248C5_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&NetworkWriterPool_tDAD1CE5B5A3F73CC1D52E76DFF72EA2B57094267_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	PooledNetworkWriter_t94EA264974848EB7C1465B22A12967EC43951458* V_0 = NULL;
+	{
+		// using (PooledNetworkWriter writer = NetworkWriterPool.GetWriter())
+		il2cpp_codegen_runtime_class_init_inline(NetworkWriterPool_tDAD1CE5B5A3F73CC1D52E76DFF72EA2B57094267_il2cpp_TypeInfo_var);
+		PooledNetworkWriter_t94EA264974848EB7C1465B22A12967EC43951458* L_0;
+		L_0 = NetworkWriterPool_GetWriter_m1698DCA253D41E4B3B8206F7596D45BCB0A1BDA8_inline(NULL);
+		V_0 = L_0;
+	}
+	{
+		auto __finallyBlock = il2cpp::utils::Finally([&]
+		{
+
+FINALLY_0030:
+			{// begin finally (depth: 1)
+				{
+					PooledNetworkWriter_t94EA264974848EB7C1465B22A12967EC43951458* L_1 = V_0;
+					if (!L_1)
+					{
+						goto IL_003a;
+					}
+				}
+				{
+					PooledNetworkWriter_t94EA264974848EB7C1465B22A12967EC43951458* L_2 = V_0;
+					NullCheck((RuntimeObject*)L_2);
+					InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t030E0496B4E0E4E4F086825007979AF51F7248C5_il2cpp_TypeInfo_var, (RuntimeObject*)L_2);
+				}
+
+IL_003a:
+				{
+					return;
+				}
+			}// end finally (depth: 1)
+		});
+		try
+		{// begin try (depth: 1)
+			// MessagePacking.Pack(message, writer);
+			ShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E L_3 = ___message0;
+			PooledNetworkWriter_t94EA264974848EB7C1465B22A12967EC43951458* L_4 = V_0;
+			((  void (*) (ShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E, NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C*, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->rgctx_data, 0)))(L_3, (NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C*)L_4, il2cpp_rgctx_method(method->rgctx_data, 0));
+			// NetworkDiagnostics.OnSend(message, channelId, writer.Position, 1);
+			ShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E L_5 = ___message0;
+			int32_t L_6 = ___channelId1;
+			PooledNetworkWriter_t94EA264974848EB7C1465B22A12967EC43951458* L_7 = V_0;
+			NullCheck(L_7);
+			int32_t L_8 = (int32_t)((NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C*)L_7)->___Position_2;
+			((  void (*) (ShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E, int32_t, int32_t, int32_t, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->rgctx_data, 1)))(L_5, L_6, L_8, 1, il2cpp_rgctx_method(method->rgctx_data, 1));
 			// Send(writer.ToArraySegment(), channelId);
 			PooledNetworkWriter_t94EA264974848EB7C1465B22A12967EC43951458* L_9 = V_0;
 			NullCheck((NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C*)L_9);
@@ -21628,6 +21968,89 @@ IL_0038:
 		return;
 	}
 }
+// System.Void Mirror.NetworkDiagnostics::OnSend<PlayFab.Networking.MaintenanceMessage>(T,System.Int32,System.Int32,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NetworkDiagnostics_OnSend_TisMaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6_m7DF08BF8A173730C8751CCD5DAD3D7BCE856CE47_gshared (MaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6 ___message0, int32_t ___channel1, int32_t ___bytes2, int32_t ___count3, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&NetworkDiagnostics_t7BFE721CDA9DBAF34BC2307119708D5E8FA2235D_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	bool V_0 = false;
+	MessageInfo_t6C0038A809CC3ACAC360B6FD8B35933C72776127 V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	int32_t G_B3_0 = 0;
+	Action_1_tB3BBD378513E182189219BBCB8EE412A4E52F35B* G_B6_0 = NULL;
+	Action_1_tB3BBD378513E182189219BBCB8EE412A4E52F35B* G_B5_0 = NULL;
+	{
+		// if (count > 0 && OutMessageEvent != null)
+		int32_t L_0 = ___count3;
+		if ((((int32_t)L_0) <= ((int32_t)0)))
+		{
+			goto IL_000f;
+		}
+	}
+	{
+		Action_1_tB3BBD378513E182189219BBCB8EE412A4E52F35B* L_1 = ((NetworkDiagnostics_t7BFE721CDA9DBAF34BC2307119708D5E8FA2235D_StaticFields*)il2cpp_codegen_static_fields_for(NetworkDiagnostics_t7BFE721CDA9DBAF34BC2307119708D5E8FA2235D_il2cpp_TypeInfo_var))->___OutMessageEvent_0;
+		G_B3_0 = ((!(((RuntimeObject*)(Action_1_tB3BBD378513E182189219BBCB8EE412A4E52F35B*)L_1) <= ((RuntimeObject*)(RuntimeObject*)NULL)))? 1 : 0);
+		goto IL_0010;
+	}
+
+IL_000f:
+	{
+		G_B3_0 = 0;
+	}
+
+IL_0010:
+	{
+		V_0 = (bool)G_B3_0;
+		bool L_2 = V_0;
+		if (!L_2)
+		{
+			goto IL_0038;
+		}
+	}
+	{
+		// MessageInfo outMessage = new MessageInfo(message, channel, bytes, count);
+		MaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6 L_3 = ___message0;
+		MaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6 L_4 = L_3;
+		RuntimeObject* L_5 = Box(il2cpp_rgctx_data(method->rgctx_data, 0), &L_4);
+		int32_t L_6 = ___channel1;
+		int32_t L_7 = ___bytes2;
+		int32_t L_8 = ___count3;
+		MessageInfo__ctor_m544E158986CD48130C1E1E2B68040337F0CA475A((&V_1), (RuntimeObject*)L_5, L_6, L_7, L_8, NULL);
+		// OutMessageEvent?.Invoke(outMessage);
+		Action_1_tB3BBD378513E182189219BBCB8EE412A4E52F35B* L_9 = ((NetworkDiagnostics_t7BFE721CDA9DBAF34BC2307119708D5E8FA2235D_StaticFields*)il2cpp_codegen_static_fields_for(NetworkDiagnostics_t7BFE721CDA9DBAF34BC2307119708D5E8FA2235D_il2cpp_TypeInfo_var))->___OutMessageEvent_0;
+		Action_1_tB3BBD378513E182189219BBCB8EE412A4E52F35B* L_10 = L_9;
+		G_B5_0 = L_10;
+		if (L_10)
+		{
+			G_B6_0 = L_10;
+			goto IL_0030;
+		}
+	}
+	{
+		goto IL_0037;
+	}
+
+IL_0030:
+	{
+		MessageInfo_t6C0038A809CC3ACAC360B6FD8B35933C72776127 L_11 = V_1;
+		NullCheck(G_B6_0);
+		Action_1_Invoke_m1D52868ED5351185569F98C8BD983977C5FD8BB2_inline(G_B6_0, L_11, NULL);
+	}
+
+IL_0037:
+	{
+	}
+
+IL_0038:
+	{
+		// }
+		return;
+	}
+}
 // System.Void Mirror.NetworkDiagnostics::OnSend<Mirror.NetworkPingMessage>(T,System.Int32,System.Int32,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NetworkDiagnostics_OnSend_TisNetworkPingMessage_t254AA1B47CDBC1136A16C49B6147AC5462C60B27_m056CF770E8353FCD1D413E588E13E3CB95BF72F0_gshared (NetworkPingMessage_t254AA1B47CDBC1136A16C49B6147AC5462C60B27 ___message0, int32_t ___channel1, int32_t ___bytes2, int32_t ___count3, const RuntimeMethod* method) 
 {
@@ -22505,6 +22928,89 @@ IL_0010:
 		// MessageInfo outMessage = new MessageInfo(message, channel, bytes, count);
 		ServerMatchMessage_tAA90E663A53A2A48E57057D0B00DA4251AC000B8 L_3 = ___message0;
 		ServerMatchMessage_tAA90E663A53A2A48E57057D0B00DA4251AC000B8 L_4 = L_3;
+		RuntimeObject* L_5 = Box(il2cpp_rgctx_data(method->rgctx_data, 0), &L_4);
+		int32_t L_6 = ___channel1;
+		int32_t L_7 = ___bytes2;
+		int32_t L_8 = ___count3;
+		MessageInfo__ctor_m544E158986CD48130C1E1E2B68040337F0CA475A((&V_1), (RuntimeObject*)L_5, L_6, L_7, L_8, NULL);
+		// OutMessageEvent?.Invoke(outMessage);
+		Action_1_tB3BBD378513E182189219BBCB8EE412A4E52F35B* L_9 = ((NetworkDiagnostics_t7BFE721CDA9DBAF34BC2307119708D5E8FA2235D_StaticFields*)il2cpp_codegen_static_fields_for(NetworkDiagnostics_t7BFE721CDA9DBAF34BC2307119708D5E8FA2235D_il2cpp_TypeInfo_var))->___OutMessageEvent_0;
+		Action_1_tB3BBD378513E182189219BBCB8EE412A4E52F35B* L_10 = L_9;
+		G_B5_0 = L_10;
+		if (L_10)
+		{
+			G_B6_0 = L_10;
+			goto IL_0030;
+		}
+	}
+	{
+		goto IL_0037;
+	}
+
+IL_0030:
+	{
+		MessageInfo_t6C0038A809CC3ACAC360B6FD8B35933C72776127 L_11 = V_1;
+		NullCheck(G_B6_0);
+		Action_1_Invoke_m1D52868ED5351185569F98C8BD983977C5FD8BB2_inline(G_B6_0, L_11, NULL);
+	}
+
+IL_0037:
+	{
+	}
+
+IL_0038:
+	{
+		// }
+		return;
+	}
+}
+// System.Void Mirror.NetworkDiagnostics::OnSend<PlayFab.Networking.ShutdownMessage>(T,System.Int32,System.Int32,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NetworkDiagnostics_OnSend_TisShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E_m2B15AD8E41E6D1DC64BFAB0EF6C0C19627C67907_gshared (ShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E ___message0, int32_t ___channel1, int32_t ___bytes2, int32_t ___count3, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&NetworkDiagnostics_t7BFE721CDA9DBAF34BC2307119708D5E8FA2235D_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	bool V_0 = false;
+	MessageInfo_t6C0038A809CC3ACAC360B6FD8B35933C72776127 V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	int32_t G_B3_0 = 0;
+	Action_1_tB3BBD378513E182189219BBCB8EE412A4E52F35B* G_B6_0 = NULL;
+	Action_1_tB3BBD378513E182189219BBCB8EE412A4E52F35B* G_B5_0 = NULL;
+	{
+		// if (count > 0 && OutMessageEvent != null)
+		int32_t L_0 = ___count3;
+		if ((((int32_t)L_0) <= ((int32_t)0)))
+		{
+			goto IL_000f;
+		}
+	}
+	{
+		Action_1_tB3BBD378513E182189219BBCB8EE412A4E52F35B* L_1 = ((NetworkDiagnostics_t7BFE721CDA9DBAF34BC2307119708D5E8FA2235D_StaticFields*)il2cpp_codegen_static_fields_for(NetworkDiagnostics_t7BFE721CDA9DBAF34BC2307119708D5E8FA2235D_il2cpp_TypeInfo_var))->___OutMessageEvent_0;
+		G_B3_0 = ((!(((RuntimeObject*)(Action_1_tB3BBD378513E182189219BBCB8EE412A4E52F35B*)L_1) <= ((RuntimeObject*)(RuntimeObject*)NULL)))? 1 : 0);
+		goto IL_0010;
+	}
+
+IL_000f:
+	{
+		G_B3_0 = 0;
+	}
+
+IL_0010:
+	{
+		V_0 = (bool)G_B3_0;
+		bool L_2 = V_0;
+		if (!L_2)
+		{
+			goto IL_0038;
+		}
+	}
+	{
+		// MessageInfo outMessage = new MessageInfo(message, channel, bytes, count);
+		ShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E L_3 = ___message0;
+		ShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E L_4 = L_3;
 		RuntimeObject* L_5 = Box(il2cpp_rgctx_data(method->rgctx_data, 0), &L_4);
 		int32_t L_6 = ___channel1;
 		int32_t L_7 = ___bytes2;
@@ -30661,6 +31167,60 @@ IL_0038:
 		return;
 	}
 }
+// System.Void Mirror.NetworkWriter::Write<PlayFab.Networking.MaintenanceMessage>(T)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NetworkWriter_Write_TisMaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6_m14DC1C44617F276F2E5C3E6EF8F62374048834AC_gshared (NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C* __this, MaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6 ___value0, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Type_t_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral06D086C696776AFE3FEDDB7F5F90A8E464E1A00B);
+		s_Il2CppMethodInitialized = true;
+	}
+	Action_2_t1816B3536A4D885546AB79822042E54A33F800ED* V_0 = NULL;
+	bool V_1 = false;
+	{
+		// Action<NetworkWriter, T> writeDelegate = Writer<T>.write;
+		Action_2_t1816B3536A4D885546AB79822042E54A33F800ED* L_0 = ((Writer_1_tD491F75433868FC328E4B58A2C1DA365BEA40958_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(method->rgctx_data, 0)))->___write_0;
+		V_0 = L_0;
+		// if (writeDelegate == null)
+		Action_2_t1816B3536A4D885546AB79822042E54A33F800ED* L_1 = V_0;
+		V_1 = (bool)((((RuntimeObject*)(Action_2_t1816B3536A4D885546AB79822042E54A33F800ED*)L_1) == ((RuntimeObject*)(RuntimeObject*)NULL))? 1 : 0);
+		bool L_2 = V_1;
+		if (!L_2)
+		{
+			goto IL_002d;
+		}
+	}
+	{
+		// Debug.LogError($"No writer found for {typeof(T)}. This happens either if you are missing a NetworkWriter extension for your custom type, or if weaving failed. Try to reimport a script to weave again.");
+		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_3 = { reinterpret_cast<intptr_t> (il2cpp_rgctx_type(method->rgctx_data, 1)) };
+		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
+		Type_t* L_4;
+		L_4 = Type_GetTypeFromHandle_m2570A2A5B32A5E9D9F0F38B37459DA18736C823E(L_3, NULL);
+		String_t* L_5;
+		L_5 = String_Format_m8C122B26BC5AA10E2550AECA16E57DAE10F07E30(_stringLiteral06D086C696776AFE3FEDDB7F5F90A8E464E1A00B, (RuntimeObject*)L_4, NULL);
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_LogError_m059825802BB6AF7EA9693FEBEEB0D85F59A3E38E((RuntimeObject*)L_5, NULL);
+		goto IL_0038;
+	}
+
+IL_002d:
+	{
+		// writeDelegate(this, value);
+		Action_2_t1816B3536A4D885546AB79822042E54A33F800ED* L_6 = V_0;
+		MaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6 L_7 = ___value0;
+		NullCheck(L_6);
+		((  void (*) (Action_2_t1816B3536A4D885546AB79822042E54A33F800ED*, NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C*, MaintenanceMessage_t360B2D727CF90F52FDD40948C998BE3E2C8F33D6, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->rgctx_data, 3)))(L_6, __this, L_7, il2cpp_rgctx_method(method->rgctx_data, 3));
+	}
+
+IL_0038:
+	{
+		// }
+		return;
+	}
+}
 // System.Void Mirror.NetworkWriter::Write<Mirror.Examples.MultipleMatch.MatchInfo>(T)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NetworkWriter_Write_TisMatchInfo_tEDF27DC9DFC19E26535E0CBBE992F002B1A6CF41_m5F1062AE5175A019B707AC071A517D1A66157205_gshared (NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C* __this, MatchInfo_tEDF27DC9DFC19E26535E0CBBE992F002B1A6CF41 ___value0, const RuntimeMethod* method) 
 {
@@ -31571,6 +32131,60 @@ IL_002d:
 		ServerResponse_t32FDA3FF44465187DD1DA88F5ABAB7C3F1227088 L_7 = ___value0;
 		NullCheck(L_6);
 		((  void (*) (Action_2_tCEBC50305883EF04493D9481294E72765C203EB5*, NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C*, ServerResponse_t32FDA3FF44465187DD1DA88F5ABAB7C3F1227088, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->rgctx_data, 3)))(L_6, __this, L_7, il2cpp_rgctx_method(method->rgctx_data, 3));
+	}
+
+IL_0038:
+	{
+		// }
+		return;
+	}
+}
+// System.Void Mirror.NetworkWriter::Write<PlayFab.Networking.ShutdownMessage>(T)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NetworkWriter_Write_TisShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E_mF6F44CE1427D18681E93E1FC35F0B15EB54895E9_gshared (NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C* __this, ShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E ___value0, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Type_t_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral06D086C696776AFE3FEDDB7F5F90A8E464E1A00B);
+		s_Il2CppMethodInitialized = true;
+	}
+	Action_2_t28A7122B69BEC7212EFFDE277560165A2D5D5AC4* V_0 = NULL;
+	bool V_1 = false;
+	{
+		// Action<NetworkWriter, T> writeDelegate = Writer<T>.write;
+		Action_2_t28A7122B69BEC7212EFFDE277560165A2D5D5AC4* L_0 = ((Writer_1_tE54D615FC33ECCFCB2E5487BE5F3AF0796D11C26_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(method->rgctx_data, 0)))->___write_0;
+		V_0 = L_0;
+		// if (writeDelegate == null)
+		Action_2_t28A7122B69BEC7212EFFDE277560165A2D5D5AC4* L_1 = V_0;
+		V_1 = (bool)((((RuntimeObject*)(Action_2_t28A7122B69BEC7212EFFDE277560165A2D5D5AC4*)L_1) == ((RuntimeObject*)(RuntimeObject*)NULL))? 1 : 0);
+		bool L_2 = V_1;
+		if (!L_2)
+		{
+			goto IL_002d;
+		}
+	}
+	{
+		// Debug.LogError($"No writer found for {typeof(T)}. This happens either if you are missing a NetworkWriter extension for your custom type, or if weaving failed. Try to reimport a script to weave again.");
+		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_3 = { reinterpret_cast<intptr_t> (il2cpp_rgctx_type(method->rgctx_data, 1)) };
+		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
+		Type_t* L_4;
+		L_4 = Type_GetTypeFromHandle_m2570A2A5B32A5E9D9F0F38B37459DA18736C823E(L_3, NULL);
+		String_t* L_5;
+		L_5 = String_Format_m8C122B26BC5AA10E2550AECA16E57DAE10F07E30(_stringLiteral06D086C696776AFE3FEDDB7F5F90A8E464E1A00B, (RuntimeObject*)L_4, NULL);
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_LogError_m059825802BB6AF7EA9693FEBEEB0D85F59A3E38E((RuntimeObject*)L_5, NULL);
+		goto IL_0038;
+	}
+
+IL_002d:
+	{
+		// writeDelegate(this, value);
+		Action_2_t28A7122B69BEC7212EFFDE277560165A2D5D5AC4* L_6 = V_0;
+		ShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E L_7 = ___value0;
+		NullCheck(L_6);
+		((  void (*) (Action_2_t28A7122B69BEC7212EFFDE277560165A2D5D5AC4*, NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C*, ShutdownMessage_tE40F7F4B9A5155A28EBD66411549E5226BA86B5E, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->rgctx_data, 3)))(L_6, __this, L_7, il2cpp_rgctx_method(method->rgctx_data, 3));
 	}
 
 IL_0038:
@@ -32730,266 +33344,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NetworkWriter_WriteBlittable_TisRect_tA0
 		// UnsafeUtility.MemCpy(ptr, valueBuffer, size);
 		uint8_t* L_10 = V_1;
 		Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D* L_11 = V_3;
-		int32_t L_12 = V_0;
-		UnsafeUtility_MemCpy_m019E657B952C27F705607F0F3D371EEE526B716B((void*)L_10, (void*)L_11, ((int64_t)L_12), NULL);
-		V_2 = (uint8_t*)((uintptr_t)0);
-		// Position += size;
-		int32_t L_13 = (int32_t)__this->___Position_2;
-		int32_t L_14 = V_0;
-		__this->___Position_2 = ((int32_t)il2cpp_codegen_add(L_13, L_14));
-		// }
-		return;
-	}
-}
-// System.Void Mirror.NetworkWriter::WriteBlittable<System.SByte>(T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NetworkWriter_WriteBlittable_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_mB83421D51DF4417A5E9E204F78319F101D7441EF_gshared (NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C* __this, int8_t ___value0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&NetworkWriter_WriteBlittable_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_mB83421D51DF4417A5E9E204F78319F101D7441EF_RuntimeMethod_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	int32_t V_0 = 0;
-	uint8_t* V_1 = NULL;
-	uint8_t* V_2 = NULL;
-	int8_t* V_3 = NULL;
-	{
-		// int size = sizeof(T);
-		uint32_t L_0 = sizeof(int8_t);
-		V_0 = (int32_t)L_0;
-		// EnsureCapacity(Position + size);
-		int32_t L_1 = (int32_t)__this->___Position_2;
-		int32_t L_2 = V_0;
-		NetworkWriter_EnsureCapacity_mCA41CB950C5E89DCBAFCE7D00E588D21858911D3_inline(__this, ((int32_t)il2cpp_codegen_add(L_1, L_2)), NULL);
-		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_3 = (ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*)__this->___buffer_1;
-		int32_t L_4 = (int32_t)__this->___Position_2;
-		NullCheck(L_3);
-		V_2 = ((L_3)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_4)));
-		// fixed (byte* ptr = &buffer[Position])
-		uint8_t* L_5 = V_2;
-		V_1 = (uint8_t*)((uintptr_t)L_5);
-		// T* valueBuffer = stackalloc T[1]{value};
-		uint32_t L_6 = sizeof(int8_t);
-		if ((uintptr_t)((uintptr_t)1) * (uintptr_t)L_6 > (uintptr_t)kIl2CppUIntPtrMax)
-			IL2CPP_RAISE_MANAGED_EXCEPTION(il2cpp_codegen_get_overflow_exception(), NetworkWriter_WriteBlittable_TisSByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_mB83421D51DF4417A5E9E204F78319F101D7441EF_RuntimeMethod_var);
-		int8_t* L_7 = (int8_t*) alloca(((intptr_t)il2cpp_codegen_multiply((intptr_t)((uintptr_t)1), (int32_t)L_6)));
-		memset(L_7, 0, ((intptr_t)il2cpp_codegen_multiply((intptr_t)((uintptr_t)1), (int32_t)L_6)));
-		int8_t* L_8 = (L_7);
-		int8_t L_9 = ___value0;
-		*(int8_t*)L_8 = L_9;
-		V_3 = L_8;
-		// UnsafeUtility.MemCpy(ptr, valueBuffer, size);
-		uint8_t* L_10 = V_1;
-		int8_t* L_11 = V_3;
-		int32_t L_12 = V_0;
-		UnsafeUtility_MemCpy_m019E657B952C27F705607F0F3D371EEE526B716B((void*)L_10, (void*)L_11, ((int64_t)L_12), NULL);
-		V_2 = (uint8_t*)((uintptr_t)0);
-		// Position += size;
-		int32_t L_13 = (int32_t)__this->___Position_2;
-		int32_t L_14 = V_0;
-		__this->___Position_2 = ((int32_t)il2cpp_codegen_add(L_13, L_14));
-		// }
-		return;
-	}
-}
-// System.Void Mirror.NetworkWriter::WriteBlittable<System.Single>(T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NetworkWriter_WriteBlittable_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m52D9BC2519EC2FAD4102C0A11EFA7DA40E68615D_gshared (NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C* __this, float ___value0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&NetworkWriter_WriteBlittable_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m52D9BC2519EC2FAD4102C0A11EFA7DA40E68615D_RuntimeMethod_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	int32_t V_0 = 0;
-	uint8_t* V_1 = NULL;
-	uint8_t* V_2 = NULL;
-	float* V_3 = NULL;
-	{
-		// int size = sizeof(T);
-		uint32_t L_0 = sizeof(float);
-		V_0 = (int32_t)L_0;
-		// EnsureCapacity(Position + size);
-		int32_t L_1 = (int32_t)__this->___Position_2;
-		int32_t L_2 = V_0;
-		NetworkWriter_EnsureCapacity_mCA41CB950C5E89DCBAFCE7D00E588D21858911D3_inline(__this, ((int32_t)il2cpp_codegen_add(L_1, L_2)), NULL);
-		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_3 = (ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*)__this->___buffer_1;
-		int32_t L_4 = (int32_t)__this->___Position_2;
-		NullCheck(L_3);
-		V_2 = ((L_3)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_4)));
-		// fixed (byte* ptr = &buffer[Position])
-		uint8_t* L_5 = V_2;
-		V_1 = (uint8_t*)((uintptr_t)L_5);
-		// T* valueBuffer = stackalloc T[1]{value};
-		uint32_t L_6 = sizeof(float);
-		if ((uintptr_t)((uintptr_t)1) * (uintptr_t)L_6 > (uintptr_t)kIl2CppUIntPtrMax)
-			IL2CPP_RAISE_MANAGED_EXCEPTION(il2cpp_codegen_get_overflow_exception(), NetworkWriter_WriteBlittable_TisSingle_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_m52D9BC2519EC2FAD4102C0A11EFA7DA40E68615D_RuntimeMethod_var);
-		int8_t* L_7 = (int8_t*) alloca(((intptr_t)il2cpp_codegen_multiply((intptr_t)((uintptr_t)1), (int32_t)L_6)));
-		memset(L_7, 0, ((intptr_t)il2cpp_codegen_multiply((intptr_t)((uintptr_t)1), (int32_t)L_6)));
-		int8_t* L_8 = (L_7);
-		float L_9 = ___value0;
-		*(float*)L_8 = L_9;
-		V_3 = (float*)L_8;
-		// UnsafeUtility.MemCpy(ptr, valueBuffer, size);
-		uint8_t* L_10 = V_1;
-		float* L_11 = V_3;
-		int32_t L_12 = V_0;
-		UnsafeUtility_MemCpy_m019E657B952C27F705607F0F3D371EEE526B716B((void*)L_10, (void*)L_11, ((int64_t)L_12), NULL);
-		V_2 = (uint8_t*)((uintptr_t)0);
-		// Position += size;
-		int32_t L_13 = (int32_t)__this->___Position_2;
-		int32_t L_14 = V_0;
-		__this->___Position_2 = ((int32_t)il2cpp_codegen_add(L_13, L_14));
-		// }
-		return;
-	}
-}
-// System.Void Mirror.NetworkWriter::WriteBlittable<System.UInt16>(T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NetworkWriter_WriteBlittable_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m7A05C5F5DD5D33FC126D2DAC895A096EC3402A14_gshared (NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C* __this, uint16_t ___value0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&NetworkWriter_WriteBlittable_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m7A05C5F5DD5D33FC126D2DAC895A096EC3402A14_RuntimeMethod_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	int32_t V_0 = 0;
-	uint8_t* V_1 = NULL;
-	uint8_t* V_2 = NULL;
-	uint16_t* V_3 = NULL;
-	{
-		// int size = sizeof(T);
-		uint32_t L_0 = sizeof(uint16_t);
-		V_0 = (int32_t)L_0;
-		// EnsureCapacity(Position + size);
-		int32_t L_1 = (int32_t)__this->___Position_2;
-		int32_t L_2 = V_0;
-		NetworkWriter_EnsureCapacity_mCA41CB950C5E89DCBAFCE7D00E588D21858911D3_inline(__this, ((int32_t)il2cpp_codegen_add(L_1, L_2)), NULL);
-		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_3 = (ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*)__this->___buffer_1;
-		int32_t L_4 = (int32_t)__this->___Position_2;
-		NullCheck(L_3);
-		V_2 = ((L_3)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_4)));
-		// fixed (byte* ptr = &buffer[Position])
-		uint8_t* L_5 = V_2;
-		V_1 = (uint8_t*)((uintptr_t)L_5);
-		// T* valueBuffer = stackalloc T[1]{value};
-		uint32_t L_6 = sizeof(uint16_t);
-		if ((uintptr_t)((uintptr_t)1) * (uintptr_t)L_6 > (uintptr_t)kIl2CppUIntPtrMax)
-			IL2CPP_RAISE_MANAGED_EXCEPTION(il2cpp_codegen_get_overflow_exception(), NetworkWriter_WriteBlittable_TisUInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_m7A05C5F5DD5D33FC126D2DAC895A096EC3402A14_RuntimeMethod_var);
-		int8_t* L_7 = (int8_t*) alloca(((intptr_t)il2cpp_codegen_multiply((intptr_t)((uintptr_t)1), (int32_t)L_6)));
-		memset(L_7, 0, ((intptr_t)il2cpp_codegen_multiply((intptr_t)((uintptr_t)1), (int32_t)L_6)));
-		int8_t* L_8 = (L_7);
-		uint16_t L_9 = ___value0;
-		*(uint16_t*)L_8 = L_9;
-		V_3 = (uint16_t*)L_8;
-		// UnsafeUtility.MemCpy(ptr, valueBuffer, size);
-		uint8_t* L_10 = V_1;
-		uint16_t* L_11 = V_3;
-		int32_t L_12 = V_0;
-		UnsafeUtility_MemCpy_m019E657B952C27F705607F0F3D371EEE526B716B((void*)L_10, (void*)L_11, ((int64_t)L_12), NULL);
-		V_2 = (uint8_t*)((uintptr_t)0);
-		// Position += size;
-		int32_t L_13 = (int32_t)__this->___Position_2;
-		int32_t L_14 = V_0;
-		__this->___Position_2 = ((int32_t)il2cpp_codegen_add(L_13, L_14));
-		// }
-		return;
-	}
-}
-// System.Void Mirror.NetworkWriter::WriteBlittable<System.UInt32>(T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NetworkWriter_WriteBlittable_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m3F8565D904BC20262924C7AF8BFBB3F7FE770535_gshared (NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C* __this, uint32_t ___value0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&NetworkWriter_WriteBlittable_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m3F8565D904BC20262924C7AF8BFBB3F7FE770535_RuntimeMethod_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	int32_t V_0 = 0;
-	uint8_t* V_1 = NULL;
-	uint8_t* V_2 = NULL;
-	uint32_t* V_3 = NULL;
-	{
-		// int size = sizeof(T);
-		uint32_t L_0 = sizeof(uint32_t);
-		V_0 = (int32_t)L_0;
-		// EnsureCapacity(Position + size);
-		int32_t L_1 = (int32_t)__this->___Position_2;
-		int32_t L_2 = V_0;
-		NetworkWriter_EnsureCapacity_mCA41CB950C5E89DCBAFCE7D00E588D21858911D3_inline(__this, ((int32_t)il2cpp_codegen_add(L_1, L_2)), NULL);
-		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_3 = (ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*)__this->___buffer_1;
-		int32_t L_4 = (int32_t)__this->___Position_2;
-		NullCheck(L_3);
-		V_2 = ((L_3)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_4)));
-		// fixed (byte* ptr = &buffer[Position])
-		uint8_t* L_5 = V_2;
-		V_1 = (uint8_t*)((uintptr_t)L_5);
-		// T* valueBuffer = stackalloc T[1]{value};
-		uint32_t L_6 = sizeof(uint32_t);
-		if ((uintptr_t)((uintptr_t)1) * (uintptr_t)L_6 > (uintptr_t)kIl2CppUIntPtrMax)
-			IL2CPP_RAISE_MANAGED_EXCEPTION(il2cpp_codegen_get_overflow_exception(), NetworkWriter_WriteBlittable_TisUInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_m3F8565D904BC20262924C7AF8BFBB3F7FE770535_RuntimeMethod_var);
-		int8_t* L_7 = (int8_t*) alloca(((intptr_t)il2cpp_codegen_multiply((intptr_t)((uintptr_t)1), (int32_t)L_6)));
-		memset(L_7, 0, ((intptr_t)il2cpp_codegen_multiply((intptr_t)((uintptr_t)1), (int32_t)L_6)));
-		int8_t* L_8 = (L_7);
-		uint32_t L_9 = ___value0;
-		*(uint32_t*)L_8 = L_9;
-		V_3 = (uint32_t*)L_8;
-		// UnsafeUtility.MemCpy(ptr, valueBuffer, size);
-		uint8_t* L_10 = V_1;
-		uint32_t* L_11 = V_3;
-		int32_t L_12 = V_0;
-		UnsafeUtility_MemCpy_m019E657B952C27F705607F0F3D371EEE526B716B((void*)L_10, (void*)L_11, ((int64_t)L_12), NULL);
-		V_2 = (uint8_t*)((uintptr_t)0);
-		// Position += size;
-		int32_t L_13 = (int32_t)__this->___Position_2;
-		int32_t L_14 = V_0;
-		__this->___Position_2 = ((int32_t)il2cpp_codegen_add(L_13, L_14));
-		// }
-		return;
-	}
-}
-// System.Void Mirror.NetworkWriter::WriteBlittable<System.UInt64>(T)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NetworkWriter_WriteBlittable_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_m869219CA464A4A9CCE03043BF274E8EBD19428AC_gshared (NetworkWriter_t27BA8C1DA1F8507E98CBD409717A57125ABDC37C* __this, uint64_t ___value0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&NetworkWriter_WriteBlittable_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_m869219CA464A4A9CCE03043BF274E8EBD19428AC_RuntimeMethod_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	int32_t V_0 = 0;
-	uint8_t* V_1 = NULL;
-	uint8_t* V_2 = NULL;
-	uint64_t* V_3 = NULL;
-	{
-		// int size = sizeof(T);
-		uint32_t L_0 = sizeof(uint64_t);
-		V_0 = (int32_t)L_0;
-		// EnsureCapacity(Position + size);
-		int32_t L_1 = (int32_t)__this->___Position_2;
-		int32_t L_2 = V_0;
-		NetworkWriter_EnsureCapacity_mCA41CB950C5E89DCBAFCE7D00E588D21858911D3_inline(__this, ((int32_t)il2cpp_codegen_add(L_1, L_2)), NULL);
-		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_3 = (ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*)__this->___buffer_1;
-		int32_t L_4 = (int32_t)__this->___Position_2;
-		NullCheck(L_3);
-		V_2 = ((L_3)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_4)));
-		// fixed (byte* ptr = &buffer[Position])
-		uint8_t* L_5 = V_2;
-		V_1 = (uint8_t*)((uintptr_t)L_5);
-		// T* valueBuffer = stackalloc T[1]{value};
-		uint32_t L_6 = sizeof(uint64_t);
-		if ((uintptr_t)((uintptr_t)1) * (uintptr_t)L_6 > (uintptr_t)kIl2CppUIntPtrMax)
-			IL2CPP_RAISE_MANAGED_EXCEPTION(il2cpp_codegen_get_overflow_exception(), NetworkWriter_WriteBlittable_TisUInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_m869219CA464A4A9CCE03043BF274E8EBD19428AC_RuntimeMethod_var);
-		int8_t* L_7 = (int8_t*) alloca(((intptr_t)il2cpp_codegen_multiply((intptr_t)((uintptr_t)1), (int32_t)L_6)));
-		memset(L_7, 0, ((intptr_t)il2cpp_codegen_multiply((intptr_t)((uintptr_t)1), (int32_t)L_6)));
-		int8_t* L_8 = (L_7);
-		uint64_t L_9 = ___value0;
-		*(uint64_t*)L_8 = L_9;
-		V_3 = (uint64_t*)L_8;
-		// UnsafeUtility.MemCpy(ptr, valueBuffer, size);
-		uint8_t* L_10 = V_1;
-		uint64_t* L_11 = V_3;
 		int32_t L_12 = V_0;
 		UnsafeUtility_MemCpy_m019E657B952C27F705607F0F3D371EEE526B716B((void*)L_10, (void*)L_11, ((int64_t)L_12), NULL);
 		V_2 = (uint8_t*)((uintptr_t)0);
