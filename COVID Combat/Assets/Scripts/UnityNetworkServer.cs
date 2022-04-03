@@ -13,6 +13,8 @@ namespace PlayFab.Networking
         public PlayerEvent OnPlayerAdded = new PlayerEvent();
         public PlayerEvent OnPlayerRemoved = new PlayerEvent();
 
+        public class NetworkConnectionToClientEvent : UnityEvent<NetworkConnectionToClient> { };
+        public NetworkConnectionToClientEvent OnServerDisconnectEvent = new NetworkConnectionToClientEvent();
 
         public List<UnityNetworkConnection> Connections
         {
@@ -80,6 +82,8 @@ namespace PlayFab.Networking
 
         public override void OnServerDisconnect(NetworkConnectionToClient conn)
         {
+            OnServerDisconnectEvent.Invoke(conn);
+
             base.OnServerDisconnect(conn);
 
             var uconn = _connections.Find(c => c.ConnectionId == conn.connectionId);

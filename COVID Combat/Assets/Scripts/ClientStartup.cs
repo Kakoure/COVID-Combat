@@ -6,10 +6,23 @@ using PlayFab.ClientModels;
 using PlayFab.MultiplayerModels;
 using PlayFab.Networking;
 
+
 public class ClientStartup : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
+    {
+      
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+
+    public void BeginClientStartup()
     {
         LoginWithCustomIDRequest request = new LoginWithCustomIDRequest()
         {
@@ -20,13 +33,6 @@ public class ClientStartup : MonoBehaviour
 
         PlayFabClientAPI.LoginWithCustomID(request, OnPlayFabLoginSuccess, OnLoginError);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 
     void OnPlayFabLoginSuccess(LoginResult loginResult)
     {
@@ -40,8 +46,8 @@ public class ClientStartup : MonoBehaviour
         Debug.Log("[ClientStartup].RequestMultiplayerServer");
         RequestMultiplayerServerRequest requestData = new RequestMultiplayerServerRequest
         {
-            BuildId = "18ca93f0-6076-468f-b680-32475728a759",
-            SessionId = "951BC03B-3DDB-4000-85EA-04529895C3B2",
+            BuildId = "29e6eafc-57a4-4f6c-9841-42baf8cd9780",
+            SessionId = "951BC03B-3DDB-4000-85EA-04529895C3B5",
             PreferredRegions = new List<string> { "EastUS" }
         };
 

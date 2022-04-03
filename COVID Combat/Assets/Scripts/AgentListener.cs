@@ -51,6 +51,11 @@ public class AgentListener : MonoBehaviour
         ConnectedPlayer player = _connectedPlayers.Find(x => x.PlayerId.Equals(playfabId, StringComparison.OrdinalIgnoreCase));
         _connectedPlayers.Remove(player);
         PlayFabMultiplayerAgentAPI.UpdateConnectedPlayers(_connectedPlayers);
+
+        if(_connectedPlayers.Count == 0)
+        {
+            OnShutdown();
+        }
     }
 
     private void OnPlayerAdded(string playfabId)
