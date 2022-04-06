@@ -4,32 +4,46 @@ using UnityEngine;
 
 public class PilotControls : MonoBehaviour
 {
-    public Rigidbody rb;
+    //public Rigidbody rb;
+    // force = 25, turn rate = 1 is good
     public float force;
-    GameObject mainCamera;
+    public float turnRate;
+    GameObject player;
+    private Rigidbody rb;
+    private CharacterController charController;
     float horMove;
     float vertMove;
+    
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        rb = GetComponent<Rigidbody>();
+        charController = GetComponent<CharacterController>();
+        player = gameObject;
         horMove = 0;
         vertMove = 0;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("Horiz: " +Input.GetAxis("Horizontal"));
         horMove = Input.GetAxis("Horizontal");
         vertMove = Input.GetAxis("Vertical");
     }
 
     private void FixedUpdate()
     {
-        Vector3 forwardVect = mainCamera.transform.forward * vertMove;
-        Vector3 sideVect = mainCamera.transform.right * horMove;
-        Vector3 moveVect = forwardVect + sideVect;
-        rb.AddForce(moveVect * force * Time.fixedDeltaTime);
+        if (horMove >= .05 || horMove <= -.05 || vertMove >= .05 || vertMove <= -.05)
+        {
+           player.transform.Rotate(turnRate * vertMove, turnRate * horMove, 0);
+
+        }
+
+        Vector3 moveVect = player.transform.forward;
+        charController.Move(moveVect * force * Time.fixedDeltaTime);
     }
 }
