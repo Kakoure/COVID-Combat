@@ -113,6 +113,7 @@ public class RoleManager : NetworkBehaviour
         var cam = GameObject.FindGameObjectWithTag("MainCamera");
         cam.transform.parent = pilotHook.transform;
         cam.transform.localPosition = Vector3.zero;
+        cam.transform.rotation = pilotHook.transform.rotation;
 
         pilotCntrl.enabled = true;
         
@@ -124,6 +125,7 @@ public class RoleManager : NetworkBehaviour
         var cam = GameObject.FindGameObjectWithTag("MainCamera");
         cam.transform.parent = shooterHook.transform;
         cam.transform.localPosition = Vector3.zero;
+        cam.transform.rotation = shooterHook.transform.rotation;
 
         shooterCntrl.enabled = true;
 
