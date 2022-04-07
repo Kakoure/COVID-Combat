@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class PilotControls : MonoBehaviour
+public class PilotControls : NetworkBehaviour
 {
     //public Rigidbody rb;
     // force = 25, turn rate = 1 is good
@@ -29,6 +30,10 @@ public class PilotControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!hasAuthority)
+        {
+            return;
+        }
         //Debug.Log("Horiz: " +Input.GetAxis("Horizontal"));
         horMove = Input.GetAxis("Horizontal");
         vertMove = Input.GetAxis("Vertical");
@@ -36,6 +41,10 @@ public class PilotControls : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!hasAuthority)
+        {
+            return;
+        }
         if (horMove >= .05 || horMove <= -.05 || vertMove >= .05 || vertMove <= -.05)
         {
            ship.transform.Rotate(turnRate * vertMove, turnRate * horMove, 0);

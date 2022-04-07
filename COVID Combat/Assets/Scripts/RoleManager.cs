@@ -58,6 +58,7 @@ public class RoleManager : NetworkBehaviour
         {
             pilotIdentity = sender.identity;
             shipObj.GetComponent<NetworkIdentity>().AssignClientAuthority(sender);
+            pilotCntrl.netIdentity.AssignClientAuthority(sender);
             DisablePilotButton();
             TargetSetupPilot(sender);
         }
@@ -147,10 +148,12 @@ public class RoleManager : NetworkBehaviour
     {
         pilotIdentity = null;
         shipObj.GetComponent<NetworkIdentity>().RemoveClientAuthority();
+        pilotCntrl.netIdentity.RemoveClientAuthority();
     }
 
     void ResetShooter()
     {
         shooterIdentity = null;
+        shooterCntrl.netIdentity.RemoveClientAuthority();
     }
 }

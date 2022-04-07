@@ -2,29 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
-
 public class ShooterControls : NetworkBehaviour
 {
     public float maxAimDistance;
     public LayerMask aimLayers;
+
+    public float shootCooldown;
+    public float projSpeed;
     GameObject pointerTargetObject = null;
     public GunRotation gunRot;
     GameObject cameraObj;
+
+    public string shootButton;
+    bool shootPressed;
+    float timeLastShot;
+    Vector3 aimPoint;
+    public Transform shotOrigin;
+    public GameObject shotObj;
 
     // Start is called before the first frame update
     void Start()
     {
         cameraObj = GameObject.FindGameObjectWithTag("MainCamera");
+        timeLastShot = Time.time;
     }
 
-    // Update is called once per frame
-    void Update()
+
+
+    void FixedUpdate()
     {
         
         if (!hasAuthority)
         {
             return;
         }
+        HandleAim();
+        HandleShoot();
+        
+    }
+
+
+    void HandleAim()
+    {
         RaycastHit hit;
         if (Physics.Raycast(cameraObj.transform.position, cameraObj.transform.forward, out hit, maxAimDistance, aimLayers))
         {
@@ -36,7 +55,7 @@ public class ShooterControls : NetworkBehaviour
                 pointerTargetObject = hit.transform.gameObject;
                 pointerTargetObject.SendMessage("OnPointerEnter");
             }
-
+            aimPoint = hit.point;
             CmdUpdateAimPoint(hit.point);
         }
         else
@@ -44,7 +63,19 @@ public class ShooterControls : NetworkBehaviour
             // No GameObject detected in front of the camera.
             pointerTargetObject?.SendMessage("OnPointerExit");
             pointerTargetObject = null;
-            CmdUpdateAimPoint(cameraObj.transform.position + (cameraObj.transform.forward * maxAimDistance));
+            aimPoint = cameraObj.transform.forward * maxAimDistance;
+            CmdUpdateAimPoint(cameraObj.transform.position + (aimPoint));
+        }
+    }
+
+    void HandleShoot()
+    {
+        if (Input.GetButton(shootButton) && Time.time - timeLastShot > shootCooldown)
+        {
+            var dirVect = (aimPoint - shotOrigin.position).normalized;
+            CmdShootAntibody(dirVect);
+            Debug.Log("Pew");
+            timeLastShot = Time.time;
         }
     }
 
@@ -54,4 +85,12 @@ public class ShooterControls : NetworkBehaviour
         gunRot.UpdateAim(aimPoint);
     }
 
+
+    [Command(requiresAuthority = false)]
+    public void CmdShootAntibody(Vector3 dir)
+    {
+        GameObject newProj = Instantiate(shotObj, shotOrigin.position, Quaternion.LookRotation(dir, Vector3.up));
+        newProj.GetComponent<AntibodyController>().SetupProjectile();
+        NetworkServer.Spawn(newProj);
+    }
 }
