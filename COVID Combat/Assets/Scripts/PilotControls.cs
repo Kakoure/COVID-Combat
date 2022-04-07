@@ -8,7 +8,9 @@ public class PilotControls : MonoBehaviour
     // force = 25, turn rate = 1 is good
     public float force;
     public float turnRate;
-    GameObject player;
+
+    public bool drivingEnabled;
+    public GameObject ship;
     private Rigidbody rb;
     private CharacterController charController;
     float horMove;
@@ -19,12 +21,9 @@ public class PilotControls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        charController = GetComponent<CharacterController>();
-        player = gameObject;
+        rb = ship.GetComponent<Rigidbody>();
         horMove = 0;
         vertMove = 0;
-        
     }
 
     // Update is called once per frame
@@ -39,11 +38,14 @@ public class PilotControls : MonoBehaviour
     {
         if (horMove >= .05 || horMove <= -.05 || vertMove >= .05 || vertMove <= -.05)
         {
-           player.transform.Rotate(turnRate * vertMove, turnRate * horMove, 0);
+           ship.transform.Rotate(turnRate * vertMove, turnRate * horMove, 0);
 
         }
 
-        Vector3 moveVect = player.transform.forward;
-        charController.Move(moveVect * force * Time.fixedDeltaTime);
+        Vector3 moveVect = ship.transform.forward;
+        if (drivingEnabled)
+        {
+            rb.AddForce(moveVect * force);
+        }
     }
 }

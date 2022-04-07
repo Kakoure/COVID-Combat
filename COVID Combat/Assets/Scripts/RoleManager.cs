@@ -18,10 +18,14 @@ public class RoleManager : NetworkBehaviour
     public Button pilotButton;
     public Button shooterButton;
 
+    public PilotControls pilotCntrl;
+    public ShooterControls shooterCntrl;
+
     // Start is called before the first frame update
     void Start()
     {
         UnityNetworkServer.Instance.OnServerDisconnectEvent.AddListener(OnPlayerRemoved);
+        SetButtonVals();
     }
 
     // Update is called once per frame
@@ -39,6 +43,14 @@ public class RoleManager : NetworkBehaviour
         }
     }
 
+    public void OnJoinShooterPressed()
+    {
+        if (shooterIdentity == null)
+        {
+            CmdJoinAsShooter();
+        }
+    }
+
     [Command(requiresAuthority = false)]
     public void CmdJoinAsPilot(NetworkConnectionToClient sender = null)
     {
@@ -48,6 +60,19 @@ public class RoleManager : NetworkBehaviour
             shipObj.GetComponent<NetworkIdentity>().AssignClientAuthority(sender);
             DisablePilotButton();
             TargetSetupPilot(sender);
+        }
+    }
+
+    [Command(requiresAuthority = false)]
+    public void CmdJoinAsShooter(NetworkConnectionToClient sender = null)
+    {
+        if (shooterIdentity == null)
+        {
+            shooterIdentity = sender.identity;
+            //shipObj.GetComponent<NetworkIdentity>().AssignClientAuthority(sender);
+            shooterCntrl.netIdentity.AssignClientAuthority(sender);
+            DisableShooterButton();
+            TargetSetupShooter(sender);
         }
     }
 
@@ -63,6 +88,24 @@ public class RoleManager : NetworkBehaviour
         pilotButton.interactable = true;
     }
 
+    [ClientRpc]
+    public void DisableShooterButton()
+    {
+        shooterButton.interactable = false;
+    }
+
+    [ClientRpc]
+    public void EnableShooterButton()
+    {
+        shooterButton.interactable = true;
+    }
+
+    void SetButtonVals()
+    {
+        shooterButton.interactable = (shooterIdentity == null);
+        pilotButton.interactable = (pilotIdentity == null);
+    }
+
     [TargetRpc]
     public void TargetSetupPilot(NetworkConnection target)
     {
@@ -70,8 +113,19 @@ public class RoleManager : NetworkBehaviour
         cam.transform.parent = pilotHook.transform;
         cam.transform.localPosition = Vector3.zero;
 
-        pilotHook.GetComponentInChildren<PilotControls>().enabled = true;
+        pilotCntrl.enabled = true;
         
+    }
+
+    [TargetRpc]
+    public void TargetSetupShooter(NetworkConnection target)
+    {
+        var cam = GameObject.FindGameObjectWithTag("MainCamera");
+        cam.transform.parent = shooterHook.transform;
+        cam.transform.localPosition = Vector3.zero;
+
+        shooterCntrl.enabled = true;
+
     }
 
 
@@ -80,13 +134,23 @@ public class RoleManager : NetworkBehaviour
         if (conn.identity.Equals(pilotIdentity))
         {
             ResetPilot();
+        } else if (conn.identity.Equals(shooterIdentity))
+        {
+            ResetShooter();
         }
+
+
+        SetButtonVals();
     }
 
     void ResetPilot()
     {
         pilotIdentity = null;
         shipObj.GetComponent<NetworkIdentity>().RemoveClientAuthority();
-        EnablePilotButton();
+    }
+
+    void ResetShooter()
+    {
+        shooterIdentity = null;
     }
 }
