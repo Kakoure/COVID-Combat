@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8443528116942928123}
   - component: {fileID: 5965448026867043377}
   - component: {fileID: 8335180954200199142}
+  - component: {fileID: -5694688076100200675}
   m_Layer: 0
   m_Name: BloodVesselCurveCurve
   m_TagString: Untagged
@@ -98,3 +99,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1550514412580984892, guid: 2125ec30f7e674f408acd7d97b156c4d, type: 3}
+--- !u!205 &-5694688076100200675
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5316916280938769892}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5965448026867043377}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5965448026867043377}
+  - screenRelativeHeight: 0.007739336
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5965448026867043377}
+  m_Enabled: 1
