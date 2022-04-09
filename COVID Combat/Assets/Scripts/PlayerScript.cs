@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class PlayerScript : MonoBehaviour
+public class PlayerScript : NetworkBehaviour
 {
     public int maxHealth = 100;
+    [SyncVar]
     public int currentHealth;
     private int counter;
     GameObject player;
+    Rigidbody rb;
 
     public HealthBar healthBar;
     // Start is called before the first frame update
@@ -16,23 +19,32 @@ public class PlayerScript : MonoBehaviour
         player = gameObject;
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        rb = GetComponent<Rigidbody>();
     }
 
     void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.gameObject.name);
+        if (!hasAuthority)
+        {
+            return;
+        }
         if (collision.gameObject.name == "WhiteBloodCell")
         {
             
         }
         else if (!collision.gameObject.name.Contains("BloodVessel"))
         {
-            TakeDamage(20);
+            CmdTakeDamage(20);
             Destroy(collision.gameObject);
         }
-        else
+        else if(collision.gameObject.name.Contains("BloodVessel"))
         {
-            //Debug.Log("Ouch");
-            TakeDamage(10);
+            if(collision.impulse.magnitude > 25f)
+            {
+                CmdTakeDamage(10);
+            }
+            
         }
         
     }
@@ -40,7 +52,7 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
- 
+        //Debug.Log(rb.velocity.magnitude);
     }
 
     void FixedUpdate()
@@ -48,10 +60,25 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-    void TakeDamage(int damage)
+    [Command]
+    void CmdTakeDamage(int val)
     {
-        currentHealth -= damage;
-
-        healthBar.SetHealth(currentHealth);
+        currentHealth -= val;
+        RpcSetHealth(currentHealth);
     }
+
+
+    [Command]
+    void CmdSetHealth(int val)
+    {
+        currentHealth = val;
+        RpcSetHealth(val);
+    }
+
+    [ClientRpc]
+    void RpcSetHealth(int val)
+    {
+        healthBar.SetHealth(val);
+    }
+
 }

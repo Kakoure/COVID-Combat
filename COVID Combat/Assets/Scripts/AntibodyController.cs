@@ -25,4 +25,13 @@ public class AntibodyController : NetworkBehaviour
         startTime = 0;
         GetComponent<Rigidbody>().velocity = transform.forward * speed;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!isServer)
+        {
+            return;
+        }
+        NetworkServer.Destroy(gameObject);
+    }
 }
