@@ -3,6 +3,20 @@
 
 Our StartMenu scene is the start of the game for the players. It then transitions to the GameScene, which is where the rest of the game takes place.
 
+Interaction Techniques:
+Menu:
+	-Select options with ---I DON'T ACTUALLY KNOW WHAT BUTTON DOES THIS---
+
+
+In game:
+Player 1: 
+	-Uses Google VR SDK to see
+	-Can move left/right/up/down with joystick
+	-Automatically moves forward
+Player 2:
+	-Uses Google VR SDK to see and aim
+	-Presses X to shoot
+
 -----NEED TO EXPLAIN HOW TO OPERATE WITH MULTIPLE DEVICES-----
 
 
