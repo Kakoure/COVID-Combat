@@ -1,6 +1,17 @@
 # COVID-Combat
  CS 6334 Project - Team 15
 
+Our StartMenu scene is the start of the game for the players. It then transitions to the GameScene, which is where the rest of the game takes place.
+
+-----NEED TO EXPLAIN HOW TO OPERATE WITH MULTIPLE DEVICES-----
+
+
+
+
+
+--------------------------
+Development Notes:
+
 If you get the error "The name 'PlayFabMultiplayerAgentAPI1 does not exist in the current context, go to Edit -> Projet Settings -> Player -> Other Settings -> Scripting Define Symbols, click the + to add a new define called ENABLE_PLAYFABSERVER_API
 
 This adds in the necessary directive
