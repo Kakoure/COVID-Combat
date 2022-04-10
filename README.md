@@ -5,7 +5,7 @@ Our StartMenu scene is the start of the game for the players. It then transition
 
 Interaction Techniques:
 Menu:
-	-Select options with ---I DON'T ACTUALLY KNOW WHAT BUTTON DOES THIS---
+	-Select options by looking at the desired button and pressing X.
 
 
 In game:
@@ -13,11 +13,12 @@ Player 1:
 	-Uses Google VR SDK to see
 	-Can move left/right/up/down with joystick
 	-Automatically moves forward
+	-Hold Trigger to stop moving
 Player 2:
 	-Uses Google VR SDK to see and aim
-	-Presses X to shoot
+	-Presses Trigger to shoot
 
------NEED TO EXPLAIN HOW TO OPERATE WITH MULTIPLE DEVICES-----
+The game is configured so that it automatically connects to a specified dedicated server when running the game. In its current state, the servers only hold two players at once (once game session), and the servers are only up when we are actively using/testing them (limited number of free hours for the servers to be running). If running the project through the unity editor, however, a local version of the game can be tested by using the UI located on the top left of the screen and selecting the "Host (Server + Client)" button.
 
 
 
@@ -38,4 +39,4 @@ all the files I used to make the prefabs, so don't use those in the game.
 The blood vessels can be put together like legos to construct the course.
 
 This should automatically be included, but if not, the Healthbar max health can be set to 100. On the WhiteBloodCell's PilotControl
-script, Force = 25 and turnRate = 1 give good values for the controls.
+script, Force = 100 and turnRate = 1 give good values for the controls.
