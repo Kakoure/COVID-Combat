@@ -9,6 +9,7 @@ public class PilotControls : NetworkBehaviour
     // force = 25, turn rate = 1 is good
     public float force;
     public float turnRate;
+    public string brakeButton;
 
     public bool drivingEnabled;
     public GameObject ship;
@@ -52,7 +53,7 @@ public class PilotControls : NetworkBehaviour
         }
 
         Vector3 moveVect = ship.transform.forward;
-        if (drivingEnabled)
+        if (drivingEnabled && !Input.GetButton(brakeButton))
         {
             rb.AddForce(moveVect * force);
         }
