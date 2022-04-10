@@ -3,6 +3,8 @@
 
 Our StartMenu scene is the start of the game for the players. It then transitions to the GameScene, which is where the rest of the game takes place.
 
+The VR equipment we are using are the Google Cardboard and Bluetooth Controller provided in class.
+
 Interaction Techniques:
 Menu:
 	-Select options by looking at the desired button and pressing X.
@@ -18,7 +20,7 @@ Player 2:
 	-Uses Google VR SDK to see and aim
 	-Presses Trigger to shoot
 
-The game is configured so that it automatically connects to a specified dedicated server when running the game. In its current state, the servers only hold two players at once (once game session), and the servers are only up when we are actively using/testing them (limited number of free hours for the servers to be running). If running the project through the unity editor, however, a local version of the game can be tested by using the UI located on the top left of the screen and selecting the "Host (Server + Client)" button.
+The game is configured so that it automatically connects to a specified dedicated server when running the game. To operate with multiple devices, simply press the "Join Game" button in the Start Menu, and the devices should automatically join the same session. However, in its current state, the server only holds two players at once (one game session), and the server is only up when we are actively using/testing it (limited number of free hours for the server to be running). If running the project through the unity editor, however, a local version of the game can be tested by using the UI located on the top left of the screen and selecting the "Host (Server + Client)" button.
 
 
 
