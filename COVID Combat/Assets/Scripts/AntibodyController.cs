@@ -34,4 +34,15 @@ public class AntibodyController : NetworkBehaviour
         }
         NetworkServer.Destroy(gameObject);
     }
+
+    [ClientRpc]
+    public void RpcStartParticles()
+    {
+        foreach(ParticleSystem ps in GetComponentsInChildren<ParticleSystem>())
+        {
+            ps.Play();
+        }
+    }
 }
+
+

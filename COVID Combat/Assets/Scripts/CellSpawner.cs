@@ -23,7 +23,7 @@ public class CellSpawner : NetworkBehaviour
     {
         public GameObject objPrefab;
         public GameObject containerObj;
-        public List<GameObject> pooledObjects;
+        public Queue<GameObject> pooledObjects;
         public int amountToPool;
         public float spawnWeight;
     }
@@ -32,6 +32,10 @@ public class CellSpawner : NetworkBehaviour
 
     void Start()
     {
+        if (!isServer)
+        {
+            return;
+        }
         GenerateObjects();
         spawnDistanceTracker = 0f;
         spawnTimeTracker = 0f;
@@ -40,6 +44,10 @@ public class CellSpawner : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isServer)
+        {
+            return;
+        }
         var deltaPosition = playerObj.transform.position - transform.position;
         transform.position = playerObj.transform.position;
         spawnDistanceTracker += deltaPosition.magnitude;
@@ -58,24 +66,23 @@ public class CellSpawner : NetworkBehaviour
 
     void GenerateObjects()
     {
-        foreach(ObjectPool pool in spawnableItems)
-        {
-            GeneratePool(pool);
+        for(int i = 0; i < spawnableItems.Count; i++) {
+            var pool = spawnableItems[i];
+            pool.pooledObjects = new Queue<GameObject>();
+            spawnableItems[i] = pool;
         }
     }
 
-    void GeneratePool(ObjectPool pool)
+    GameObject SpawnPoolObj(ObjectPool pool)
     {
-        for (int i = 0; i < pool.amountToPool; i++)
-        {
-            var newObj = Instantiate(pool.objPrefab, pool.containerObj.transform);
-            newObj.SetActive(false);
-            var moveNet = newObj.GetComponent<CellMoveNetwork>();
-            moveNet.despawnDistance = despawnDistance;
-            moveNet.playerObj = playerObj;
-            pool.pooledObjects.Add(newObj);
-            NetworkServer.Spawn(newObj);
-        }
+        var newObj = Instantiate(pool.objPrefab, pool.containerObj.transform);
+        newObj.SetActive(true);
+        var moveNet = newObj.GetComponent<CellMoveNetwork>();
+        moveNet.despawnDistance = despawnDistance;
+        moveNet.playerObj = playerObj;
+        moveNet.SetPool(pool);
+        NetworkServer.Spawn(newObj);
+        return newObj;
     }
 
     ObjectPool SelectRandomPool()
@@ -104,14 +111,13 @@ public class CellSpawner : NetworkBehaviour
     GameObject GetNextObject()
     {
         var pool = SelectRandomPool();
-        for(int i = 0; i < pool.pooledObjects.Count; i++)
+        if(pool.pooledObjects.Count > 0)
         {
-            if (!pool.pooledObjects[i].activeInHierarchy)
-            {
-                return pool.pooledObjects[i];
-            }
+            return pool.pooledObjects.Dequeue();
+        } else
+        {
+            return SpawnPoolObj(pool);           
         }
-        return null;
     }
     void SpawnObject()
     {
@@ -142,5 +148,8 @@ public class CellSpawner : NetworkBehaviour
 
         objToSpawn.transform.position = spawnPos;
         objToSpawn.SetActive(true);
+        objToSpawn.GetComponent<CellMoveNetwork>().RpcShowObject();
     }
+
+
 }

@@ -11,6 +11,8 @@ public class GunRotation : NetworkBehaviour
     [SyncVar]
     Vector3 aimPoint;
 
+    public bool debugMode;
+
     void Start()
     {
         
@@ -23,10 +25,20 @@ public class GunRotation : NetworkBehaviour
         var dirVect = aimPoint - gunPivot.position;
         var targetRot = Quaternion.LookRotation(dirVect);
         gunPivot.rotation = Quaternion.Lerp(gunPivot.rotation, targetRot, lerpSpeed * Time.deltaTime);
+        if (debugMode)
+        {
+            Debug.DrawRay(gunPivot.position, dirVect);
+        }
+        
     }
 
     public void UpdateAim(Vector3 newPos)
     {
         aimPoint = newPos;
+    }
+
+    public Vector3 GetAimPoint()
+    {
+        return aimPoint;
     }
 }
