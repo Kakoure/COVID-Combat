@@ -1,6 +1,9 @@
 # COVID-Combat
  CS 6334 Project - Team 15
 
+Demo video link: https://youtu.be/tZ0ybF2Znz8
+
+
 Our StartMenu scene is the start of the game for the players. It then transitions to the GameScene, which is where the rest of the game takes place.
 
 The VR equipment we are using are the Google Cardboard and Bluetooth Controller provided in class.
@@ -22,6 +25,17 @@ Player 2:
 
 The game is configured so that it automatically connects to a specified dedicated server when running the game. To operate with multiple devices, simply press the "Join Game" button in the Start Menu, and the devices should automatically join the same session. However, in its current state, the server only holds two players at once (one game session), and the server is only up when we are actively using/testing it (limited number of free hours for the server to be running). If running the project through the unity editor, however, a local version of the game can be tested by using the UI located on the top left of the screen and selecting the "Host (Server + Client)" button.
 
+Implemented features:
+-2 player multiplayer
+-Start menu
+-Blood vessel course
+-COVID, T-Cell, B-Cell, Megakaryocyte Cell, and Red Blood Cells
+	-Spawn into the game
+	-Can move
+-Antibody gun
+	-shoots antibodies, which disappear when they collide with the course
+-Player movement for the pilot (including the ability to slow down)
+-Shooter can aim and shoot
 
 
 

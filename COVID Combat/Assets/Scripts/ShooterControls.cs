@@ -51,7 +51,10 @@ public class ShooterControls : NetworkBehaviour
             if (pointerTargetObject != hit.transform.gameObject)
             {
                 // New GameObject.
-                pointerTargetObject?.SendMessage("OnPointerExit");
+                if (pointerTargetObject != null)
+                {
+                    pointerTargetObject?.SendMessage("OnPointerExit");
+                }
                 pointerTargetObject = hit.transform.gameObject;
                 pointerTargetObject.SendMessage("OnPointerEnter");
             }
@@ -61,10 +64,13 @@ public class ShooterControls : NetworkBehaviour
         else
         {
             // No GameObject detected in front of the camera.
-            pointerTargetObject?.SendMessage("OnPointerExit");
+            if(pointerTargetObject != null)
+            {
+                pointerTargetObject?.SendMessage("OnPointerExit");
+            }
             pointerTargetObject = null;
-            aimPoint = cameraObj.transform.forward * maxAimDistance;
-            CmdUpdateAimPoint(cameraObj.transform.position + (aimPoint));
+            aimPoint = cameraObj.transform.position + (cameraObj.transform.forward * maxAimDistance);
+            CmdUpdateAimPoint(aimPoint);
         }
     }
 
@@ -90,7 +96,10 @@ public class ShooterControls : NetworkBehaviour
     public void CmdShootAntibody(Vector3 dir)
     {
         GameObject newProj = Instantiate(shotObj, shotOrigin.position, Quaternion.LookRotation(dir, Vector3.up));
-        newProj.GetComponent<AntibodyController>().SetupProjectile();
+        var cntrl = newProj.GetComponent<AntibodyController>();
+        cntrl.SetupProjectile();
         NetworkServer.Spawn(newProj);
+        cntrl.RpcStartParticles();
+
     }
 }

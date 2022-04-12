@@ -11,6 +11,7 @@ public class CellMoveNetwork : NetworkBehaviour
     float movez;
     public float despawnDistance;
     public GameObject playerObj;
+    CellSpawner.ObjectPool pool;
 
 
     // Start is called before the first frame update
@@ -37,7 +38,10 @@ public class CellMoveNetwork : NetworkBehaviour
         var distance = (playerObj.transform.position - transform.position).magnitude;
         if (distance >= despawnDistance)
         {
+            RpcHideObj();
             gameObject.SetActive(false);
+            //pool.pooledObjects.Enqueue(gameObject);
+            NetworkServer.UnSpawn(gameObject);
         }
     }
     void BloodCellMove()
@@ -51,5 +55,21 @@ public class CellMoveNetwork : NetworkBehaviour
 
     }
 
+    [ClientRpc]
+    void RpcHideObj()
+    {
+        gameObject.SetActive(false);
+
+    }
+    [ClientRpc]
+    public void RpcShowObject()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void SetPool(CellSpawner.ObjectPool pool)
+    {
+        this.pool = pool;
+    }
 
 }
