@@ -1,6 +1,9 @@
 # COVID-Combat
  CS 6334 Project - Team 15
 
+Demo video link: https://youtu.be/tZ0ybF2Znz8
+
+
 Our StartMenu scene is the start of the game for the players. It then transitions to the GameScene, which is where the rest of the game takes place.
 
 The VR equipment we are using are the Google Cardboard and Bluetooth Controller provided in class.
