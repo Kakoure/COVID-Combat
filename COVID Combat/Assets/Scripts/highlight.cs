@@ -21,7 +21,7 @@ public class highlight : MonoBehaviour
                     outline.enabled = true;
                     outline.OutlineColor = Color.red;
                     outline.OutlineWidth = 5f;
-                    
+                    Debug.Log("rbc collide");
                     break;
                 }
             case "mbc":

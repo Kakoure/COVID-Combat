@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Kill
+  - ship
+  - rbc
+  - virus
+  - tc
+  - mgc
+  - antibody
   layers:
   - Default
   - TransparentFX
