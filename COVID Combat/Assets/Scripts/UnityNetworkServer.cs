@@ -35,7 +35,9 @@ namespace PlayFab.Networking
             base.Awake();
             Instance = this;
             NetworkServer.RegisterHandler<ReceiveAuthenticateMessage>(OnReceiveAuthenticate);
+            #if !UNITY_SERVER
             InitializeAgent();
+            #endif
         }
 
         public void StartListen()
