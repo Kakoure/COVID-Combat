@@ -12,7 +12,6 @@ namespace PlayFab.Networking
     {
         ChatroomAgent agent;
         public string voiceChatroomName;
-        bool hostingVCRoom;
         public static UnityNetworkServer Instance { get; private set; }
 
         public PlayerEvent OnPlayerAdded = new PlayerEvent();
@@ -37,7 +36,6 @@ namespace PlayFab.Networking
             Instance = this;
             NetworkServer.RegisterHandler<ReceiveAuthenticateMessage>(OnReceiveAuthenticate);
             InitializeAgent();
-            hostingVCRoom = false;
         }
 
         public void StartListen()
@@ -107,19 +105,18 @@ namespace PlayFab.Networking
         public override void OnStartClient()
         {
             base.OnStartClient();
-            //Join the voice chat room
-            if (!hostingVCRoom)
-            {
-                Debug.Log("Joining Room");
-                agent.Network.JoinChatroom(voiceChatroomName);
-                
-            }
-            agent.MuteSelf = false;
+            //Host/Join the voice chat room
+
+            Debug.Log("Hosting Room");
+            agent.Network.HostChatroom(voiceChatroomName);
+
         }
 
         public override void OnStartServer()
         {
+            
             base.OnStartServer();
+            /*
             hostingVCRoom = true;
             //Host the voice chat room
             if (agent.CurrentMode == ChatroomAgentMode.Unconnected)
@@ -130,6 +127,7 @@ namespace PlayFab.Networking
             }
             
             agent.MuteSelf = true;
+            */
         }
 
         public override void OnClientDisconnect()
@@ -163,6 +161,9 @@ namespace PlayFab.Networking
 
             agent.Network.OnChatroomCreationFailed += ex => {
                 ShowMessage("Chatroom creation failed");
+                Debug.Log("Joining Room");
+                agent.Network.JoinChatroom(voiceChatroomName);
+                agent.MuteSelf = false;
             };
 
             agent.Network.OnlosedChatroom += () => {
