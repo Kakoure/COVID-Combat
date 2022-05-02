@@ -5,9 +5,14 @@ namespace PlayFab.Networking
     using UnityEngine;
     using Mirror;
     using UnityEngine.Events;
+    using Adrenak.UniVoice.InbuiltImplementations;
+    using Adrenak.UniVoice;
 
     public class UnityNetworkServer : NetworkManager
     {
+        ChatroomAgent agent;
+        public string voiceChatroomName;
+        bool hostingVCRoom;
         public static UnityNetworkServer Instance { get; private set; }
 
         public PlayerEvent OnPlayerAdded = new PlayerEvent();
@@ -31,6 +36,8 @@ namespace PlayFab.Networking
             base.Awake();
             Instance = this;
             NetworkServer.RegisterHandler<ReceiveAuthenticateMessage>(OnReceiveAuthenticate);
+            InitializeAgent();
+            hostingVCRoom = false;
         }
 
         public void StartListen()
@@ -95,6 +102,122 @@ namespace PlayFab.Networking
                 }
                 _connections.Remove(uconn);
             }
+        }
+
+        public override void OnStartClient()
+        {
+            base.OnStartClient();
+            //Join the voice chat room
+            if (!hostingVCRoom)
+            {
+                Debug.Log("Joining Room");
+                agent.Network.JoinChatroom(voiceChatroomName);
+                
+            }
+            agent.MuteSelf = false;
+        }
+
+        public override void OnStartServer()
+        {
+            base.OnStartServer();
+            hostingVCRoom = true;
+            //Host the voice chat room
+            if (agent.CurrentMode == ChatroomAgentMode.Unconnected)
+            {
+                Debug.Log("Hosting Room");
+                agent.Network.HostChatroom(voiceChatroomName);
+
+            }
+            
+            agent.MuteSelf = true;
+        }
+
+        public override void OnClientDisconnect()
+        {
+            base.OnClientDisconnect();
+            agent.Network.LeaveChatroom();
+        }
+
+        public override void OnStopServer()
+        {
+            base.OnStopServer();
+            agent.Network.CloseChatroom();
+        }
+        void InitializeAgent()
+        {
+            // 167.71.17.13:11000 is a test server hosted by the creator of UniVoice.
+            // This server should NOT be used in any serious application or production as it
+            // is neither secure nor gaurunteed to be online which will cause your
+            // apps to fail. 
+            // 
+            // Host your own signalling server on something like DigitalOcean, AWS etc.
+            // The test server is node based and its code is here: github.com/adrenak/airsignal
+            agent = new InbuiltChatroomAgentFactory("ws://167.71.17.13:11000").Create();
+
+            // HOSTING
+            agent.Network.OnCreatedChatroom += () => {
+                var chatroomName = agent.Network.CurrentChatroomName;
+                ShowMessage($"Chatroom \"{chatroomName}\" created!\n" +
+                $" You are Peer ID 0");
+            };
+
+            agent.Network.OnChatroomCreationFailed += ex => {
+                ShowMessage("Chatroom creation failed");
+            };
+
+            agent.Network.OnlosedChatroom += () => {
+                ShowMessage("You closed the chatroom! All peers have been kicked");
+
+            };
+
+            // JOINING
+            agent.Network.OnJoinedChatroom += id => {
+                var chatroomName = agent.Network.CurrentChatroomName;
+                ShowMessage("Joined chatroom " + chatroomName);
+                ShowMessage("You are Peer ID " + id);
+
+            };
+
+            agent.Network.OnChatroomJoinFailed += ex => {
+                ShowMessage(ex);
+            };
+
+            agent.Network.OnLeftChatroom += () => {
+                ShowMessage("You left the chatroom");
+
+            };
+
+            // PEERS
+
+            /*
+            agent.Network.OnPeerJoinedChatroom += id => {
+                var view = Instantiate(peerViewTemplate, peerViewContainer);
+                view.IncomingAudio = !agent.PeerSettings[id].muteThem;
+                view.OutgoingAudio = !agent.PeerSettings[id].muteSelf;
+
+                view.OnIncomingModified += value =>
+                    agent.PeerSettings[id].muteThem = !value;
+
+                view.OnOutgoingModified += value =>
+                    agent.PeerSettings[id].muteSelf = !value;
+
+                peerViews.Add(id, view);
+                view.SetPeerID(id);
+            };
+
+            agent.Network.OnPeerLeftChatroom += id => {
+                var peerViewInstance = peerViews[id];
+                Destroy(peerViewInstance.gameObject);
+                peerViews.Remove(id);
+            };
+            */
+        }
+        void ShowMessage(object obj)
+        {
+            Debug.Log("<color=blue>" + obj + "</color>");
+            //menuMessage.text = obj.ToString();
+            //if (agent.CurrentMode != ChatroomAgentMode.Unconnected)
+            //    chatroomMessage.text = obj.ToString();
         }
     }
 
