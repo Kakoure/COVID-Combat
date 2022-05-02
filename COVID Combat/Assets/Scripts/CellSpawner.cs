@@ -23,6 +23,7 @@ public class CellSpawner : NetworkBehaviour
     {
         public GameObject objPrefab;
         public GameObject containerObj;
+        public string origintag;
         public Queue<GameObject> pooledObjects;
         public int amountToPool;
         public float spawnWeight;
@@ -64,10 +65,10 @@ public class CellSpawner : NetworkBehaviour
         }
     }
 
-    void GenerateObjects()
+    void GenerateObjects()  
     {
         for(int i = 0; i < spawnableItems.Count; i++) {
-            var pool = spawnableItems[i];
+            var pool = spawnableItems[i];    
             pool.pooledObjects = new Queue<GameObject>();
             spawnableItems[i] = pool;
         }
@@ -77,6 +78,7 @@ public class CellSpawner : NetworkBehaviour
     {
         var newObj = Instantiate(pool.objPrefab, pool.containerObj.transform);
         newObj.SetActive(true);
+        newObj.tag=pool.origintag;
         var moveNet = newObj.GetComponent<CellMoveNetwork>();
         moveNet.despawnDistance = despawnDistance;
         moveNet.playerObj = playerObj;
