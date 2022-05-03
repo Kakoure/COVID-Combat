@@ -14,11 +14,17 @@ public class ShooterControls : NetworkBehaviour
     GameObject cameraObj;
 
     public string shootButton;
+    public string bleachButton;
     bool shootPressed;
     float timeLastShot;
     Vector3 aimPoint;
     public Transform shotOrigin;
     public GameObject shotObj;
+
+
+    public PowerBar powerBar;
+
+    public bleachpower bleachCntrl;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +44,8 @@ public class ShooterControls : NetworkBehaviour
         }
         HandleAim();
         HandleShoot();
+        HandleBleach();
+        
         
     }
 
@@ -101,5 +109,38 @@ public class ShooterControls : NetworkBehaviour
         NetworkServer.Spawn(newProj);
         cntrl.RpcStartParticles();
 
+    }
+
+    void HandleBleach()
+    {
+        if (Input.GetButtonDown(bleachButton))
+        {
+            CmdHandleBleach();
+        }
+    }
+
+    [Command(requiresAuthority = false)]
+    public void CmdHandleBleach()
+    {
+        if(bleachCntrl.slider.value == bleachCntrl.slider.maxValue)
+        {
+            powerBar.SetPower(0);
+            RpcSetPower(0);
+            bleachCntrl.unleashbleach();
+        }
+    }
+
+
+
+    [Command]
+    void CmdSetPower(int val)
+    {
+        RpcSetPower(val);
+    }
+
+    [ClientRpc]
+    void RpcSetPower(int val)
+    {
+        powerBar.SetPower(val);
     }
 }

@@ -2,40 +2,73 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Mirror;
 
-public class bleachpower : MonoBehaviour
+public class bleachpower : NetworkBehaviour
 {
    // [SerializeField] FlashImage _flashImage = null;
    // [SerializeField] Color _newColor = Color.red;
     public float dis = 1000f;
     public Slider slider;
+    public GameObject chargedParticles;
+    public Image bleachImg;
+    public LayerMask killMask;
+    public CameraShake camShake;
+    public Image flashImage;
+
+    bool isReady;
 
     // Start is called before the first frame update
     public void unleashbleach()
     {
-        if (slider.value == 100f)
+        if (!isServer)
         {
-            //Debug.Log("unleashed");
-            GameObject[] covidgroup;
-
-            covidgroup = GameObject.FindGameObjectsWithTag("virus");
-
-            Vector3 position = transform.position;
-            //_flashImage.startflash(.25f, .5f, _newColor);
-            foreach (GameObject covid in covidgroup)
+            return;
+        }
+        RpcBleachSequence();
+        Collider[] hitCells = Physics.OverlapSphere(transform.position, dis, killMask, QueryTriggerInteraction.Collide);
+        foreach (Collider cell in hitCells)
+        {
+            var cellCntrl = cell.gameObject.GetComponent<CellMoveNetwork>();
+            cellCntrl.ReturnCellToPool();
+            if (cell.CompareTag("virus"))
             {
-
-                Vector3 diss = covid.transform.position - position;
-                float curdiss = diss.sqrMagnitude;
-                if (curdiss > dis)
-                {
-                    covid.GetComponent<Explosion>().explode();
-                }
+                GameObject.Find("Score").GetComponent<ScoreTracker>().IncreaseScore();
             }
-            slider.value = 0f;
+        }
+
+
+    }
+
+    private void Update()
+    {
+        if(!isReady && slider.value == slider.maxValue)
+        {
+            bleachImg.color = Color.white;
+            chargedParticles.SetActive(true);
+            isReady = true;
+        } else if (isReady && slider.value != slider.maxValue)
+        {
+            bleachImg.color = Color.gray;
+            chargedParticles.SetActive(false);
+            isReady = false;
         }
     }
 
+    [ClientRpc]
+    void RpcBleachSequence()
+    {
+        StartCoroutine(BleachFlash());
+    }
 
+    IEnumerator BleachFlash()
+    {
+        camShake.SetShake(3f);
+        for(float i = 1f; i > 0f; i -= .04f)
+        {
+            flashImage.color = new Color(1f, 1f, 1f, i);
+            yield return new WaitForSeconds(.05f);
+        }
+    }
 
 }

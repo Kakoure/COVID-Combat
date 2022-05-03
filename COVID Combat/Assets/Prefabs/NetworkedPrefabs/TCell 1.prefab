@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 1311363816632574180}
   m_Layer: 7
   m_Name: TCell 1
-  m_TagString: Untagged
+  m_TagString: tc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

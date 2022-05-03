@@ -223,6 +223,7 @@ public class PlayerScript : NetworkBehaviour
     [Command]
     void CmdGetPower(int val)
     {
+        currentPower = (int)powerbar.slider.value;
         currentPower += val;
         RpcSetPower(currentPower);
     }
