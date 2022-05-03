@@ -28,6 +28,9 @@ public class PlayerScript : NetworkBehaviour
     [SerializeField]
     Image fadeImage;
     bool dying;
+    //-----
+    bool winning;
+    //-------
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +42,7 @@ public class PlayerScript : NetworkBehaviour
         rb = GetComponent<Rigidbody>();
         outline = windsheild.GetComponent<Outline>();
         dying = false;
-
+        winning = false;
     }
 
     void OnCollisionEnter(Collision collision)
@@ -133,6 +136,15 @@ public class PlayerScript : NetworkBehaviour
                 CmdDeathSequence();
                 
             }
+            //------------
+            Debug.Log(GameObject.Find("Score").GetComponent<ScoreTracker>().score);
+            if (GameObject.Find("Score").GetComponent<ScoreTracker>().score >= 50 && !winning)
+            {
+                Debug.Log("Winner winner");
+                winning = true;
+                CmdWinSequence();
+            }
+            //----------
         }
     }
 
@@ -305,6 +317,43 @@ public class PlayerScript : NetworkBehaviour
         if (isServer)
         {
             NetworkManager.singleton.ServerChangeScene("Death Screen");
+        }
+    }
+
+
+
+    //---------
+    [Command]
+    void CmdWinSequence()
+    {
+        RpcWinSequence();
+        Debug.Log("CmdWinSequence");
+        StartCoroutine(WinCoroutine());
+        Debug.Log("CmdWinSequence end");
+    }
+
+    [ClientRpc]
+    void RpcWinSequence()
+    {
+        Debug.Log("Ok come on we won rpc");
+        StartCoroutine(WinCoroutine());
+    }
+
+    IEnumerator WinCoroutine()
+    {
+        winning = true;
+        Debug.Log("In WinCoroutine");
+        for (float i = 0f; i < 1.2f; i += .005f)
+        {
+            fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, i);
+
+
+            yield return new WaitForSeconds(.01f);
+        }
+
+        if (isServer)
+        {
+            NetworkManager.singleton.ServerChangeScene("Win Screen");
         }
     }
 }

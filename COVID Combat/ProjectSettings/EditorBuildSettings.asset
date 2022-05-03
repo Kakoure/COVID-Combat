@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Death Screen.unity
     guid: 3207471054fef7d4884f6981e657d8fc
+  - enabled: 1
+    path: Assets/Scenes/Win Screen.unity
+    guid: e41dd6c881c8b324086c8c76ebce5587
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f09635346fcf1d44ea6184c3ef96af03,
       type: 2}
