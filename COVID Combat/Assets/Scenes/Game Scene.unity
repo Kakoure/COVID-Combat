@@ -4651,7 +4651,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1278519973}
+  - {fileID: 1376948198}
   m_Father: {fileID: 517007007}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4934,9 +4934,10 @@ GameObject:
   - component: {fileID: 1278519971}
   - component: {fileID: 1278519974}
   - component: {fileID: 1278519975}
+  - component: {fileID: 1278519976}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5005,7 +5006,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1596905567}
-  m_Father: {fileID: 1200515049}
+  m_Father: {fileID: 1376948198}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1278519974
@@ -5042,6 +5043,52 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 32
   pressButton: js2
+--- !u!114 &1278519976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278519970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24aa36c2a3b9f94da366b1e5b8d812c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeDamper: 5
+  shakeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -5.0110292
+      value: 1.0057718
+      inSlope: -0.111732535
+      outSlope: -0.0027232673
+      tangentMode: 65
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.1841481
+    - serializedVersion: 3
+      time: -0.00039672852
+      value: 0.99212646
+      inSlope: -0.0027232673
+      outSlope: -1.621284
+      tangentMode: 5
+      weightedMode: 0
+      inWeight: 0.10738408
+      outWeight: 0.0918497
+    - serializedVersion: 3
+      time: 1.0005233
+      value: 0.00009849761
+      inSlope: 0.11166063
+      outSlope: 0.11166063
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.06274428
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1284440465
 GameObject:
   m_ObjectHideFlags: 0
@@ -5265,6 +5312,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 160, y: 70, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1376948197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1376948198}
+  m_Layer: 0
+  m_Name: CamShakeContainer
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1376948198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376948197}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1278519973}
+  m_Father: {fileID: 1200515049}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1393796275
 GameObject:
   m_ObjectHideFlags: 0
@@ -12186,6 +12265,7 @@ MonoBehaviour:
   source_rbc: {fileID: 2063515912}
   source_tc: {fileID: 2063515911}
   source_mgc: {fileID: 2063515913}
+  camShake: {fileID: 1278519976}
   windsheild: {fileID: 1811527680}
   powerbar: {fileID: 1678024463}
   healthBar: {fileID: 127639172}

@@ -13,7 +13,7 @@ namespace PlayFab.Networking
 
     public class UnityNetworkServer : NetworkManager
     {
-
+        public bool voiceChatEnabled;
         public string voiceChatroomName;
         public string agoraAppID;
         public string agoraToken;
@@ -230,7 +230,11 @@ namespace PlayFab.Networking
         public override void OnStartClient()
         {
             base.OnStartClient();
-            JoinVoiceChannel();
+            if (voiceChatEnabled)
+            {
+                JoinVoiceChannel();
+            }
+            
 
         }
 
@@ -244,7 +248,10 @@ namespace PlayFab.Networking
         public override void OnClientDisconnect()
         {
             base.OnClientDisconnect();
-
+            if (voiceChatEnabled)
+            {
+                LeaveVoiceChannel();
+            }
 
         }
 

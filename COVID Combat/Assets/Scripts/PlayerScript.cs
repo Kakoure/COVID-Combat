@@ -13,6 +13,7 @@ public class PlayerScript : NetworkBehaviour
     public AudioSource source_rbc;
     public AudioSource source_tc;
     public AudioSource source_mgc;
+    public CameraShake camShake;
     private int counter;
     public GameObject windsheild;
     Outline outline;
@@ -56,6 +57,7 @@ public class PlayerScript : NetworkBehaviour
             outline.OutlineColor = Color.red;
             outline.OutlineWidth = 10f;
             source_rbc.Play();
+            CmdShakeCam(1f);
         }
 
         else if (collision.gameObject.tag == "mgc")
@@ -65,6 +67,7 @@ public class PlayerScript : NetworkBehaviour
             outline.OutlineColor = Color.yellow;
             outline.OutlineWidth = 10f;
             source_mgc.Play();
+            CmdShakeCam(1f);
         }
 
         else if (collision.gameObject.tag == "tc")
@@ -81,6 +84,7 @@ public class PlayerScript : NetworkBehaviour
         else if (!collision.gameObject.name.Contains("BloodVessel"))
         {
             CmdTakeDamage(20);
+            CmdShakeCam(1f);
             Destroy(collision.gameObject);
         }
         else if(collision.gameObject.name.Contains("BloodVessel"))
@@ -88,6 +92,7 @@ public class PlayerScript : NetworkBehaviour
             if(collision.impulse.magnitude > 25f)
             {
                 CmdTakeDamage(10);
+                CmdShakeCam(1f);
             }
             
         }
@@ -143,7 +148,17 @@ public class PlayerScript : NetworkBehaviour
     }
 
 
+    [Command]
+    void CmdShakeCam(float len)
+    {
+        RpcShakeCam(len);
+    }
 
+    [ClientRpc]
+    void RpcShakeCam(float len)
+    {
+        camShake.SetShake(len);
+    }
 
 
     [Command]
