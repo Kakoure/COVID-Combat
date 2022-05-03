@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PressButtons : MonoBehaviour
 {
-    private const float _maxDistance = 1000;
+    private const float _maxDistance = 4000;
     private GameObject _gazedAtObject = null;
     public LayerMask interactsWith;
     public string pressButton;
