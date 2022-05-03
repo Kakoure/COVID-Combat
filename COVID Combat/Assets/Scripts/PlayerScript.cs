@@ -44,6 +44,7 @@ public class PlayerScript : NetworkBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        
         Debug.Log(collision.gameObject.name);
         if (!hasAuthority)
         {
@@ -57,32 +58,20 @@ public class PlayerScript : NetworkBehaviour
         }
         else if (collision.gameObject.tag == "rbc")
         {
-
-            outline.enabled = true;
-            outline.OutlineColor = Color.red;
-            outline.OutlineWidth = 10f;
-            source_rbc.Play();
-            CmdShakeCam(1f);
+            CmdTakeDamage(10);
+            CmdHitRBC();
         }
 
         else if (collision.gameObject.tag == "mgc")
         {
-
-            outline.enabled = true;
-            outline.OutlineColor = Color.yellow;
-            outline.OutlineWidth = 10f;
-            source_mgc.Play();
-            CmdShakeCam(1f);
+            CmdTakeDamage(20);
+            CmdHitMGC();
         }
 
         else if (collision.gameObject.tag == "tc")
         {
-
-            outline.enabled = true;
-            outline.OutlineColor = Color.blue;
-            outline.OutlineWidth = 10f;
             CmdGetPower(30);
-            source_tc.Play();
+            CmdHitTC();
         }
 
 
@@ -106,12 +95,14 @@ public class PlayerScript : NetworkBehaviour
 
     private void OnCollisionExit(Collision other)
     {
-        outline.enabled = false;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        outline.OutlineWidth = Mathf.Max(0f, outline.OutlineWidth -= 10 * Time.deltaTime); 
+        outline.OutlineColor = outline.OutlineColor = new Color(outline.OutlineColor.r, outline.OutlineColor.g, outline.OutlineColor.b, Mathf.Max(0f, outline.OutlineColor.a - 1 * Time.deltaTime));
         //Debug.Log(rb.velocity.magnitude);
         if (isServer)
         {
@@ -130,7 +121,61 @@ public class PlayerScript : NetworkBehaviour
     }
 
 
+    [Command]
+    void CmdHitRBC()
+    {
+        RpcColorShip(Color.red);
+        RpcShakeCam(1f);
+        RpcHitRBC();
+    }
 
+    [Command]
+    void CmdHitMGC()
+    {
+        RpcColorShip(Color.yellow);
+        RpcShakeCam(1f);
+        RpcHitMGC();
+    }
+
+    [Command]
+    void CmdHitTC()
+    {
+        RpcColorShip(Color.blue);
+        RpcShakeCam(1f);
+        RpcHitTC();
+    }
+
+    [ClientRpc]
+    void RpcHitRBC()
+    {
+        source_rbc.PlayOneShot(source_rbc.clip);
+    }
+
+    [ClientRpc]
+    void RpcHitMGC()
+    {
+        source_mgc.PlayOneShot(source_mgc.clip);
+    }
+
+    [ClientRpc]
+    void RpcHitTC()
+    {
+        source_tc.PlayOneShot(source_tc.clip);
+    }
+
+    [Command]
+    void CmdColorShip(Color color)
+    {
+        RpcColorShip(color);
+    }
+
+    [ClientRpc]
+    void RpcColorShip(Color color)
+    {
+        outline.enabled = true;
+        outline.OutlineWidth = 10f;
+        outline.OutlineColor = color;
+    }
 
     [Command]
     void CmdGetPower(int val)

@@ -123,10 +123,12 @@ public class CellSpawner : NetworkBehaviour
     }
     void SpawnObject()
     {
+        int spawnIters = 0;
         bool validSpawn = false;
         Vector3 spawnPos = Vector3.zero;
         var objToSpawn = GetNextObject();
-        while (!validSpawn)
+        var objBounds = objToSpawn.GetComponent<Collider>().bounds.extents;
+        while (!validSpawn && spawnIters < 1000)
         {
             var randAngle = Quaternion.Euler(UnityEngine.Random.Range(-180f, 180f), UnityEngine.Random.Range(-180f, 180f), UnityEngine.Random.Range(-180f, 180f));
             var spawnDistance = UnityEngine.Random.Range(spawnDistanceMin, spawnDistanceMax);
@@ -137,13 +139,18 @@ public class CellSpawner : NetworkBehaviour
                 return;
             }
             spawnPos = playerObj.transform.position + (randAngle * posVect * spawnDistance) + (playerObj.transform.forward * spawnOffset);
-            if(Physics.OverlapSphere(spawnPos, 10f, killMask, QueryTriggerInteraction.Collide).Length > 0)
+            if(Physics.OverlapSphere(spawnPos, Mathf.Max(objBounds.x, objBounds.y, objBounds.z) + 1f, killMask, QueryTriggerInteraction.Collide).Length > 0)
             {
                 validSpawn = false; 
             } else
             {
                 validSpawn = true;
             }
+        }
+
+        if(spawnIters >= 1000)
+        {
+            Debug.LogError("Failed to find valid spawn location!");
         }
         
 
