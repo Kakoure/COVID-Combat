@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
+using UnityEngine.UI;
 
 public class PlayerScript : NetworkBehaviour
 {
@@ -24,6 +25,9 @@ public class PlayerScript : NetworkBehaviour
 
     public PowerBar powerbar;
     public HealthBar healthBar;
+    [SerializeField]
+    Image fadeImage;
+    bool dying;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +38,7 @@ public class PlayerScript : NetworkBehaviour
         powerbar.SetMaxPower(maxPower);
         rb = GetComponent<Rigidbody>();
         outline = windsheild.GetComponent<Outline>();
+        dying = false;
 
     }
 
@@ -110,10 +115,11 @@ public class PlayerScript : NetworkBehaviour
         //Debug.Log(rb.velocity.magnitude);
         if (isServer)
         {
-            if (currentHealth <= 0)
+            if (currentHealth <= 0 && !dying)
             {
-
-                NetworkManager.singleton.ServerChangeScene("Death Screen");
+                dying = true;
+                CmdDeathSequence();
+                
             }
         }
     }
@@ -182,4 +188,33 @@ public class PlayerScript : NetworkBehaviour
         healthBar.SetHealth(val);
     }
 
+    [Command]
+    void CmdDeathSequence()
+    {
+        RpcDeathSequence();
+        StartCoroutine(DeathCoroutine());
+    }
+
+    [ClientRpc]
+    void RpcDeathSequence()
+    {
+        StartCoroutine(DeathCoroutine());
+    }
+    IEnumerator DeathCoroutine()
+    {
+        dying = true;
+        camShake.SetShake(5f);
+        for(float i = 0f; i < 1.2f; i += .005f)
+        {
+            fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, i);
+            
+
+            yield return new WaitForSeconds(.01f);
+        }
+
+        if (isServer)
+        {
+            NetworkManager.singleton.ServerChangeScene("Death Screen");
+        }
+    }
 }

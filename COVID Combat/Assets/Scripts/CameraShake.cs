@@ -21,7 +21,7 @@ public class CameraShake : MonoBehaviour
 
     public void SetShake(float amount)
     {
-        t = 1-amount;
+        t = Mathf.Min(t, 1-amount);
     }
 }
 
