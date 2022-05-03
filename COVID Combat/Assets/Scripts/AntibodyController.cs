@@ -32,6 +32,12 @@ public class AntibodyController : NetworkBehaviour
         {
             return;
         }
+        //Debug.Log("Hit obj");
+        if (collision.gameObject.tag == "virus")
+        {
+            collision.gameObject.GetComponent<Explosion>().explode();
+            GameObject.Find("Score").GetComponent<ScoreTracker>().IncreaseScore();
+        }
         NetworkServer.Destroy(gameObject);
     }
 
