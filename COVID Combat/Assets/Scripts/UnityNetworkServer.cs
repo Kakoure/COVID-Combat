@@ -5,13 +5,19 @@ namespace PlayFab.Networking
     using UnityEngine;
     using Mirror;
     using UnityEngine.Events;
-    using Adrenak.UniVoice.InbuiltImplementations;
-    using Adrenak.UniVoice;
+#if (UNITY_2018_3_OR_NEWER)
+    using UnityEngine.Android;
+#endif
+    using agora_gaming_rtc;
+
 
     public class UnityNetworkServer : NetworkManager
     {
-        ChatroomAgent agent;
+
         public string voiceChatroomName;
+        public string agoraAppID;
+        public string agoraToken;
+        private IRtcEngine mRtcEngine = null;
         public static UnityNetworkServer Instance { get; private set; }
 
         public PlayerEvent OnPlayerAdded = new PlayerEvent();
@@ -35,9 +41,121 @@ namespace PlayFab.Networking
             base.Awake();
             Instance = this;
             NetworkServer.RegisterHandler<ReceiveAuthenticateMessage>(OnReceiveAuthenticate);
-            #if !UNITY_SERVER
-            InitializeAgent();
-            #endif
+#if !UNITY_SERVER
+#if (UNITY_2018_3_OR_NEWER)
+            if (Permission.HasUserAuthorizedPermission(Permission.Microphone))
+            {
+
+            }
+            else
+            {
+                Permission.RequestUserPermission(Permission.Microphone);
+            }
+#endif
+            mRtcEngine = IRtcEngine.GetEngine(agoraAppID);
+
+            mRtcEngine.OnJoinChannelSuccess += (string channelName, uint uid, int elapsed) =>
+            {
+                string joinSuccessMessage = string.Format("joinChannel callback uid: {0}, channel: {1}, version: {2}", uid, channelName, getAgoraSdkVersion());
+                Debug.Log(joinSuccessMessage);
+              
+            };
+
+            mRtcEngine.OnLeaveChannel += (RtcStats stats) =>
+            {
+                string leaveChannelMessage = string.Format("onLeaveChannel callback duration {0}, tx: {1}, rx: {2}, tx kbps: {3}, rx kbps: {4}", stats.duration, stats.txBytes, stats.rxBytes, stats.txKBitRate, stats.rxKBitRate);
+                Debug.Log(leaveChannelMessage);
+               
+            };
+
+            mRtcEngine.OnUserJoined += (uint uid, int elapsed) =>
+            {
+                string userJoinedMessage = string.Format("onUserJoined callback uid {0} {1}", uid, elapsed);
+                Debug.Log(userJoinedMessage);
+            };
+
+            mRtcEngine.OnUserOffline += (uint uid, USER_OFFLINE_REASON reason) =>
+            {
+                string userOfflineMessage = string.Format("onUserOffline callback uid {0} {1}", uid, reason);
+                Debug.Log(userOfflineMessage);
+            };
+
+            mRtcEngine.OnVolumeIndication += (AudioVolumeInfo[] speakers, int speakerNumber, int totalVolume) =>
+            {
+                if (speakerNumber == 0 || speakers == null)
+                {
+                    Debug.Log(string.Format("onVolumeIndication only local {0}", totalVolume));
+                }
+
+                for (int idx = 0; idx < speakerNumber; idx++)
+                {
+                    string volumeIndicationMessage = string.Format("{0} onVolumeIndication {1} {2}", speakerNumber, speakers[idx].uid, speakers[idx].volume);
+                    Debug.Log(volumeIndicationMessage);
+                }
+            };
+
+            mRtcEngine.OnUserMutedAudio += (uint uid, bool muted) =>
+            {
+                string userMutedMessage = string.Format("onUserMuted callback uid {0} {1}", uid, muted);
+                Debug.Log(userMutedMessage);
+            };
+
+            mRtcEngine.OnWarning += (int warn, string msg) =>
+            {
+                string description = IRtcEngine.GetErrorDescription(warn);
+                string warningMessage = string.Format("onWarning callback {0} {1} {2}", warn, msg, description);
+                Debug.Log(warningMessage);
+            };
+
+            mRtcEngine.OnError += (int error, string msg) =>
+            {
+                string description = IRtcEngine.GetErrorDescription(error);
+                string errorMessage = string.Format("onError callback {0} {1} {2}", error, msg, description);
+                Debug.Log(errorMessage);
+            };
+
+            mRtcEngine.OnRtcStats += (RtcStats stats) =>
+            {
+                string rtcStatsMessage = string.Format("onRtcStats callback duration {0}, tx: {1}, rx: {2}, tx kbps: {3}, rx kbps: {4}, tx(a) kbps: {5}, rx(a) kbps: {6} users {7}",
+                    stats.duration, stats.txBytes, stats.rxBytes, stats.txKBitRate, stats.rxKBitRate, stats.txAudioKBitRate, stats.rxAudioKBitRate, stats.userCount);
+                Debug.Log(rtcStatsMessage);
+
+                int lengthOfMixingFile = mRtcEngine.GetAudioMixingDuration();
+                int currentTs = mRtcEngine.GetAudioMixingCurrentPosition();
+
+                string mixingMessage = string.Format("Mixing File Meta {0}, {1}", lengthOfMixingFile, currentTs);
+                Debug.Log(mixingMessage);
+            };
+
+            mRtcEngine.OnAudioRouteChanged += (AUDIO_ROUTE route) =>
+            {
+                string routeMessage = string.Format("onAudioRouteChanged {0}", route);
+                Debug.Log(routeMessage);
+            };
+
+            mRtcEngine.OnRequestToken += () =>
+            {
+                string requestKeyMessage = string.Format("OnRequestToken");
+                Debug.Log(requestKeyMessage);
+            };
+
+            mRtcEngine.OnConnectionInterrupted += () =>
+            {
+                string interruptedMessage = string.Format("OnConnectionInterrupted");
+                Debug.Log(interruptedMessage);
+            };
+
+            mRtcEngine.OnConnectionLost += () =>
+            {
+                string lostMessage = string.Format("OnConnectionLost");
+                Debug.Log(lostMessage);
+            };
+
+            mRtcEngine.SetLogFilter(LOG_FILTER.INFO);
+
+            mRtcEngine.SetChannelProfile(CHANNEL_PROFILE.CHANNEL_PROFILE_COMMUNICATION);
+
+#endif
         }
 
         public void StartListen()
@@ -50,6 +168,11 @@ namespace PlayFab.Networking
         {
             base.OnApplicationQuit();
             NetworkServer.Shutdown();
+            base.OnApplicationQuit();
+            if (mRtcEngine != null)
+            {
+                IRtcEngine.Destroy();
+            }
         }
 
         private void OnReceiveAuthenticate(NetworkConnectionToClient nconn, ReceiveAuthenticateMessage message)
@@ -107,10 +230,7 @@ namespace PlayFab.Networking
         public override void OnStartClient()
         {
             base.OnStartClient();
-            //Host/Join the voice chat room
-
-            Debug.Log("Hosting Room");
-            agent.Network.HostChatroom(voiceChatroomName);
+            JoinVoiceChannel();
 
         }
 
@@ -118,110 +238,49 @@ namespace PlayFab.Networking
         {
             
             base.OnStartServer();
-            /*
-            hostingVCRoom = true;
-            //Host the voice chat room
-            if (agent.CurrentMode == ChatroomAgentMode.Unconnected)
-            {
-                Debug.Log("Hosting Room");
-                agent.Network.HostChatroom(voiceChatroomName);
 
-            }
-            
-            agent.MuteSelf = true;
-            */
         }
 
         public override void OnClientDisconnect()
         {
             base.OnClientDisconnect();
-            agent.Network.LeaveChatroom();
+
+
         }
 
         public override void OnStopServer()
         {
             base.OnStopServer();
-            agent.Network.CloseChatroom();
+           
         }
-        void InitializeAgent()
+
+
+        public void JoinVoiceChannel()
         {
-            // 167.71.17.13:11000 is a test server hosted by the creator of UniVoice.
-            // This server should NOT be used in any serious application or production as it
-            // is neither secure nor gaurunteed to be online which will cause your
-            // apps to fail. 
-            // 
-            // Host your own signalling server on something like DigitalOcean, AWS etc.
-            // The test server is node based and its code is here: github.com/adrenak/airsignal
-            agent = new InbuiltChatroomAgentFactory("ws://167.71.17.13:11000").Create();
 
-            // HOSTING
-            agent.Network.OnCreatedChatroom += () => {
-                var chatroomName = agent.Network.CurrentChatroomName;
-                ShowMessage($"Chatroom \"{chatroomName}\" created!\n" +
-                $" You are Peer ID 0");
-            };
 
-            agent.Network.OnChatroomCreationFailed += ex => {
-                ShowMessage("Chatroom creation failed");
-                Debug.Log("Joining Room");
-                agent.Network.JoinChatroom(voiceChatroomName);
-                agent.MuteSelf = false;
-            };
+            Debug.Log(string.Format("tap joinChannel with channel name {0}", voiceChatroomName));
 
-            agent.Network.OnlosedChatroom += () => {
-                ShowMessage("You closed the chatroom! All peers have been kicked");
+            if (string.IsNullOrEmpty(voiceChatroomName))
+            {
+                return;
+            }
 
-            };
-
-            // JOINING
-            agent.Network.OnJoinedChatroom += id => {
-                var chatroomName = agent.Network.CurrentChatroomName;
-                ShowMessage("Joined chatroom " + chatroomName);
-                ShowMessage("You are Peer ID " + id);
-
-            };
-
-            agent.Network.OnChatroomJoinFailed += ex => {
-                ShowMessage(ex);
-            };
-
-            agent.Network.OnLeftChatroom += () => {
-                ShowMessage("You left the chatroom");
-
-            };
-
-            // PEERS
-
-            /*
-            agent.Network.OnPeerJoinedChatroom += id => {
-                var view = Instantiate(peerViewTemplate, peerViewContainer);
-                view.IncomingAudio = !agent.PeerSettings[id].muteThem;
-                view.OutgoingAudio = !agent.PeerSettings[id].muteSelf;
-
-                view.OnIncomingModified += value =>
-                    agent.PeerSettings[id].muteThem = !value;
-
-                view.OnOutgoingModified += value =>
-                    agent.PeerSettings[id].muteSelf = !value;
-
-                peerViews.Add(id, view);
-                view.SetPeerID(id);
-            };
-
-            agent.Network.OnPeerLeftChatroom += id => {
-                var peerViewInstance = peerViews[id];
-                Destroy(peerViewInstance.gameObject);
-                peerViews.Remove(id);
-            };
-            */
+            mRtcEngine.JoinChannelByKey(agoraToken, voiceChatroomName, "extra", 0);
         }
-        void ShowMessage(object obj)
+
+        public void LeaveVoiceChannel()
         {
-            Debug.Log("<color=blue>" + obj + "</color>");
-            //menuMessage.text = obj.ToString();
-            //if (agent.CurrentMode != ChatroomAgentMode.Unconnected)
-            //    chatroomMessage.text = obj.ToString();
+            mRtcEngine.LeaveChannel();
+            Debug.Log(string.Format("left channel name {0}", voiceChatroomName));
         }
+
+        public string getAgoraSdkVersion()
+        {
+            string ver = IRtcEngine.GetSdkVersion();
+            return ver;
+        }
+
     }
 
     [Serializable]

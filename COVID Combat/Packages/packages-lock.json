@@ -1,29 +1,5 @@
 {
   "dependencies": {
-    "com.adrenak.airpeer": {
-      "version": "1.2.0",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://package.openupm.com"
-    },
-    "com.adrenak.unimic": {
-      "version": "1.0.3",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://package.openupm.com"
-    },
-    "com.adrenak.univoice": {
-      "version": "1.1.4",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.adrenak.unimic": "1.0.3",
-        "com.adrenak.airpeer": "1.2.0"
-      },
-      "url": "https://package.openupm.com"
-    },
     "com.google.xr.cardboard": {
       "version": "https://github.com/googlevr/cardboard-xr-plugin.git",
       "depth": 0,

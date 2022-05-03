@@ -1,8 +1,5 @@
 {
   "dependencies": {
-    "com.adrenak.airpeer": "1.2.0",
-    "com.adrenak.unimic": "1.0.3",
-    "com.adrenak.univoice": "1.1.4",
     "com.google.xr.cardboard": "https://github.com/googlevr/cardboard-xr-plugin.git",
     "com.unity.collab-proxy": "1.15.13",
     "com.unity.ide.rider": "3.0.12",
