@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.23308674, g: 0.23605686, b: 0.27302542, a: 1}
+  m_IndirectSpecularColor: {r: 0.23282295, g: 0.23444027, b: 0.27287063, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17407,7 +17407,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  score: 0
   scoreObj: {fileID: 1884859627}
+  fadeImage: {fileID: 1270273401}
 --- !u!114 &1884859632
 MonoBehaviour:
   m_ObjectHideFlags: 0
