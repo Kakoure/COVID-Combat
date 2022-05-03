@@ -11,7 +11,8 @@ public class ShooterControls : NetworkBehaviour
     public float projSpeed;
     GameObject pointerTargetObject = null;
     public GunRotation gunRot;
-    GameObject cameraObj;
+    
+    public GameObject cameraObj;
 
     public string shootButton;
     public string bleachButton;
@@ -44,7 +45,7 @@ public class ShooterControls : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cameraObj = GameObject.FindGameObjectWithTag("MainCamera");
+        //cameraObj = GameObject.FindGameObjectWithTag("MainCamera");
         timeLastShot = Time.time;
         usingAltWeapon = false;
     }
