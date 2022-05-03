@@ -67,7 +67,7 @@ public class bleachpower : NetworkBehaviour
         for(float i = 1f; i > 0f; i -= .04f)
         {
             flashImage.color = new Color(1f, 1f, 1f, i);
-            yield return new WaitForSeconds(.05f);
+            yield return new WaitForSeconds(.1f);
         }
     }
 

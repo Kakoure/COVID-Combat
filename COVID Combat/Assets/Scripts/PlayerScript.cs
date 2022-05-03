@@ -72,7 +72,7 @@ public class PlayerScript : NetworkBehaviour
             CmdTakeDamage(20);
             CmdHitMGC();
             var cellCntrl = collision.gameObject.GetComponent<CellMoveNetwork>();
-            cellCntrl.CmdReturnCellToPool();
+            //cellCntrl.CmdReturnCellToPool();
         }
 
         else if (collision.gameObject.CompareTag("tc"))
@@ -290,7 +290,7 @@ public class PlayerScript : NetworkBehaviour
         healthBar.SetHealth(val);
     }
 
-    [Command]
+    [Command(requiresAuthority = false)]
     void CmdDeathSequence()
     {
         RpcDeathSequence();
