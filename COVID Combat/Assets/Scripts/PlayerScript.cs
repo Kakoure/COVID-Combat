@@ -158,7 +158,7 @@ public class PlayerScript : NetworkBehaviour
     {
         RpcColorShip(Color.gray);
         RpcShakeCam(1f);
-        //RpcHitVirus();
+        RpcHitVirus();
     }
 
     [Command]
@@ -192,6 +192,12 @@ public class PlayerScript : NetworkBehaviour
         RpcColorShip(Color.green);
         //RpcShakeCam(1f);
         RpcHitBC();
+    }
+
+    [ClientRpc]
+    void RpcHitVirus()
+    {
+        source_rbc.PlayOneShot(source_rbc.clip);
     }
 
     [ClientRpc]
