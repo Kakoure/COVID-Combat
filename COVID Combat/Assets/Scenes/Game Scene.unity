@@ -16249,8 +16249,8 @@ MonoBehaviour:
   projSpeed: 10
   gunRot: {fileID: 1269895474}
   shootButton: js14
-  bleachButton: Fire1
-  swapWeapon: Submit
+  bleachButton: js3
+  swapWeapon: js10
   shotOrigin: {fileID: 1030444612}
   shotObj: {fileID: 2663123144354780821, guid: 1b6725632af998544a8cea628f4766b8, type: 3}
   usingAltWeapon: 0
