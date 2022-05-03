@@ -3152,7 +3152,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Collect B and T cells to fill the Bleach Power Up
+  m_text: Collect B and T cells to heal and fill the Bleach Power Up
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 41367f43b3b41ba4d83e0ea811403bdf, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 41367f43b3b41ba4d83e0ea811403bdf, type: 2}
@@ -3416,7 +3416,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Collisions with megakaryocyte and red blood cells reduce speed
+  m_text: Collisions with megakaryocyte and red blood cells deal damage and reduce
+    speed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 41367f43b3b41ba4d83e0ea811403bdf, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 41367f43b3b41ba4d83e0ea811403bdf, type: 2}
@@ -3533,7 +3534,7 @@ PrefabInstance:
     - target: {fileID: 7420789806503199591, guid: 4ca5bb81780c277419fafda2d49e22cc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.015
+      value: 4.43
       objectReference: {fileID: 0}
     - target: {fileID: 7420789806503199591, guid: 4ca5bb81780c277419fafda2d49e22cc,
         type: 3}
@@ -12659,7 +12660,7 @@ PrefabInstance:
     - target: {fileID: 2158443768102552789, guid: 2a854f8ec4161b244a19401fcba4aa4d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.98
+      value: 4.43
       objectReference: {fileID: 0}
     - target: {fileID: 2158443768102552789, guid: 2a854f8ec4161b244a19401fcba4aa4d,
         type: 3}
