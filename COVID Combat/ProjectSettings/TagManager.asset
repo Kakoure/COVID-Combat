@@ -11,6 +11,7 @@ TagManager:
   - tc
   - mgc
   - antibody
+  - bc
   layers:
   - Default
   - TransparentFX

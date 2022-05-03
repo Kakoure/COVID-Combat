@@ -12,6 +12,8 @@ public class CellMoveNetwork : NetworkBehaviour
     public float despawnDistance;
     public GameObject playerObj;
     CellSpawner.ObjectPool pool;
+    [SerializeField]
+    GameObject deathParticles;
 
 
     // Start is called before the first frame update
@@ -38,10 +40,7 @@ public class CellMoveNetwork : NetworkBehaviour
         var distance = (playerObj.transform.position - transform.position).magnitude;
         if (distance >= despawnDistance)
         {
-            RpcHideObj();
-            gameObject.SetActive(false);
-            //pool.pooledObjects.Enqueue(gameObject);
-            NetworkServer.UnSpawn(gameObject);
+            ReturnCellToPool();
         }
     }
     void BloodCellMove()
@@ -53,6 +52,32 @@ public class CellMoveNetwork : NetworkBehaviour
     private void OnTriggerEnter(Collision collision)
     {
 
+    }
+
+    [Command(requiresAuthority =false)]
+    public void CmdReturnCellToPool()
+    {
+        ReturnCellToPool();
+    }
+
+    [Command]
+    public void CmdShowParticles()
+    {
+        RpcShowParticles();
+    }
+
+    [ClientRpc]
+    public void RpcShowParticles()
+    {
+        Instantiate(deathParticles, transform.position, Quaternion.identity);
+    }
+
+    public void ReturnCellToPool()
+    {
+        RpcHideObj();
+        gameObject.SetActive(false);
+        //pool.pooledObjects.Enqueue(gameObject);
+        NetworkServer.UnSpawn(gameObject);
     }
 
     [ClientRpc]
@@ -72,4 +97,9 @@ public class CellMoveNetwork : NetworkBehaviour
         this.pool = pool;
     }
 
+    public override void OnStopClient()
+    {
+        base.OnStopClient();
+        Instantiate(deathParticles, transform.position, Quaternion.identity);
+    }
 }

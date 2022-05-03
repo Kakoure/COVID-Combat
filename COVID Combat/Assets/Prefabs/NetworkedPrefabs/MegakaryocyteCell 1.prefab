@@ -186,6 +186,8 @@ MonoBehaviour:
   syncInterval: 0.1
   despawnDistance: 0
   playerObj: {fileID: 0}
+  deathParticles: {fileID: 8293529623468880994, guid: 551268575bdd7d0418d62fe3a646508e,
+    type: 3}
 --- !u!114 &1416666163059118084
 MonoBehaviour:
   m_ObjectHideFlags: 0

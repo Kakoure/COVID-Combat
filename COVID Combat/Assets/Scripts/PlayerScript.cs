@@ -56,22 +56,43 @@ public class PlayerScript : NetworkBehaviour
         {
             
         }
-        else if (collision.gameObject.tag == "rbc")
+        else if (collision.gameObject.CompareTag("rbc"))
         {
             CmdTakeDamage(10);
             CmdHitRBC();
+            var cellCntrl = collision.gameObject.GetComponent<CellMoveNetwork>();
+            cellCntrl.CmdReturnCellToPool();
         }
 
-        else if (collision.gameObject.tag == "mgc")
+        else if (collision.gameObject.CompareTag("mgc"))
         {
             CmdTakeDamage(20);
             CmdHitMGC();
+            var cellCntrl = collision.gameObject.GetComponent<CellMoveNetwork>();
+            cellCntrl.CmdReturnCellToPool();
         }
 
-        else if (collision.gameObject.tag == "tc")
+        else if (collision.gameObject.CompareTag("tc"))
         {
             CmdGetPower(30);
             CmdHitTC();
+            var cellCntrl = collision.gameObject.GetComponent<CellMoveNetwork>();
+            cellCntrl.CmdReturnCellToPool();
+        }
+
+
+        else if (collision.gameObject.CompareTag("bc"))
+        {
+            CmdTakeDamage(-10);
+            CmdHitBC();
+            var cellCntrl = collision.gameObject.GetComponent<CellMoveNetwork>();
+            cellCntrl.CmdReturnCellToPool();
+        }
+
+        else if (collision.gameObject.CompareTag("virus"))
+        {
+            CmdTakeDamage(20);
+            CmdHitVirus();
         }
 
 
@@ -79,7 +100,7 @@ public class PlayerScript : NetworkBehaviour
         {
             CmdTakeDamage(20);
             CmdShakeCam(1f);
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
         }
         else if(collision.gameObject.name.Contains("BloodVessel"))
         {
@@ -120,6 +141,13 @@ public class PlayerScript : NetworkBehaviour
 
     }
 
+    [Command]
+    void CmdHitVirus()
+    {
+        RpcColorShip(Color.gray);
+        RpcShakeCam(1f);
+        //RpcHitVirus();
+    }
 
     [Command]
     void CmdHitRBC()
@@ -141,8 +169,17 @@ public class PlayerScript : NetworkBehaviour
     void CmdHitTC()
     {
         RpcColorShip(Color.blue);
-        RpcShakeCam(1f);
+        //RpcShakeCam(1f);
         RpcHitTC();
+    }
+
+
+    [Command]
+    void CmdHitBC()
+    {
+        RpcColorShip(Color.green);
+        //RpcShakeCam(1f);
+        RpcHitBC();
     }
 
     [ClientRpc]
@@ -159,6 +196,12 @@ public class PlayerScript : NetworkBehaviour
 
     [ClientRpc]
     void RpcHitTC()
+    {
+        source_tc.PlayOneShot(source_tc.clip);
+    }
+
+    [ClientRpc]
+    void RpcHitBC()
     {
         source_tc.PlayOneShot(source_tc.clip);
     }
@@ -216,6 +259,7 @@ public class PlayerScript : NetworkBehaviour
     void CmdTakeDamage(int val)
     {
         currentHealth -= val;
+        currentHealth = (int)Mathf.Clamp(currentHealth, 0f, healthBar.GetMaxHealth());
         RpcSetHealth(currentHealth);
     }
 

@@ -8,6 +8,8 @@ public class AntibodyController : NetworkBehaviour
     public float maxLifetime;
     public float speed;
     float startTime;
+    [SerializeField]
+    GameObject deathParticles;
 
     // Update is called once per frame
     void Update()
@@ -16,6 +18,7 @@ public class AntibodyController : NetworkBehaviour
         startTime += Time.deltaTime;
         if(startTime >= maxLifetime)
         {
+
             NetworkServer.Destroy(gameObject);
         }
     }
@@ -33,9 +36,10 @@ public class AntibodyController : NetworkBehaviour
             return;
         }
         //Debug.Log("Hit obj");
-        if (collision.gameObject.tag == "virus")
+        if (collision.gameObject.CompareTag("virus"))
         {
-            collision.gameObject.GetComponent<Explosion>().explode();
+            var cellCntrl = collision.gameObject.GetComponent<CellMoveNetwork>();
+            cellCntrl.ReturnCellToPool();
             GameObject.Find("Score").GetComponent<ScoreTracker>().IncreaseScore();
         }
         NetworkServer.Destroy(gameObject);
@@ -48,6 +52,18 @@ public class AntibodyController : NetworkBehaviour
         {
             ps.Play();
         }
+    }
+
+    [ClientRpc]
+    public void RpcExplodeParticles()
+    {
+        Instantiate(deathParticles, transform.position, Quaternion.identity);
+    }
+
+    public override void OnStopClient()
+    {
+        base.OnStopClient();
+        Instantiate(deathParticles, transform.position, Quaternion.identity);
     }
 }
 

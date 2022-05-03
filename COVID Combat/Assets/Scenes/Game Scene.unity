@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.23308674, g: 0.23605686, b: 0.27302542, a: 1}
+  m_IndirectSpecularColor: {r: 0.2328035, g: 0.23442134, b: 0.27287462, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3963,6 +3963,7 @@ Transform:
   - {fileID: 1201412613}
   - {fileID: 1300564826}
   - {fileID: 1284440466}
+  - {fileID: 1366148009}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4710,7 +4711,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 409c35a8f0757a648bc88f478d9df7cc, type: 2}
+  - {fileID: -6478536213147159724, guid: 01b5221504862df40978d27d58e5d2f7, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5383,6 +5384,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 160, y: 70, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1366148008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1366148009}
+  m_Layer: 0
+  m_Name: B Cell
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1366148009
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366148008}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 953084865}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1376948197
 GameObject:
   m_ObjectHideFlags: 0
@@ -5642,7 +5674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  force: 100
+  force: 80
   turnRate: 1
   brakeButton: js0
   drivingEnabled: 1
@@ -13873,7 +13905,7 @@ MonoBehaviour:
     containerObj: {fileID: 138635740}
     origintag: virus
     amountToPool: 5000
-    spawnWeight: 1
+    spawnWeight: 1.5
   - objPrefab: {fileID: 7903854383883278813, guid: 397e4ebccad8377428e002029265bf6a,
       type: 3}
     containerObj: {fileID: 1201412612}
@@ -13892,6 +13924,12 @@ MonoBehaviour:
     origintag: tc
     amountToPool: 5000
     spawnWeight: 0.5
+  - objPrefab: {fileID: 7080630437718394824, guid: 3ff8ffb184f68dc4d80b3e78da5cfbda,
+      type: 3}
+    containerObj: {fileID: 1366148008}
+    origintag: bc
+    amountToPool: 5000
+    spawnWeight: 0.2
 --- !u!4 &2115587311
 Transform:
   m_ObjectHideFlags: 0

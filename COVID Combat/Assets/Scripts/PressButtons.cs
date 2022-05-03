@@ -20,24 +20,35 @@ public class PressButtons : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, _maxDistance, interactsWith))
         {
             // GameObject detected in front of the camera.
-            if (_gazedAtObject != hit.transform.gameObject)
+            if ((_gazedAtObject != null) && _gazedAtObject != hit.transform.gameObject)
             {
                 // New GameObject.
                 _gazedAtObject?.SendMessage("OnPointerExit");
-                _gazedAtObject = hit.transform.gameObject;
-                _gazedAtObject.SendMessage("OnPointerEnter");
+                
+                
             }
+
+            _gazedAtObject = hit.transform.gameObject;
+            _gazedAtObject.SendMessage("OnPointerEnter");
         }
         else
         {
             // No GameObject detected in front of the camera.
-            _gazedAtObject?.SendMessage("OnPointerExit");
+            if(_gazedAtObject != null)
+            {
+                _gazedAtObject?.SendMessage("OnPointerExit");
+            }
+            
             _gazedAtObject = null;
         }
 
         if (Input.GetButtonDown(pressButton))
         {
-            _gazedAtObject?.SendMessage("OnPointerClick");
+            if(_gazedAtObject != null)
+            {
+                _gazedAtObject?.SendMessage("OnPointerClick");
+            }
+           
         }
     }
 }

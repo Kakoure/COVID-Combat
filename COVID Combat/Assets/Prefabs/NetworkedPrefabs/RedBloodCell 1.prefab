@@ -34,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 7903854383883278813}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.3747635, y: -2.329648, z: -58.600353}
-  m_LocalScale: {x: 300, y: 300, z: 180}
+  m_LocalScale: {x: 450, y: 450, z: 270}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -187,6 +187,8 @@ MonoBehaviour:
   syncInterval: 0.1
   despawnDistance: 0
   playerObj: {fileID: 0}
+  deathParticles: {fileID: 938581741573750833, guid: cfb4ee46a90be55478cee949f3a7afe0,
+    type: 3}
 --- !u!114 &3144744548150942077
 MonoBehaviour:
   m_ObjectHideFlags: 0
