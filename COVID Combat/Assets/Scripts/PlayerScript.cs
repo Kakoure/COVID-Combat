@@ -69,7 +69,7 @@ public class PlayerScript : NetworkBehaviour
             CmdTakeDamage(20);
             CmdHitMGC();
             var cellCntrl = collision.gameObject.GetComponent<CellMoveNetwork>();
-            cellCntrl.CmdReturnCellToPool();
+            //cellCntrl.CmdReturnCellToPool();
         }
 
         else if (collision.gameObject.CompareTag("tc"))
