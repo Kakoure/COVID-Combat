@@ -103,6 +103,14 @@ public class PlayerScript : NetworkBehaviour
     void Update()
     {
         //Debug.Log(rb.velocity.magnitude);
+        if (isServer)
+        {
+            if (currentHealth <= 0)
+            {
+
+                NetworkManager.singleton.ServerChangeScene("Death Screen");
+            }
+        }
     }
 
     void FixedUpdate()
