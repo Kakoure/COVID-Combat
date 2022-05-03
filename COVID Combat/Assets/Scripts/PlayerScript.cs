@@ -278,7 +278,7 @@ public class PlayerScript : NetworkBehaviour
         healthBar.SetHealth(val);
     }
 
-    [Command]
+    [Command(requiresAuthority = false)]
     void CmdDeathSequence()
     {
         RpcDeathSequence();

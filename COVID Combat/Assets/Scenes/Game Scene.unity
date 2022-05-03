@@ -11438,8 +11438,20 @@ MonoBehaviour:
   gunRot: {fileID: 1269895474}
   shootButton: js14
   bleachButton: Fire1
+  swapWeapon: Submit
   shotOrigin: {fileID: 1030444612}
   shotObj: {fileID: 2663123144354780821, guid: 1b6725632af998544a8cea628f4766b8, type: 3}
+  usingAltWeapon: 0
+  weaponMat: {fileID: -6478536213147159724, guid: 01b5221504862df40978d27d58e5d2f7,
+    type: 3}
+  altWeaponMat: {fileID: 2100000, guid: 1c3d10ae065d3644ab2ad0f042ea4643, type: 2}
+  gunObj: {fileID: 1184042943}
+  laserMask:
+    serializedVersion: 2
+    m_Bits: 1152
+  laserTrail: {fileID: 5349565194835308307, guid: 5a117f588cc0e54479cd7d2d8aac28b9,
+    type: 3}
+  laserHit: {fileID: 795601065555834221, guid: bdbb62bee2cd677468b9bbf9c8972163, type: 3}
   powerBar: {fileID: 1678024463}
   bleachCntrl: {fileID: 2063515910}
 --- !u!114 &1637570674

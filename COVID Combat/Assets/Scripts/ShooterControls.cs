@@ -15,12 +15,27 @@ public class ShooterControls : NetworkBehaviour
 
     public string shootButton;
     public string bleachButton;
+    public string swapWeapon;
     bool shootPressed;
     float timeLastShot;
     Vector3 aimPoint;
     public Transform shotOrigin;
     public GameObject shotObj;
 
+    [SerializeField]
+    bool usingAltWeapon;
+    [SerializeField]
+    Material weaponMat;
+    [SerializeField]
+    Material altWeaponMat;
+    [SerializeField]
+    GameObject gunObj;
+    [SerializeField]
+    LayerMask laserMask;
+    [SerializeField]
+    GameObject laserTrail;
+    [SerializeField]
+    GameObject laserHit;
 
     public PowerBar powerBar;
 
@@ -31,11 +46,12 @@ public class ShooterControls : NetworkBehaviour
     {
         cameraObj = GameObject.FindGameObjectWithTag("MainCamera");
         timeLastShot = Time.time;
+        usingAltWeapon = false;
     }
 
 
 
-    void FixedUpdate()
+    void Update()
     {
         
         if (!hasAuthority)
@@ -45,7 +61,7 @@ public class ShooterControls : NetworkBehaviour
         HandleAim();
         HandleShoot();
         HandleBleach();
-        
+        HandleWeaponSwitch();
         
     }
 
@@ -87,8 +103,15 @@ public class ShooterControls : NetworkBehaviour
         if (Input.GetButton(shootButton) && Time.time - timeLastShot > shootCooldown)
         {
             var dirVect = (aimPoint - shotOrigin.position).normalized;
-            CmdShootAntibody(dirVect);
-            Debug.Log("Pew");
+            if (!usingAltWeapon)
+            {                
+                CmdShootAntibody(dirVect);
+                Debug.Log("Pew");
+                
+            } else if (usingAltWeapon)
+            {
+                CmdShootLaser(dirVect);
+            }
             timeLastShot = Time.time;
         }
     }
@@ -111,6 +134,59 @@ public class ShooterControls : NetworkBehaviour
 
     }
 
+    [Command(requiresAuthority =false)]
+    public void CmdShootLaser(Vector3 dir)
+    {
+        RaycastHit laserHit;
+        var isHit = Physics.CapsuleCast(shotOrigin.position, shotOrigin.position + Vector3.forward, 2f, dir, out laserHit, 1000f, laserMask, QueryTriggerInteraction.Collide);
+        if (isHit)
+        {
+            RpcGenerateLaser(shotOrigin.position, laserHit.point);
+
+            if (laserHit.collider.CompareTag("virus"))
+            {
+                GameObject.Find("Score").GetComponent<ScoreTracker>().IncreaseScore();
+            }
+
+            if(laserHit.collider.CompareTag("virus") || laserHit.collider.CompareTag("rbc") || laserHit.collider.CompareTag("bc") || laserHit.collider.CompareTag("tc") || laserHit.collider.CompareTag("mgc"))
+            {
+                var cellCntrl = laserHit.collider.GetComponent<CellMoveNetwork>();
+                cellCntrl.ReturnCellToPool();
+            }
+
+
+        } else
+        {
+            RpcGenerateLaser(shotOrigin.position, shotOrigin.position + (dir * 1000f));
+        }
+        
+        
+    }
+
+    [ClientRpc]
+    public void RpcGenerateLaser(Vector3 origin, Vector3 end)
+    {
+        var distance = ((int)(origin - end).magnitude) + 1;
+        var dir = (end - origin).normalized;
+        var pos = origin;
+        for(int i = 0; i < distance; i++)
+        {
+            var newLaserTrail = Instantiate(laserTrail, pos, Quaternion.identity);
+            newLaserTrail.transform.LookAt(end);
+            pos += dir;
+        }
+        Instantiate(laserHit, end, Quaternion.identity);
+
+    }
+
+    void HandleWeaponSwitch()
+    {
+        if (Input.GetButtonDown(swapWeapon))
+        {
+            CmdHandleWeaponSwap();
+        }
+    }
+
     void HandleBleach()
     {
         if (Input.GetButtonDown(bleachButton))
@@ -130,7 +206,28 @@ public class ShooterControls : NetworkBehaviour
         }
     }
 
+    [Command(requiresAuthority = false)]
+    public void CmdHandleWeaponSwap()
+    {
+        usingAltWeapon = !usingAltWeapon;
+        RpcWeaponSwap(usingAltWeapon);
 
+    }
+
+    [ClientRpc]
+    void RpcWeaponSwap(bool val)
+    {
+        usingAltWeapon = val;
+        if (usingAltWeapon)
+        {
+            gunObj.GetComponent<MeshRenderer>().material = altWeaponMat;
+            shootCooldown = 2f;
+        } else
+        {
+            gunObj.GetComponent<MeshRenderer>().material = weaponMat;
+            shootCooldown = .5f;
+        }
+    }
 
     [Command]
     void CmdSetPower(int val)
