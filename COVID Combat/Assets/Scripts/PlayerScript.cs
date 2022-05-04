@@ -63,6 +63,7 @@ public class PlayerScript : NetworkBehaviour
         {
             CmdTakeDamage(10);
             CmdHitRBC();
+            CmdTempDrag(.125f);
             var cellCntrl = collision.gameObject.GetComponent<CellMoveNetwork>();
             cellCntrl.CmdReturnCellToPool();
         }
@@ -72,7 +73,8 @@ public class PlayerScript : NetworkBehaviour
             CmdTakeDamage(20);
             CmdHitMGC();
             var cellCntrl = collision.gameObject.GetComponent<CellMoveNetwork>();
-            //cellCntrl.CmdReturnCellToPool();
+            CmdTempDrag(.5f);
+            cellCntrl.CmdReturnCellToPool();
         }
 
         else if (collision.gameObject.CompareTag("tc"))
@@ -89,6 +91,7 @@ public class PlayerScript : NetworkBehaviour
             CmdTakeDamage(-30);
             CmdHitBC();
             var cellCntrl = collision.gameObject.GetComponent<CellMoveNetwork>();
+            rb.velocity = rb.velocity * .5f;
             cellCntrl.CmdReturnCellToPool();
         }
 
@@ -133,8 +136,9 @@ public class PlayerScript : NetworkBehaviour
             if (currentHealth <= 0 && !dying)
             {
                 dying = true;
-                CmdDeathSequence();
-                
+                RpcDeathSequence();
+                StartCoroutine(DeathCoroutine());
+
             }
             //------------
             //Debug.Log(GameObject.Find("Score").GetComponent<ScoreTracker>().score);
@@ -152,6 +156,39 @@ public class PlayerScript : NetworkBehaviour
     {
 
     }
+
+
+    [Command]
+    void CmdTempDrag(float amount)
+    {
+        StartCoroutine(TempDrag(amount));
+    }
+
+
+    [ClientRpc]
+    void RpcSetDrag(float amount)
+    {
+        rb.drag = amount;
+    }
+
+    IEnumerator TempDrag(float amount)
+    {
+
+        rb.drag += amount * 16f;
+
+        for(int i = 0; i < 15; i++)
+        {
+           
+            rb.drag -= amount;
+            RpcSetDrag(rb.drag);
+            yield return new WaitForSeconds(.1f);
+        }
+        
+
+        rb.drag -= amount;
+    }
+
+
 
     [Command]
     void CmdHitVirus()
