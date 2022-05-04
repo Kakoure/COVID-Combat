@@ -86,7 +86,7 @@ public class PlayerScript : NetworkBehaviour
 
         else if (collision.gameObject.CompareTag("bc"))
         {
-            CmdTakeDamage(-10);
+            CmdTakeDamage(-20);
             CmdHitBC();
             var cellCntrl = collision.gameObject.GetComponent<CellMoveNetwork>();
             cellCntrl.CmdReturnCellToPool();
@@ -94,7 +94,7 @@ public class PlayerScript : NetworkBehaviour
 
         else if (collision.gameObject.CompareTag("virus"))
         {
-            CmdTakeDamage(20);
+            CmdTakeDamage(30);
             CmdHitVirus();
         }
 
