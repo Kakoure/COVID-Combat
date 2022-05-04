@@ -13,11 +13,14 @@ public class CellSpawner : NetworkBehaviour
     public float spawnOffset;
     public GameObject playerObj;
     public float despawnDistance;
-    public LayerMask killMask;
+    public LayerMask spawnMask;
+    public RoleManager roleManager;
 
 
     float spawnDistanceTracker;
     float spawnTimeTracker;
+
+    Vector3 lastPos;
     [Serializable]
     public struct ObjectPool
     {
@@ -40,6 +43,7 @@ public class CellSpawner : NetworkBehaviour
         GenerateObjects();
         spawnDistanceTracker = 0f;
         spawnTimeTracker = 0f;
+        lastPos = playerObj.transform.position;
     }
 
     // Update is called once per frame
@@ -49,20 +53,32 @@ public class CellSpawner : NetworkBehaviour
         {
             return;
         }
-        var deltaPosition = playerObj.transform.position - transform.position;
+        //Dont spawn if game hasnt started
+        if (!roleManager.PilotJoined())
+        {
+            return;
+        }
+
+        var deltaPosition = playerObj.transform.position - lastPos;
         transform.position = playerObj.transform.position;
         spawnDistanceTracker += deltaPosition.magnitude;
+       
+        spawnTimeTracker += Time.deltaTime;
         while(spawnDistanceTracker > spawnRateOverDistance)
         {
+            Debug.Log("Distance Spawn");
             SpawnObject();
             spawnDistanceTracker -= spawnRateOverDistance;
         }
 
         while(spawnTimeTracker > spawnRateOverTime)
         {
+            Debug.Log("Time Spawn");
             SpawnObject();
             spawnTimeTracker -= spawnRateOverTime;
         }
+
+        lastPos = playerObj.transform.position;
     }
 
     void GenerateObjects()  
@@ -139,7 +155,7 @@ public class CellSpawner : NetworkBehaviour
                 return;
             }
             spawnPos = playerObj.transform.position + (randAngle * posVect * spawnDistance) + (playerObj.transform.forward * spawnOffset);
-            if(Physics.OverlapSphere(spawnPos, Mathf.Max(objBounds.x, objBounds.y, objBounds.z) + 1f, killMask, QueryTriggerInteraction.Collide).Length > 0)
+            if(Physics.OverlapSphere(spawnPos, Mathf.Max(objBounds.x, objBounds.y, objBounds.z) + 1f, spawnMask, QueryTriggerInteraction.Collide).Length <= 0)
             {
                 validSpawn = false; 
             } else
@@ -157,7 +173,9 @@ public class CellSpawner : NetworkBehaviour
 
         objToSpawn.transform.position = spawnPos;
         objToSpawn.SetActive(true);
-        objToSpawn.GetComponent<CellMoveNetwork>().RpcShowObject();
+        var cellCntrl = objToSpawn.GetComponent<CellMoveNetwork>();
+        cellCntrl.RpcShowObject();
+        cellCntrl.BloodCellMove();
     }
 
 

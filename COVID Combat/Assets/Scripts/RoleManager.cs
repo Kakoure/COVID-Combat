@@ -158,4 +158,10 @@ public class RoleManager : NetworkBehaviour
         shooterIdentity = null;
         shooterCntrl.netIdentity.RemoveClientAuthority();
     }
+
+
+    public bool PilotJoined()
+    {
+        return pilotIdentity != null;
+    }
 }

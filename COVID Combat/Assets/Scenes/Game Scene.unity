@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.23282295, g: 0.23444027, b: 0.27287063, a: 1}
+  m_IndirectSpecularColor: {r: 0.23308674, g: 0.23605686, b: 0.27302542, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5892,7 +5892,7 @@ GameObject:
   - component: {fileID: 181310734}
   - component: {fileID: 181310733}
   - component: {fileID: 181310732}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5970,8 +5970,8 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 1278519972}
-  m_PlaneDistance: 0.5
+  m_Camera: {fileID: 1523447123}
+  m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -7633,7 +7633,7 @@ GameObject:
   - component: {fileID: 630538962}
   - component: {fileID: 630538964}
   - component: {fileID: 630538963}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Curs0r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9316,6 +9316,90 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040248214}
   m_CullTransparentMesh: 1
+--- !u!1001 &1107183256
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6108729375530468762, guid: 7ba0610217500454292f8cab3de36194,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108729375530468762, guid: 7ba0610217500454292f8cab3de36194,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108729375530468762, guid: 7ba0610217500454292f8cab3de36194,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108729375530468762, guid: 7ba0610217500454292f8cab3de36194,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108729375530468762, guid: 7ba0610217500454292f8cab3de36194,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22188
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108729375530468762, guid: 7ba0610217500454292f8cab3de36194,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108729375530468762, guid: 7ba0610217500454292f8cab3de36194,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 15289
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108729375530468762, guid: 7ba0610217500454292f8cab3de36194,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108729375530468762, guid: 7ba0610217500454292f8cab3de36194,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108729375530468762, guid: 7ba0610217500454292f8cab3de36194,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108729375530468762, guid: 7ba0610217500454292f8cab3de36194,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108729375530468762, guid: 7ba0610217500454292f8cab3de36194,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108729375530468762, guid: 7ba0610217500454292f8cab3de36194,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6108729375530468762, guid: 7ba0610217500454292f8cab3de36194,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005813781939091606, guid: 7ba0610217500454292f8cab3de36194,
+        type: 3}
+      propertyPath: m_Name
+      value: Vessel Course
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7ba0610217500454292f8cab3de36194, type: 3}
 --- !u!1 &1118605112
 GameObject:
   m_ObjectHideFlags: 0
@@ -9345,7 +9429,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1523447123}
-  m_PlaneDistance: 0.5
+  m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -11445,7 +11529,12 @@ PrefabInstance:
     - target: {fileID: 8670492727701480628, guid: 58f391e5f9b14e645ba05d0fda1f5f99,
         type: 3}
       propertyPath: m_Name
-      value: VesselCourse
+      value: VesselCourse - OLD
+      objectReference: {fileID: 0}
+    - target: {fileID: 8670492727701480628, guid: 58f391e5f9b14e645ba05d0fda1f5f99,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8727339943206285288, guid: 58f391e5f9b14e645ba05d0fda1f5f99,
         type: 3}
@@ -22625,7 +22714,7 @@ GameObject:
   - component: {fileID: 1950558324}
   - component: {fileID: 1950558326}
   - component: {fileID: 1950558325}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Pointer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23047,7 +23136,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063515903}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -70.8, y: -3.1, z: -341.4}
+  m_LocalPosition: {x: 17993, y: -3.1, z: 11416}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23802,14 +23891,15 @@ MonoBehaviour:
   syncInterval: 0.1
   spawnDistanceMin: 1000
   spawnDistanceMax: 2000
-  spawnRateOverTime: 10
-  spawnRateOverDistance: 10
+  spawnRateOverTime: 0.5
+  spawnRateOverDistance: 60
   spawnOffset: 0
   playerObj: {fileID: 2063515903}
   despawnDistance: 3000
-  killMask:
+  spawnMask:
     serializedVersion: 2
-    m_Bits: 3072
+    m_Bits: 4096
+  roleManager: {fileID: 61036916}
   spawnableItems:
   - objPrefab: {fileID: 3203708006919302276, guid: 34d9b11a6b0aafd498010a223be8ed62,
       type: 3}

@@ -23,12 +23,17 @@ public class CellMoveNetwork : NetworkBehaviour
         {
             return;
         }
-        rb = GetComponent<Rigidbody>();
-        movex = Random.Range(0f, 10f);
-        movey = Random.Range(0f, 10f);
-        movez = Random.Range(0f, 10f);
-        BloodCellMove();
+       
+        
+       
+      
 
+
+    }
+
+    private void Awake()
+    {
+        
     }
 
     private void Update()
@@ -43,10 +48,19 @@ public class CellMoveNetwork : NetworkBehaviour
             ReturnCellToPool();
         }
     }
-    void BloodCellMove()
+    public void BloodCellMove()
     {
+        if (!isServer)
+        {
+            return;
+        }
+        transform.rotation = Random.rotation;
+        rb = GetComponent<Rigidbody>();
+        movex = Random.Range(0f, 10f);
+        movey = Random.Range(0f, 10f);
+        movez = Random.Range(0f, 10f);
         rb.AddForce(movex, movey, movez, ForceMode.Impulse);
-
+        rb.angularVelocity = Random.insideUnitSphere;
 
     }
     private void OnTriggerEnter(Collision collision)
