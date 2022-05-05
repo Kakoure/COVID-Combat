@@ -41,49 +41,49 @@ To operate with multiple devices while the server is running, simply press the "
 - All interactable objects:
    - COVID virus:
      - does the most damage when player collides with it
-  - when shot, it increases the score
-  - Explodes when shot
- - Megakaryocyte cell:
-  - player collisions do significant damage to the player
-  - player collisions slow the player down
-  - player collisions shake the player
-  - has a sound effect for collisions
-  - gets pushed away when shot
- - Red Blood cell:
-  - player collisions do some damage to the player
-  - player collisions slow the player down
-  - player collisions shake the player
-  - has the same sound effect as megakaryocyte cell
- - B Cell
-  - move at a very fast pace to make them challenging to obtain
-  - collisions regenerate player health
-  - collisions do not slow the player down
-  - has a power up sound
- - T Cell
-  - move at a very fast pace to make them challenging to obtain
-  - player collisions charge the bleach power up
-  - player collisions do not slow the player down
-  - has the same power up sound as the B Cell
- - Blood vessel course
-  - player collisions cause damage to the player only if the player hits the course directly
-  - a glancing hit doesn't hurt the player
- - Bleach power up
-  - destroys all nearby objects (excluding the course)
-  - causes the screen to flash white
- - Antibody gun 1
-  - shoots antibodies
-  - antibodies destroy COVID viruses and push other cells out of the way
-  - fires at a rapid rate, but the projectiles move at a slower rate
- - Antibody gun 2
-  - shoots a laser
-  - laser destroys COVID viruses
-  - fires at a slower rate, but the laser reaches its target almost instantly
+     - when shot, it increases the score
+     - Explodes when shot
+   - Megakaryocyte cell:
+     - player collisions do significant damage to the player
+     - player collisions slow the player down
+     - player collisions shake the player
+     - has a sound effect for collisions
+     - gets pushed away when shot
+   - Red Blood cell:
+     - player collisions do some damage to the player
+     - player collisions slow the player down
+     - player collisions shake the player
+     - has the same sound effect as megakaryocyte cell
+   - B Cell
+     - move at a very fast pace to make them challenging to obtain
+     - collisions regenerate player health
+     - collisions do not slow the player down
+     - has a power up sound
+   - T Cell
+     - move at a very fast pace to make them challenging to obtain
+     - player collisions charge the bleach power up
+     - player collisions do not slow the player down
+     - has the same power up sound as the B Cell
+   - Blood vessel course
+     - player collisions cause damage to the player only if the player hits the course directly
+     - a glancing hit doesn't hurt the player
+   - Bleach power up
+     - destroys all nearby objects (excluding the course)
+     - causes the screen to flash white
+   - Antibody gun 1
+     - shoots antibodies
+     - antibodies destroy COVID viruses and push other cells out of the way
+     - fires at a rapid rate, but the projectiles move at a slower rate
+   - Antibody gun 2
+     - shoots a laser
+     - laser destroys COVID viruses
+     - fires at a slower rate, but the laser reaches its target almost instantly
 - Player movement for the pilot (including the ability to slow down)
 - Shooter can aim and shoot
 - Health bar
   - players are taken to the death screen once it is depleted
 - Bleach power up
- - charges by collecting T cells
- - once fully charged, it kills all nearby objects when used
+  - charges by collecting T cells
+  - once fully charged, it kills all nearby objects when used
 - All prefabs have been created (all cells, the virus, course components, player)
 
