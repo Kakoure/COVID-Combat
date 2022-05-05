@@ -17,7 +17,7 @@ public class PilotControls : NetworkBehaviour
     private CharacterController charController;
     float horMove;
     float vertMove;
-    
+ 
     
 
     // Start is called before the first frame update

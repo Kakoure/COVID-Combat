@@ -42,6 +42,8 @@ public class ShooterControls : NetworkBehaviour
 
     public bleachpower bleachCntrl;
 
+    public bool shootingEnabled;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -101,6 +103,10 @@ public class ShooterControls : NetworkBehaviour
 
     void HandleShoot()
     {
+        if (!shootingEnabled)
+        {
+            return;
+        }
         if (Input.GetButton(shootButton) && Time.time - timeLastShot > shootCooldown)
         {
             var dirVect = (aimPoint - shotOrigin.position).normalized;
@@ -147,6 +153,11 @@ public class ShooterControls : NetworkBehaviour
             if (laserHit.collider.CompareTag("virus"))
             {
                 GameObject.Find("Score").GetComponent<ScoreTracker>().IncreaseScore();
+
+                if (laserHit.collider.gameObject.name.Contains("Tutorial") && laserHit.collider.gameObject.name.Contains("Shoot"))
+                {
+                    GameflowManager.Instance.tutorialCompleted = true;
+                }
             }
 
             if(laserHit.collider.CompareTag("virus") || laserHit.collider.CompareTag("rbc") || laserHit.collider.CompareTag("bc") || laserHit.collider.CompareTag("tc") || laserHit.collider.CompareTag("mgc"))

@@ -46,6 +46,11 @@ public class AntibodyController : NetworkBehaviour
             cellCntrl.ReturnCellToPool();
             GameObject.Find("Score").GetComponent<ScoreTracker>().IncreaseScore();
 
+            if (collision.gameObject.name.Contains("Tutorial") && collision.gameObject.name.Contains("Shoot"))
+            {
+                GameflowManager.Instance.tutorialCompleted = true;
+            }
+
         }
         NetworkServer.Destroy(gameObject);
     }

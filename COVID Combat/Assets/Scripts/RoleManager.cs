@@ -4,6 +4,7 @@ using UnityEngine;
 using Mirror;
 using UnityEngine.UI;
 using PlayFab.Networking;
+using TMPro;
 public class RoleManager : NetworkBehaviour
 {
     [SyncVar]
@@ -20,6 +21,10 @@ public class RoleManager : NetworkBehaviour
 
     public PilotControls pilotCntrl;
     public ShooterControls shooterCntrl;
+
+    public TextMeshProUGUI flowText;
+
+    public GameflowManager flowCntrl;
 
     // Start is called before the first frame update
     void Start()
@@ -116,7 +121,10 @@ public class RoleManager : NetworkBehaviour
         cam.transform.rotation = pilotHook.transform.rotation;
 
         pilotCntrl.enabled = true;
-        
+        pilotCntrl.drivingEnabled = flowCntrl.drivingEnabled;
+        flowText.gameObject.SetActive(true);
+        flowCntrl.CmdSetFlowText();
+
     }
 
     [TargetRpc]
@@ -128,7 +136,9 @@ public class RoleManager : NetworkBehaviour
         cam.transform.rotation = shooterHook.transform.rotation;
 
         shooterCntrl.enabled = true;
-
+        shooterCntrl.shootingEnabled = flowCntrl.shootingEnabled;
+        flowText.gameObject.SetActive(true);
+        flowCntrl.CmdSetFlowText();
     }
 
 
@@ -163,5 +173,20 @@ public class RoleManager : NetworkBehaviour
     public bool PilotJoined()
     {
         return pilotIdentity != null;
+    }
+
+    public bool ShooterJoined()
+    {
+        return shooterIdentity != null;
+    }
+
+    public NetworkIdentity GetPilot()
+    {
+        return pilotIdentity;
+    }
+
+    public NetworkIdentity GetShooter()
+    {
+        return shooterIdentity;
     }
 }

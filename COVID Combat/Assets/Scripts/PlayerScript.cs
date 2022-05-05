@@ -26,6 +26,7 @@ public class PlayerScript : NetworkBehaviour
 
     public PowerBar powerbar;
     public HealthBar healthBar;
+    public GameflowManager flowCntrl;
     [SerializeField]
     Image fadeImage;
     bool dying;
@@ -54,7 +55,10 @@ public class PlayerScript : NetworkBehaviour
         {
             return;
         }
-
+        if(dying || winning)
+        {
+            return;
+        }
 
         if (collision.gameObject.name == "WhiteBloodCell")
         {
@@ -67,6 +71,11 @@ public class PlayerScript : NetworkBehaviour
             CmdTempDrag(.125f);
             var cellCntrl = collision.gameObject.GetComponent<CellMoveNetwork>();
             cellCntrl.CmdReturnCellToPool();
+
+            if (collision.gameObject.name.Contains("Tutorial"))
+            {
+                CmdTutorialComplete();
+            }
         }
 
         else if (collision.gameObject.CompareTag("mgc"))
@@ -76,6 +85,11 @@ public class PlayerScript : NetworkBehaviour
             var cellCntrl = collision.gameObject.GetComponent<CellMoveNetwork>();
             CmdTempDrag(.5f);
             cellCntrl.CmdReturnCellToPool();
+            if (collision.gameObject.name.Contains("Tutorial"))
+            {
+                CmdTutorialComplete();
+            }
+
         }
 
         else if (collision.gameObject.CompareTag("tc"))
@@ -84,6 +98,11 @@ public class PlayerScript : NetworkBehaviour
             CmdHitTC();
             var cellCntrl = collision.gameObject.GetComponent<CellMoveNetwork>();
             cellCntrl.CmdReturnCellToPool();
+
+            if (collision.gameObject.name.Contains("Tutorial"))
+            {
+                CmdTutorialComplete();
+            }
         }
 
 
@@ -92,20 +111,36 @@ public class PlayerScript : NetworkBehaviour
             CmdTakeDamage(-30);
             CmdHitBC();
             var cellCntrl = collision.gameObject.GetComponent<CellMoveNetwork>();
-            rb.velocity = rb.velocity * .5f;
             cellCntrl.CmdReturnCellToPool();
+
+            if (collision.gameObject.name.Contains("Tutorial"))
+            {
+                CmdTakeDamage(-1000);
+                CmdTutorialComplete();
+            }
         }
 
         else if (collision.gameObject.CompareTag("virus"))
         {
             CmdTakeDamage(30);
             CmdHitVirus();
+
+            if (collision.gameObject.name.Contains("Tutorial") && !collision.gameObject.name.Contains("Shoot"))
+            {
+                var cellCntrl = collision.gameObject.GetComponent<CellMoveNetwork>();
+                cellCntrl.CmdReturnCellToPool();
+                CmdTutorialComplete();
+                
+            }
         }
 
 
         else if (!collision.gameObject.name.Contains("BloodVessel"))
         {
-            CmdTakeDamage(20);
+            if (!flowCntrl.inTutorial)
+            {
+                CmdTakeDamage(20);
+            }          
             CmdShakeCam(1f);
             //Destroy(collision.gameObject);
         }
@@ -113,7 +148,10 @@ public class PlayerScript : NetworkBehaviour
         {
             if(collision.impulse.magnitude > 25f)
             {
-                CmdTakeDamage(10);
+                if (!flowCntrl.inTutorial)
+                {
+                    CmdTakeDamage(10);
+                }
                 CmdHitWall();
             }
             
@@ -381,6 +419,11 @@ public class PlayerScript : NetworkBehaviour
         }
     }
 
+    [Command]
+    void CmdTutorialComplete()
+    {
+        flowCntrl.tutorialCompleted = true;
+    }
 
 
     //---------

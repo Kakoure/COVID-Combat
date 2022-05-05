@@ -17,6 +17,9 @@ public class CellSpawner : NetworkBehaviour
     public RoleManager roleManager;
 
 
+    public bool distSpawnEnabled;
+    public bool timeSpawnEnabled;
+
     float spawnDistanceTracker;
     float spawnTimeTracker;
 
@@ -61,9 +64,19 @@ public class CellSpawner : NetworkBehaviour
 
         var deltaPosition = playerObj.transform.position - lastPos;
         transform.position = playerObj.transform.position;
-        spawnDistanceTracker += deltaPosition.magnitude;
-       
-        spawnTimeTracker += Time.deltaTime;
+
+        if (distSpawnEnabled)
+        {
+            spawnDistanceTracker += deltaPosition.magnitude;
+        }
+        
+
+        if (timeSpawnEnabled)
+        {
+            spawnTimeTracker += Time.deltaTime;
+
+        }
+        
         while(spawnDistanceTracker > spawnRateOverDistance)
         {
             Debug.Log("Distance Spawn");

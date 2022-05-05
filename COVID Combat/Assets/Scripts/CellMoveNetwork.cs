@@ -24,7 +24,11 @@ public class CellMoveNetwork : NetworkBehaviour
         {
             return;
         }
-       
+
+        if (playerObj == null)
+        {
+            playerObj = GameObject.FindGameObjectWithTag("ship");
+        }
         
        
       
@@ -44,7 +48,7 @@ public class CellMoveNetwork : NetworkBehaviour
             return;
         }
         var distance = (playerObj.transform.position - transform.position).magnitude;
-        if (distance >= despawnDistance)
+        if (distance >= despawnDistance && !gameObject.name.Contains("Tutorial"))
         {
             ReturnCellToPool();
         }
@@ -92,7 +96,15 @@ public class CellMoveNetwork : NetworkBehaviour
         RpcHideObj();
         gameObject.SetActive(false);
         //pool.pooledObjects.Enqueue(gameObject);
-        NetworkServer.UnSpawn(gameObject);
+
+        if (gameObject.name.Contains("Tutorial"))
+        {
+            NetworkServer.Destroy(gameObject);
+        }else
+        {
+            NetworkServer.UnSpawn(gameObject);
+        }
+       
     }
 
     [ClientRpc]
