@@ -15,16 +15,16 @@ Menu:
 
 In game:
 Player 1: 
--Uses Google VR SDK to see
--Can move left/right/up/down with joystick
--Automatically moves forward
--Hold Trigger to slow down and stop
+- Uses Google VR SDK to see
+- Can move left/right/up/down with joystick
+- Automatically moves forward
+- Hold Trigger to slow down and stop
 
 Player 2:
--Uses Google VR SDK to see and aim
--Presses Trigger to shoot
--Presses Y to use power up
--Presses A to switch antibody gun
+- Uses Google VR SDK to see and aim
+- Presses Trigger to shoot
+- Presses Y to use power up
+- Presses A to switch antibody gun
 
 The game is configured so that it automatically connects to a specified dedicated server when running the game. This means that the server must be running and on an available network. Sometimes, UTD's firewall blocks connection to the server. In this instance, have all the devices connect to a mobile hotspot. 
 
