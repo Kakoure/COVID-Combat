@@ -111,7 +111,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7080630437718394824}
   serializedVersion: 2
-  m_Mass: 0.2
+  m_Mass: 0.5
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -188,6 +188,7 @@ MonoBehaviour:
   playerObj: {fileID: 0}
   deathParticles: {fileID: 8043981818929715983, guid: 2fc143f1b561d1745afdb2367ca85f8e,
     type: 3}
+  deathClip: {fileID: 0}
 --- !u!114 &-8754961777476091068
 MonoBehaviour:
   m_ObjectHideFlags: 0
