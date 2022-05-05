@@ -204,10 +204,10 @@ MonoBehaviour:
   - {fileID: 1997120383570939676, guid: 8a5d14813ddaaa148ad7528ff56387f7, type: 3}
   - {fileID: 7080630437718394824, guid: 394be18339c33284fb09a1567e987e5b, type: 3}
   - {fileID: 7080630437718394824, guid: 3ff8ffb184f68dc4d80b3e78da5cfbda, type: 3}
-  voiceChatEnabled: 0
+  voiceChatEnabled: 1
   voiceChatroomName: CovidCombatTestRoom
   agoraAppID: 02a7500fd652449ab2800d094d52ef0b
-  agoraToken: 00602a7500fd652449ab2800d094d52ef0bIADzcOK21JvW8WXHWGGP/qYqHJ7CPodNNdQr2PQfDSJnJBrxgYkAAAAAEABD/MfDpFZ0YgEAAQCmVnRi
+  agoraToken: 9349ad176ef54deda114d256ad14ae86
 --- !u!4 &168815999
 Transform:
   m_ObjectHideFlags: 0
