@@ -94,7 +94,7 @@ public class PlayerScript : NetworkBehaviour
 
         else if (collision.gameObject.CompareTag("tc"))
         {
-            CmdGetPower(50);
+            CmdGetPower(25);
             CmdHitTC();
             var cellCntrl = collision.gameObject.GetComponent<CellMoveNetwork>();
             cellCntrl.CmdReturnCellToPool();
