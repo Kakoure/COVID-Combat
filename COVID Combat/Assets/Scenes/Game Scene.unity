@@ -10822,7 +10822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  force: 500
+  force: 300
   turnRate: 1
   brakeButton: js0
   drivingEnabled: 1
