@@ -295,6 +295,7 @@ public class PlayerScript : NetworkBehaviour
     {
         currentPower = (int)powerbar.slider.value;
         currentPower += val;
+        powerbar.SetPower(currentPower);
         RpcSetPower(currentPower);
     }
 
@@ -303,6 +304,7 @@ public class PlayerScript : NetworkBehaviour
     void CmdSetPower(int val)
     {
         currentPower = val;
+        powerbar.SetPower(currentPower);
         RpcSetPower(val);
     }
 
