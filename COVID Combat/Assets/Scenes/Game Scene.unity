@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2328035, g: 0.23442134, b: 0.27287462, a: 1}
+  m_IndirectSpecularColor: {r: 0.23308674, g: 0.23605686, b: 0.27302542, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8792,7 +8792,9 @@ MonoBehaviour:
   currentState: 0
   inTutorial: 0
   drivingEnabled: 0
+  shootingEnabled: 0
   tutorialCompleted: 0
+  currentFlowText: 
   dmgTutWall: {fileID: 2107836351}
   healTutWall: {fileID: 2108621752}
   shootTutWall: {fileID: 1116330962}
@@ -17969,6 +17971,7 @@ MonoBehaviour:
   laserHit: {fileID: 795601065555834221, guid: bdbb62bee2cd677468b9bbf9c8972163, type: 3}
   powerBar: {fileID: 1678024463}
   bleachCntrl: {fileID: 2063515910}
+  shootingEnabled: 0
 --- !u!114 &1637570674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19227,10 +19230,10 @@ RectTransform:
   m_Father: {fileID: 1118605114}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 377, y: 219}
-  m_SizeDelta: {x: 117, y: 37.8}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -198, y: -76}
+  m_SizeDelta: {x: 117, y: 37.799988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1884859629
 MonoBehaviour:
