@@ -77,6 +77,7 @@ To operate with multiple devices while the server is running, simply press the "
    - Antibody gun 2
      - Shoots a laser
      - Laser destroys COVID viruses
+     - Can also destroy other cells in the way
      - Fires at a slower rate, but the laser reaches its target almost instantly
 - Player movement for the pilot (including the ability to slow down)
 - Shooter can aim and shoot
