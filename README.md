@@ -32,7 +32,7 @@ To operate with multiple devices while the server is running, simply press the "
 
 ### Implemented features:
 - 2 player multiplayer
-- voice chat
+- Voice chat
 - Start menu
 - Character selection/tutorial menu
 - Death Screen (can restart the game from this screen)
@@ -40,50 +40,50 @@ To operate with multiple devices while the server is running, simply press the "
 - Improved blood vessel course
 - All interactable objects:
    - COVID virus:
-     - does the most damage when player collides with it
-     - when shot, it increases the score
+     - Does the most damage when player collides with it
+     - When shot, it increases the score
      - Explodes when shot
    - Megakaryocyte cell:
-     - player collisions do significant damage to the player
-     - player collisions slow the player down
-     - player collisions shake the player
-     - has a sound effect for collisions
-     - gets pushed away when shot
+     - Player collisions do significant damage to the player
+     - Player collisions slow the player down
+     - Player collisions shake the player
+     - Has a sound effect for collisions
+     - Gets pushed away when shot
    - Red Blood cell:
-     - player collisions do some damage to the player
-     - player collisions slow the player down
-     - player collisions shake the player
-     - has the same sound effect as megakaryocyte cell
+     - Player collisions do some damage to the player
+     - Player collisions slow the player down
+     - Player collisions shake the player
+     - Has the same sound effect as megakaryocyte cell
    - B Cell
-     - move at a very fast pace to make them challenging to obtain
-     - collisions regenerate player health
-     - collisions do not slow the player down
-     - has a power up sound
+     - Move at a very fast pace to make them challenging to obtain
+     - Collisions regenerate player health
+     - Collisions do not slow the player down
+     - Has a power up sound
    - T Cell
-     - move at a very fast pace to make them challenging to obtain
-     - player collisions charge the bleach power up
-     - player collisions do not slow the player down
-     - has the same power up sound as the B Cell
+     - Move at a very fast pace to make them challenging to obtain
+     - Player collisions charge the bleach power up
+     - Player collisions do not slow the player down
+     - Has the same power up sound as the B Cell
    - Blood vessel course
-     - player collisions cause damage to the player only if the player hits the course directly
-     - a glancing hit doesn't hurt the player
+     - Player collisions cause damage to the player only if the player hits the course directly
+     - A glancing hit doesn't hurt the player
    - Bleach power up
-     - destroys all nearby objects (excluding the course)
-     - causes the screen to flash white
+     - Destroys all nearby objects (excluding the course)
+     - Causes the screen to flash white
    - Antibody gun 1
-     - shoots antibodies
-     - antibodies destroy COVID viruses and push other cells out of the way
-     - fires at a rapid rate, but the projectiles move at a slower rate
+     - Shoots antibodies
+     - Antibodies destroy COVID viruses and push other cells out of the way
+     - Fires at a rapid rate, but the projectiles move at a slower rate
    - Antibody gun 2
-     - shoots a laser
-     - laser destroys COVID viruses
-     - fires at a slower rate, but the laser reaches its target almost instantly
+     - Shoots a laser
+     - Laser destroys COVID viruses
+     - Fires at a slower rate, but the laser reaches its target almost instantly
 - Player movement for the pilot (including the ability to slow down)
 - Shooter can aim and shoot
 - Health bar
-  - players are taken to the death screen once it is depleted
+  - Players are taken to the death screen once it is depleted
 - Bleach power up
-  - charges by collecting T cells
-  - once fully charged, it kills all nearby objects when used
+  - Charges by collecting T cells
+  - Once fully charged, it kills all nearby objects when used
 - All prefabs have been created (all cells, the virus, course components, player)
 
