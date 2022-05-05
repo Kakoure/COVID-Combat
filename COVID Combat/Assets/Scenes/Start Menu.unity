@@ -207,7 +207,7 @@ MonoBehaviour:
   voiceChatEnabled: 1
   voiceChatroomName: CovidCombatTestRoom
   agoraAppID: 02a7500fd652449ab2800d094d52ef0b
-  agoraToken: 9349ad176ef54deda114d256ad14ae86
+  agoraToken: 00602a7500fd652449ab2800d094d52ef0bIAB+49ShabYsr+pxb9Di4HGPQN52+wznlsqMIAc3s39uKRrxgYkAAAAAEAA4pEgw8IZ1YgEAAQDxhnVi
 --- !u!4 &168815999
 Transform:
   m_ObjectHideFlags: 0
