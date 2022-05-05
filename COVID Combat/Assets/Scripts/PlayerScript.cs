@@ -181,7 +181,7 @@ public class PlayerScript : NetworkBehaviour
             }
             //------------
             //Debug.Log(GameObject.Find("Score").GetComponent<ScoreTracker>().score);
-            if (GameObject.Find("Score").GetComponent<ScoreTracker>().score >= 15 && !winning)
+            if (GameObject.Find("Score").GetComponent<ScoreTracker>().score >= 50 && !winning)
             {
                 Debug.Log("Winner winner");
                 winning = true;
