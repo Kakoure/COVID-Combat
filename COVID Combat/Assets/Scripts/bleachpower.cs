@@ -15,6 +15,8 @@ public class bleachpower : NetworkBehaviour
     public LayerMask killMask;
     public CameraShake camShake;
     public Image flashImage;
+    [SerializeField]
+    AudioClip powerSound;
 
     bool isReady;
 
@@ -63,6 +65,7 @@ public class bleachpower : NetworkBehaviour
 
     IEnumerator BleachFlash()
     {
+        GetComponent<AudioSource>().PlayOneShot(powerSound);
         camShake.SetShake(3f);
         for(float i = 1f; i > 0f; i -= .04f)
         {

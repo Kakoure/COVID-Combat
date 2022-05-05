@@ -152,6 +152,10 @@ public class ShooterControls : NetworkBehaviour
             if(laserHit.collider.CompareTag("virus") || laserHit.collider.CompareTag("rbc") || laserHit.collider.CompareTag("bc") || laserHit.collider.CompareTag("tc") || laserHit.collider.CompareTag("mgc"))
             {
                 var cellCntrl = laserHit.collider.GetComponent<CellMoveNetwork>();
+                if (cellCntrl.deathClip != null)
+                {
+                    GameObject.FindGameObjectWithTag("ship").GetComponent<AudioSource>().PlayOneShot(cellCntrl.deathClip.clip);
+                }
                 cellCntrl.ReturnCellToPool();
             }
 

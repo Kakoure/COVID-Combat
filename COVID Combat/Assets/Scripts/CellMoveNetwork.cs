@@ -14,7 +14,8 @@ public class CellMoveNetwork : NetworkBehaviour
     CellSpawner.ObjectPool pool;
     [SerializeField]
     GameObject deathParticles;
-
+    [SerializeField]
+    public AudioSource deathClip;
 
     // Start is called before the first frame update
     void Start()
@@ -113,6 +114,7 @@ public class CellMoveNetwork : NetworkBehaviour
 
     public override void OnStopClient()
     {
+       
         base.OnStopClient();
         Instantiate(deathParticles, transform.position, Quaternion.identity);
     }

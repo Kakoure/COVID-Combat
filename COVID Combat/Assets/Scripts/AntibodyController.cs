@@ -39,8 +39,13 @@ public class AntibodyController : NetworkBehaviour
         if (collision.gameObject.CompareTag("virus"))
         {
             var cellCntrl = collision.gameObject.GetComponent<CellMoveNetwork>();
+            if (cellCntrl.deathClip != null)
+            {
+                GameObject.FindGameObjectWithTag("ship").GetComponent<AudioSource>().PlayOneShot(cellCntrl.deathClip.clip);
+            }
             cellCntrl.ReturnCellToPool();
             GameObject.Find("Score").GetComponent<ScoreTracker>().IncreaseScore();
+
         }
         NetworkServer.Destroy(gameObject);
     }

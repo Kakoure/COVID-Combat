@@ -14,6 +14,7 @@ public class PlayerScript : NetworkBehaviour
     public AudioSource source_rbc;
     public AudioSource source_tc;
     public AudioSource source_mgc;
+    public AudioSource source_wall;
     public CameraShake camShake;
     private int counter;
     public GameObject windsheild;
@@ -113,7 +114,7 @@ public class PlayerScript : NetworkBehaviour
             if(collision.impulse.magnitude > 25f)
             {
                 CmdTakeDamage(10);
-                CmdShakeCam(1f);
+                CmdHitWall();
             }
             
         }
@@ -231,6 +232,14 @@ public class PlayerScript : NetworkBehaviour
         RpcHitBC();
     }
 
+    [Command]
+    void CmdHitWall()
+    {
+        //RpcColorShip(Color.green);
+        RpcShakeCam(1f);
+        RpcHitWall();
+    }
+
     [ClientRpc]
     void RpcHitVirus()
     {
@@ -246,7 +255,7 @@ public class PlayerScript : NetworkBehaviour
     [ClientRpc]
     void RpcHitMGC()
     {
-        source_mgc.PlayOneShot(source_mgc.clip);
+        source_mgc.PlayOneShot(source_rbc.clip);
     }
 
     [ClientRpc]
@@ -259,6 +268,12 @@ public class PlayerScript : NetworkBehaviour
     void RpcHitBC()
     {
         source_tc.PlayOneShot(source_tc.clip);
+    }
+
+    [ClientRpc]
+    void RpcHitWall()
+    {
+        source_tc.PlayOneShot(source_wall.clip);
     }
 
     [Command]
