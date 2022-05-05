@@ -46,7 +46,7 @@ public class ClientStartup : MonoBehaviour
         Debug.Log("[ClientStartup].RequestMultiplayerServer");
         RequestMultiplayerServerRequest requestData = new RequestMultiplayerServerRequest
         {
-            BuildId = "a761af9f-0c9b-4a52-9321-3992051a48ec",
+            BuildId = "998d7d6a-adc0-4515-b787-fcba6f09a74c",
             SessionId = "951BC03B-3DDB-4000-85EA-04529895C3B5",
             PreferredRegions = new List<string> { "EastUS" }
         };
