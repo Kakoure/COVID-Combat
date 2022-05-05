@@ -8,7 +8,7 @@ Our StartMenu scene is the start of the game for the players. It then transition
 
 The VR equipment we are using are the Google Cardboard and Bluetooth Controller provided in class.
 
-###Interaction Techniques:
+### Interaction Techniques:
 Menu:
 -Select options by looking at the desired button and pressing X.
 
@@ -39,8 +39,8 @@ To operate with multiple devices while the server is running, simply press the "
 - Win Screen (can restart the game from this screen)
 - Improved blood vessel course
 - All interactable objects:
- - COVID virus:
-  - does the most damage when player collides with it
+   - COVID virus:
+    - does the most damage when player collides with it
   - when shot, it increases the score
   - Explodes when shot
  - Megakaryocyte cell:
