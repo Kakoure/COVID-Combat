@@ -164,6 +164,7 @@ public class GameflowManager : NetworkBehaviour
                     SetFlowText("These Cells charge your power. Try running into one!");
                     currentState = FlowState.POWER_TUTOR;
                     tutorialCompleted = false;
+                    EnablePilotMovement(roleManager.GetPilot().connectionToClient);
                     foreach (CellMoveNetwork cellCntrl in shootTutWall.GetComponentsInChildren<CellMoveNetwork>())
                     {
                         cellCntrl.ReturnCellToPool();
