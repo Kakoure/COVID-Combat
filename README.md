@@ -40,7 +40,7 @@ To operate with multiple devices while the server is running, simply press the "
 - Improved blood vessel course
 - All interactable objects:
    - COVID virus:
-    - does the most damage when player collides with it
+     - does the most damage when player collides with it
   - when shot, it increases the score
   - Explodes when shot
  - Megakaryocyte cell:
