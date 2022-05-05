@@ -189,6 +189,7 @@ MonoBehaviour:
   playerObj: {fileID: 0}
   deathParticles: {fileID: 938581741573750833, guid: cfb4ee46a90be55478cee949f3a7afe0,
     type: 3}
+  deathClip: {fileID: 0}
 --- !u!114 &3144744548150942077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 2
   precomputeOutline: 1
   bakeKeys:
