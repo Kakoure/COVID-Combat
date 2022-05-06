@@ -47,22 +47,26 @@ To operate with multiple devices while the server is running, simply press the "
      - Player collisions do significant damage to the player
      - Player collisions slow the player down
      - Player collisions shake the player
+     - Player collisions highlight the windshield
      - Has a sound effect for collisions
      - Gets pushed away when shot
    - Red Blood cell:
      - Player collisions do some damage to the player
      - Player collisions slow the player down
      - Player collisions shake the player
+     - Player collisions highlight the windshield
      - Has the same sound effect as megakaryocyte cell
    - B Cell
      - Move at a very fast pace to make them challenging to obtain
      - Collisions regenerate player health
      - Collisions do not slow the player down
+     - Player collisions highlight the windshield
      - Has a power up sound
    - T Cell
      - Move at a very fast pace to make them challenging to obtain
      - Player collisions charge the bleach power up
      - Player collisions do not slow the player down
+     - Player collisions highlight the windshield
      - Has the same power up sound as the B Cell
    - Blood vessel course
      - Player collisions cause damage to the player only if the player hits the course directly
